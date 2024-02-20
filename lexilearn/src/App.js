@@ -4,8 +4,12 @@ import Home from './Home';
     function App() {
       return (
         <div className="App">
+<<<<<<< Updated upstream
           <LoginPage />
           <Home />
+=======
+          <LoginPage/>
+>>>>>>> Stashed changes
         </div>
       );
     }
