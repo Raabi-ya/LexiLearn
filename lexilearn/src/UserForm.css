@@ -1,181 +1,74 @@
 /* UserForm.css */
-/* ... other styles ... */
 
-/* Common styles for form elements */
-.form-group label {
-    display: block;
-    margin-bottom: 10px;
-    font-size: 18px;
+/* Common styles for user form elements */
+.input-form-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px;
+  padding: 10px; /* Removed text-align: left; */
+}
+
+.input-form-group input {
+  width: 90%;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.input-form-group input:focus {
+  border-color: #ffffff;
+}
+
+/* UserForm page styles */
+.UserForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Courier New", Courier, monospace;
+  background: linear-gradient(to bottom, skyblue, cornflowerblue);
+}
+
+/* Center the content in the middle */
+.content-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+/* UserForm form styles */
+.user-login-form {
+  background-color: #f0f0f0; /* Changed to a more descriptive color */
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  height: 400px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Add hover effect */
+.user-login-form:hover {
+  transform: scale(1.05);
+}
+
+/* Media queries for responsiveness */
+@media only screen and (max-width: 768px) {
+  .user-login-form {
+    width: 90%; /* Adjust form width */
   }
-  
-  .form-group input {
-    width: 90%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    font-size: 14px;
-    transition: border-color 0.3s ease;
-  }
-  
-  .form-group input:focus {
-    border-color: #ffffff;
-  }
-  
-  .button-group {
-    display: flex;
-    justify-content: space-between;
-    width: 70%;
-  }
-  
-  .button-group button {
-    padding: 15px 30px;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s ease;
-    background-color: royalblue;
-    color: #fff;
-    font-family: "Courier New", Courier, monospace;
-  }
-  
-  .button-group button:hover {
-    background-color: navy;
-  }
-  
-  /* UserForm page styles */
-  .UserForm {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    font-family: "Courier New", Courier, monospace;
-    background: linear-gradient(to bottom, skyblue, cornflowerblue);
-  }
-  
-  /* Center the content in the middle */
+
   .content-container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    text-align: center;
   }
-  
-  /* Left section styles */
-  .left-section {
-    padding: 20px;
-  }
-  
-  .left-section img {
-    max-width: 100%;
-    border-radius: 20px;
-    width: 300px;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  /* Add hover effect */
-  .left-section img:hover {
-    transform: scale(1.1);
-  }
-  
-  /* Right section styles */
-  .right-section {
-    padding: 20px;
-  }
-  
-  .right-section h2 {
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  /* UserForm form styles */
-  .login-form {
-    background-color: #f0f0f0;
-    border-radius: 20px;
-    padding: 30px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 400px;
-    height: 300px;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  /* Add hover effect */
-  .login-form:hover {
-    transform: scale(1.05);
-  }
-  
-  /* Media queries for responsiveness */
-  @media only screen and (max-width: 768px) {
-    .login-form {
-      width: 90%; /* Adjust form width */
-    }
-  
-    .left-section img {
-      width: 100%; /* Make the image full width */
-    }
-  
-    .button-group button {
-      width: 100%; /* Make buttons full width */
-    }
-  
-    .content-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    /* Logo section styles */
-    .logo-section {
-      padding: 20px;
-    }
-  
-    .logo-section img {
-      max-width: 100%;
-      border-radius: 20px;
-      width: 150px; /* Adjust as needed */
-      transition: transform 0.3s ease-in-out;
-    }
-  
-    /* Add hover effect to the logo */
-    .logo-section img:hover {
-      transform: scale(1.1);
-    }
-  
-    /* Right section styles */
-    .profile-section {
-      padding: 20px;
-    }
-  
-    .profile-section h2 {
-      margin-bottom: 20px;
-      text-align: center;
-    }
-  
-    /* Navigation bar styles */
-    .navbar {
-      display: flex;
-      justify-content: flex-end; /* Align items to the right */
-      margin-bottom: 20px;
-    }
-  
-    .navbar a {
-      padding: 10px 15px;
-      text-decoration: none;
-      color: #fff;
-      margin: 0 10px;
-      font-family: "Courier New", Courier, monospace;
-      transition: color 0.3s ease;
-    }
-  
-    .navbar a:hover {
-      color: navy;
-    }
-  
-    .UserForm {
-      border: 0.5in solid #ccc; /* Half-inch gray border */
-    }
-  }
+}
+
+
   

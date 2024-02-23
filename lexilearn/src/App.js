@@ -1,16 +1,15 @@
 import React from 'react';
 import LoginPage from './LoginPage';
-import Home from './Home';
-    function App() {
-      return (
-        <div className="App">
-<<<<<<< Updated upstream
-          <LoginPage />
-          <Home />
-=======
-          <LoginPage/>
->>>>>>> Stashed changes
-        </div>
-      );
-    }
-    export default App;
+import UserForm from './userForm'; // Assuming UserForm component is imported correctly
+
+function App() {
+  return (
+    <div className="App">
+      <LoginPage />
+      {/*<UserForm />*/}
+    </div>
+  );
+}
+
+export default App;
+

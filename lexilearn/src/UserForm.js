@@ -23,9 +23,9 @@ const UserForm = () => {
             <a href="#levels">Levels</a>
             <a href="#about">About Us</a>
           </div>
-          <h2>Your Profile</h2>
-          <form className="login-form">
-            <div className="form-group">
+          <h2>Profile Details</h2>
+          <form className="user-login-form">
+            <div className="input-form-group">
               <label htmlFor="fullName">Full Name:</label>
               <input
                 type="text"
@@ -36,7 +36,7 @@ const UserForm = () => {
                 required
               />
             </div>
-            <div className="form-group">
+            <div className="input-form-group">
               <label htmlFor="email">Email:</label>
               <input
                 type="email"
@@ -47,7 +47,7 @@ const UserForm = () => {
                 required
               />
             </div>
-            <div className="form-group">
+            <div className="input-form-group">
               <label htmlFor="dob">Date of Birth:</label>
               <input
                 type="date"
@@ -58,7 +58,7 @@ const UserForm = () => {
                 required
               />
             </div>
-            <div className="form-group">
+            <div className="input-form-group">
               <label htmlFor="username">Username:</label>
               <input
                 type="text"
