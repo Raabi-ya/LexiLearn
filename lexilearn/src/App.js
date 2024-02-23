@@ -1,14 +1,14 @@
 import React from 'react';
 import LoginPage from './LoginPage';
 import UserForm from './userForm'; 
-import AbouUsPage from './AboutUsPage';
+import AboutUsPage from './AboutUsPage';
 
 function App() {
   return (
     <div className="App">
-      <LoginPage />
+      {/*<LoginPage />*/}
       {/*<UserForm />*/}
-      <AbouUsPage />
+      <AboutUsPage />
     </div>
   );
 }
