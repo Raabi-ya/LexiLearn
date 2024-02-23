@@ -30,7 +30,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  font-family: 'Courier New', Courier, monospace;
+  font-family:Georgia, 'Times New Roman', Times, serif;
   background: linear-gradient(to bottom,skyblue, cornflowerblue);
 }
 
