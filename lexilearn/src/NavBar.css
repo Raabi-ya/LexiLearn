@@ -1,0 +1,60 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1D3557; /* Light blue background color */
+    padding: 15px 20px;
+    color: #fff; /* White text color */
+  }
+  
+  .leftSide {
+    display: flex;
+    align-items: center;
+  }
+  
+  .hiddenLinks {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #68B0AB; /* Light blue background color */
+    width: 100%;
+    padding: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .hiddenLinks a {
+    color: #fff; /* White text color for links */
+    text-decoration: none;
+    margin-bottom: 10px;
+  }
+  
+  .rightSide a {
+    color: #fff; /* White text color for links */
+    text-decoration: none;
+    margin-left: 20px;
+  }
+  
+  button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    color: #fff; /* White text color for button */
+  }
+
+  /* Display the hiddenLinks when the navbar has the 'open' class */
+.navbar.open .hiddenLinks {
+    display: flex;
+  }
+
+.navbar.close .hiddenLinks {
+  display: none;
+}
+  
+.leftSide img {
+  width: 100px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+  

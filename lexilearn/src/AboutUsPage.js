@@ -2,9 +2,12 @@
 
 import React from 'react';
 import './AboutUs.css';
+import Navbar from "./NavBar";
 
 const AboutUsPage = () => {
   return (
+    <div>
+        <Navbar />
     <div className="about-us-page">
       <h1>About Us</h1>
       <section className="section">
@@ -27,7 +30,7 @@ const AboutUsPage = () => {
         <h2 className="section-title">Our Mission</h2>
         <p className="section-paragraph">
           Our mission is to address the critical need for personalized assistance for dyslexic children through a web application that provides essential tools and tailored support to meet their unique needs. 
-          Our goal is to alleviate the reading challenges encountered by dyslexic learners and foster inclusive education
+          Our goal is to alleviate the reading challenges encountered by dyslexic learners and foster inclusive education.
         </p>
       </section>
 
@@ -39,6 +42,7 @@ const AboutUsPage = () => {
           Our approach emphasizes early awareness of learning differences and the provision of tools to help dyslexic learners thrive academically, echoing the success stories of notable figures like Albert Einstein.
         </p>
       </section>
+    </div>
     </div>
   );
 };
