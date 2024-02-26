@@ -8,16 +8,19 @@ const UserForm = () => {
   const [dob, setDOB] = useState("");
   const [username, setUsername] = useState("");
 
+  const handleSave = () => {
+    // Add logic to save the user's profile details
+    console.log("Profile details saved!");
+  };
+
   return (
     <div className="UserForm">
-      {" "}
-      {/* Updated class name to "UserForm" */}
       <div className="content-container">
         <div className="logo-section">
           <img src="path/to/your/logo.png" alt="Logo" />
         </div>
         <div className="profile-section">
-          <h2>Profile Details</h2>
+          <h2>Your Profile</h2>
           <form className="user-save-form">
             <div className="form-group">
               <label htmlFor="fullName">Full Name:</label>
@@ -30,7 +33,7 @@ const UserForm = () => {
                 required
               />
             </div>
-            <div className="input-form-group">
+            <div className="form-group">
               <label htmlFor="email">Email:</label>
               <input
                 type="email"
@@ -41,7 +44,7 @@ const UserForm = () => {
                 required
               />
             </div>
-            <div className="input-form-group">
+            <div className="form-group">
               <label htmlFor="dob">Date of Birth:</label>
               <input
                 type="date"
@@ -52,7 +55,7 @@ const UserForm = () => {
                 required
               />
             </div>
-            <div className="input-form-group">
+            <div className="form-group">
               <label htmlFor="username">Username:</label>
               <input
                 type="text"
@@ -63,6 +66,9 @@ const UserForm = () => {
                 required
               />
             </div>
+            <button className="save-button" onClick={handleSave}>
+              Save
+            </button>
           </form>
         </div>
       </div>
