@@ -30,7 +30,7 @@ const AboutUsPage = () => {
         <h2 className="section-title">Our Mission</h2>
         <p className="section-paragraph">
           Our mission is to address the critical need for personalized assistance for dyslexic children through a web application that provides essential tools and tailored support to meet their unique needs. 
-          Our goal is to alleviate the reading challenges encountered by dyslexic learners and foster inclusive education
+          Our goal is to alleviate the reading challenges encountered by dyslexic learners and foster inclusive education.
         </p>
       </section>
 
