@@ -17,15 +17,9 @@ const UserForm = () => {
           <img src="path/to/your/logo.png" alt="Logo" />
         </div>
         <div className="profile-section">
-          <div className="navbar">
-            <a href="#home">Home</a>
-            <a href="#progress">Progress</a>
-            <a href="#levels">Levels</a>
-            <a href="#about">About Us</a>
-          </div>
           <h2>Profile Details</h2>
-          <form className="user-login-form">
-            <div className="input-form-group">
+          <form className="user-save-form">
+            <div className="form-group">
               <label htmlFor="fullName">Full Name:</label>
               <input
                 type="text"

@@ -1,6 +1,6 @@
 /* UserForm.css */
 
-
+/* UserForm page styles */
 .UserForm {
   display: flex;
   justify-content: center;
@@ -32,7 +32,7 @@
     flex-direction: column;
   }
 }
-.login-form {
+.user-save-form {
   background-color: #f0f0f0;
   border-radius: 20px;
   padding: 30px;
@@ -41,7 +41,7 @@
   height: 300px;
   transition: transform 0.3s ease-in-out;
 }
-.login-form:hover {
+.user-save-form:hover {
   transform: scale(1.1);
 }
 .form-group input {
