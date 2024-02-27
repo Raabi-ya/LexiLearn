@@ -1,5 +1,3 @@
-/* UserForm.css */
-
 /* UserForm page styles */
 .UserForm {
   display: flex;
@@ -21,7 +19,7 @@
 
 /* Media queries for responsiveness */
 @media only screen and (max-width: 768px) {
-  .user-login-form {
+  .user-save-form {
     width: 90%; /* Adjust form width */
   }
 
@@ -32,18 +30,21 @@
     flex-direction: column;
   }
 }
+
 .user-save-form {
   background-color: #f0f0f0;
   border-radius: 20px;
-  padding: 50px;
+  padding: 20px; /* Adjust padding to make the container smaller */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 400px;
-  height: 300px;
+  height: auto; /* Adjust height to auto to fit the content */
   transition: transform 0.3s ease-in-out;
 }
+
 .user-save-form:hover {
   transform: scale(1.1);
 }
+
 .form-group input {
   width: 90%;
   padding: 12px;
@@ -52,7 +53,16 @@
   font-size: 14px;
   transition: border-color 0.3s ease;
 }
-.save-button {
+
+.form-group .display-value {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.save-button,
+.edit-button {
   background-color: #4caf50;
   color: white;
   padding: 10px 20px;
@@ -63,6 +73,7 @@
   transition: background-color 0.3s ease-in-out;
 }
 
-.save-button:hover {
+.save-button:hover,
+.edit-button:hover {
   background-color: #45a049;
 }
