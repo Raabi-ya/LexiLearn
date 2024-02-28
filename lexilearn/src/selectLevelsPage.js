@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import './selectLevelsPage.css';
+import './SelectLevelsPage.css';
 //import climbImage from './climb.png'; // Import the image file
 //import ladder from './ladder.png'; 
 
-function selectLevelsPage() {
+function SelectLevelsPage() {
   const [selectedLevel, setSelectedLevel] = useState(null);
 
   const handleLevelSelect = (level) => {
@@ -36,4 +36,4 @@ function selectLevelsPage() {
   );
 }
 
-export default selectLevelsPage;
+export default SelectLevelsPage;
