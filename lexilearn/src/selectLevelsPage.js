@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './selectLevelsPage.css';
-import climbImage from './climb.png'; // Import the image file
-import ladder from './ladder.png'; 
+//import climbImage from './climb.png'; // Import the image file
+//import ladder from './ladder.png'; 
 
 function selectLevelsPage() {
   const [selectedLevel, setSelectedLevel] = useState(null);
@@ -25,10 +25,10 @@ function selectLevelsPage() {
             <button onClick={() => handleLevelSelect(4)}>Level 3</button>
           </div>
           <div className="image">
-            <img src={climbImage} alt="Climbing" />
+            <img src="/climb.png" alt="Climbing" />
           </div>
           <div className="image2">
-          <img src={ladder} alt="Ladder" />
+          <img src="/ladder.png" alt="Ladder" />
           </div>
       </div>
       </header>
