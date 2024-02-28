@@ -3,7 +3,7 @@ import './selectLevelsPage.css';
 import climbImage from './climb.png'; // Import the image file
 import ladder from './ladder.png'; 
 
-function App() {
+function selectLevelsPage() {
   const [selectedLevel, setSelectedLevel] = useState(null);
 
   const handleLevelSelect = (level) => {
@@ -36,4 +36,4 @@ function App() {
   );
 }
 
-export default App;
+export default selectLevelsPage;
