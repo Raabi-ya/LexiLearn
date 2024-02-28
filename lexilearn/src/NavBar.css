@@ -58,4 +58,11 @@
   width: 100px; /* Adjust the width as needed */
   height: auto; /* Maintain aspect ratio */
 }
+
+.NavBar button {
+  display: flex;
+  justify-content: center; 
+  margin-top: 20px; /* Added margin to separate the buttons from the form */
+  color: black;
+}
   
