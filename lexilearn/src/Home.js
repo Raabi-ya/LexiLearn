@@ -1,11 +1,8 @@
 import React from "react";
-import Navbar from "./NavBar";
 import "./Home.css";
 
 function Home() {
   return (
-    <div>
-        <Navbar />
     <div className="home">
       <div className="headerContainer">
         <h1>LexiLearn</h1>
@@ -17,7 +14,6 @@ function Home() {
           <li>Real-time motivation in text and speech</li>
         </ul>
       </div>
-    </div>
     </div>
   );
 }

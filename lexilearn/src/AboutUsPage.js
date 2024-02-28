@@ -2,12 +2,9 @@
 
 import React from 'react';
 import './AboutUs.css';
-import Navbar from "./NavBar";
 
 const AboutUsPage = () => {
   return (
-    <div>
-        <Navbar />
     <div className="about-us-page">
       <h1>About Us</h1>
       <section className="section">
@@ -42,7 +39,6 @@ const AboutUsPage = () => {
           Our approach emphasizes early awareness of learning differences and the provision of tools to help dyslexic learners thrive academically, echoing the success stories of notable figures like Albert Einstein.
         </p>
       </section>
-    </div>
     </div>
   );
 };

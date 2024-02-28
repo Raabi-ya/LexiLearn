@@ -1,25 +1,28 @@
 import React from 'react';
-<<<<<<< Updated upstream
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Use Routes instead of Switch
 import Home from './Home';
-=======
-import LoginPage from './LoginPage';
-import UserForm from './UserForm'; 
 import AboutUsPage from './AboutUsPage';
->>>>>>> Stashed changes
+import UserForm from './UserForm';
+import LoginPage from './LoginPage';
+import Navbar from './NavBar';
 
 function App() {
   return (
-    <div className="App">
-<<<<<<< Updated upstream
-      <Home />
-=======
-      {/*<LoginPage />*/}
-      <UserForm />
-      {/*<AboutUsPage />*/}
->>>>>>> Stashed changes
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+        
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/AboutUspage" element={<AboutUsPage />} />
+          <Route path="/UserForm" element={<UserForm />} />
+          <Route path="/LoginPage" element={<LoginPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
 export default App;
+
 

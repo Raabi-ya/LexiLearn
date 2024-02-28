@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./NavBar.css";
 
 function Navbar() {
@@ -13,23 +14,23 @@ function Navbar() {
       <div className="leftSide">
         <img src="/lexiLearnLogo.png" alt="Logo" />
         <div className="hiddenLinks">
-          <a href="/">Home</a>
-          <a href="/levels">Levels</a>
-          <a href="./UserForm">User Profile</a>
-          <a href="./AboutUsPage">About Us</a>
-          <a href="./LoginPage">Sign In</a>
-          <a href="/contact">Sign Up</a>
+          <Link to="/">Home</Link>
+          <Link to="/levels">Levels</Link>
+          <Link to="/UserForm">User Profile</Link>
+          <Link to="/AboutUsPage">About Us</Link>
+          <Link to="/LoginPage">Sign In</Link>
+          <Link to="/signup">Sign Up</Link>
         </div>
       </div>
       <div className="rightSide">
-        <a href="/">Home</a>
-        <a href="/levels">Levels</a>
-        <a href="./UserForm">User Profile</a>
-        <a href="./AboutUsPage">About Us</a>
-        <a href="./LoginPage">Sign In</a>
-        <a href="/contact">Sign Up</a>
-        <button onClick={toggleNavbar}>Toggle NavBar </button>
-  </div>
+        <Link to="/">Home</Link>
+        <Link to="/levels">Levels</Link>
+        <Link to="/UserForm">User Profile</Link>
+        <Link to="/AboutUsPage">About Us</Link>
+        <Link to="/LoginPage">Sign In</Link>
+        <Link to="/signup">Sign Up</Link>
+        <button onClick={toggleNavbar}>Toggle NavBar</button>
+      </div>
     </div>
   );
 }
