@@ -14,7 +14,7 @@
     padding: 20px;
   }
   
-  h1 {
+  .home h1 {
     margin-bottom: 10px;
     color: #3498db; /* Light blue color */
   }
@@ -31,4 +31,20 @@
   li {
     margin-bottom: 10px;
   }
+
+  .homeImageContainer {
+    position: absolute;
+    right: 0;
+    flex: 1; 
+    max-width: 50%; 
+    margin-left: 20px; 
+  }
+
+  .homeImageContainer img {
+    width: 50%; 
+    height: 50%; 
+  }
   
+  .homeText {
+    flex: 1;
+  }

@@ -5,7 +5,8 @@ import AboutUsPage from './AboutUsPage';
 import UserForm from './UserForm';
 import LoginPage from './LoginPage';
 import Navbar from './NavBar';
-import selectLevelsPage from './selectLevelsPage';
+import SelectLevelsPage from './SelectLevelsPage';
+import Signup from './Signup';
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
           <Route path="/AboutUspage" element={<AboutUsPage />} />
           <Route path="/UserForm" element={<UserForm />} />
           <Route path="/LoginPage" element={<LoginPage />} />
-          <Route path="/selectLevelsPage" element={<selectLevelsPage />} />
+          <Route path="/SelectLevelsPage" element={<SelectLevelsPage />} />
+          <Route path="/Signup" element={<Signup />}/>
         </Routes>
       </div>
     </Router>

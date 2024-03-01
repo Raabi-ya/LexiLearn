@@ -1,4 +1,7 @@
 /* Common styles for form elements */
+.login-page{
+  overflow: hidden;
+}
 .form-group label {
   display: block;
   margin-bottom: 10px;

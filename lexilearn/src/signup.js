@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './signup.css'; // Import CSS for styling
+import './Signup.css'; // Import CSS for styling
 import Footer from './Footer';
 
 function SignupPage() {
