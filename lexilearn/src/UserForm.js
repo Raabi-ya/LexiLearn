@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Footer from "./Footer";
 import "./UserForm.css"; // Import CSS file
 
 const UserForm = () => {
@@ -15,6 +16,7 @@ const UserForm = () => {
   };
 
   return (
+    <div>
     <div className="UserForm">
       <div className="content-container">
         <div className="logo-section">
@@ -94,6 +96,8 @@ const UserForm = () => {
           </div>
         </div>
       </div>
+    </div>
+    <div>< Footer /></div>
     </div>
   );
 };

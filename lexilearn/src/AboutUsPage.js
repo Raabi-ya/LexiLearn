@@ -1,10 +1,11 @@
 // AboutUsPage.js
-
 import React from 'react';
 import './AboutUs.css';
+import Footer from './Footer';
 
 const AboutUsPage = () => {
   return (
+    <div>
     <div className="about-us-page">
       <h1>About Us</h1>
       <section className="section">
@@ -36,9 +37,11 @@ const AboutUsPage = () => {
         <p className="section-paragraph">
           Our values are rooted in the belief that every child deserves equal access to education and opportunities for academic success. 
           We are committed to leveraging technology to create a supportive learning environment that empowers dyslexic students to excel. 
-          Our approach emphasizes early awareness of learning differences and the provision of tools to help dyslexic learners thrive academically, echoing the success stories of notable figures like Albert Einstein.
+          Our approach emphasizes early awareness of learning differences and the provision of tools to help dyslexic learners thrive academically, echoing the success stories of notable figures like Albert Einstein, Richard Branson and Tom Cruise.
         </p>
       </section>
+    </div>
+    <div> < Footer /> </div>
     </div>
   );
 };

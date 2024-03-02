@@ -2,18 +2,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #1D3557; /* Light blue background color */
+    background-color:#1446A0; /* Light blue background color */
     padding: 15px 20px;
     color: #fff; /* White text color */
     font-family: Georgia, 'Times New Roman', Times, serif;
   }
   
-  .leftSide {
+  .navbar .leftSide {
     display: flex;
     align-items: center;
   }
   
-  .hiddenLinks {
+  .navbar .hiddenLinks {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -25,19 +25,19 @@
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   }
   
-  .hiddenLinks a {
+  .navbar .hiddenLinks a {
     color: #fff; /* White text color for links */
     text-decoration: none;
     margin-bottom: 10px;
   }
   
-  .rightSide a {
+  .navbar .rightSide a {
     color: #fff; /* White text color for links */
     text-decoration: none;
     margin-left: 20px;
   }
   
-  button {
+  .navbar button {
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -54,12 +54,12 @@
   display: none;
 }
   
-.leftSide img {
+.navbar .leftSide img {
   width: 100px; /* Adjust the width as needed */
   height: auto; /* Maintain aspect ratio */
 }
 
-.toggleButton button {
+.navbar .toggleButton button {
   display: flex;
   justify-content: center; 
   /*margin-top: 20px;*/ /* Added margin to separate the buttons from the form */

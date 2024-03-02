@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Signup.css'; // Import CSS for styling
 import Footer from './Footer';
 
+
 function SignupPage() {
   const [fullName, setFullName]= useState ('');
   const [age, setAge] = useState('');const [email, setEmail] = useState('');

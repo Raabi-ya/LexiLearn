@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
-
 function Navbar() {
   const [openLinks, setOpenLinks] = useState(false);
 
   const toggleNavbar = () => {
     setOpenLinks(!openLinks);
+  };
+
+  const handleSignOut = () => {
+    // Implement sign-out logic here
+    // For example, clearing session/local storage, updating state, etc.
   };
 
   return (
@@ -23,6 +27,7 @@ function Navbar() {
           <Link to="/AboutUsPage">About Us</Link>
           <Link to="/LoginPage">Sign In</Link>
           <Link to="/Signup">Sign Up</Link>
+          <Link to={handleSignOut}>Sign Out</Link>
         </div>
       </div>
       <div className="rightSide">
@@ -32,10 +37,12 @@ function Navbar() {
         <Link to="/AboutUsPage">About Us</Link>
         <Link to="/LoginPage">Sign In</Link>
         <Link to="/Signup">Sign Up</Link>
+        <Link to={handleSignOut}>Sign Out</Link>
       </div>
     </div>
   );
 }
 
 export default Navbar;
+
 

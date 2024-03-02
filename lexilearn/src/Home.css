@@ -1,50 +1,50 @@
 .home {
-    background-color: #FAF3DD;
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-  }
-  
-  .headerContainer {
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .home h1 {
-    margin-bottom: 10px;
-    color: #3498db; /* Light blue color */
-  }
-  
-  p {
-    margin-bottom: 20px;
-  }
-  
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  li {
-    margin-bottom: 10px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color:  #FAF3DD;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
 
-  .homeImageContainer {
-    position: absolute;
-    right: 0;
-    flex: 1; 
-    max-width: 50%; 
-    margin-left: 20px; 
-  }
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
 
-  .homeImageContainer img {
-    width: 50%; 
-    height: 50%; 
+.homeText {
+  width: 60%;
+  padding: 20px;
+}
+.homeText li{
+  list-style-type: none;
+  padding: 5px;
+}
+
+.homeImageContainer {
+  width: 40%;
+  padding: 20px;
+}
+
+.homeText h1 {
+  text-align: center;
+  align-items: center;
+  animation: fadeInAndColorChange 2s ease forwards; /* Use shorthand for animation */
+}
+
+@keyframes fadeInAndColorChange {
+  from {
+    opacity: 0;
+    color: transparent; 
   }
-  
-  .homeText {
-    flex: 1;
+  to {
+    opacity: 1;
+    color:royalblue; 
   }
+}
+
+.homeImageContainer img {
+  width: 75%;
+  height: auto;
+  border-radius: 20px;
+}

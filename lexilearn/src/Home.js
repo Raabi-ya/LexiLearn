@@ -1,8 +1,10 @@
 import React from "react";
 import "./Home.css";
+import Footer from "./Footer";
 
 function Home() {
   return (
+    <div>
     <div className="home">
       <div className="headerContainer">
         <div className="homeText">
@@ -22,6 +24,9 @@ function Home() {
             <img src="home1.jpg" alt="child" />
         </div>
       </div>
+      
+    </div>
+    <div>< Footer /></div>
     </div>
   );
 }

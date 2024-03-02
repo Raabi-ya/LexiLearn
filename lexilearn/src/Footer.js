@@ -7,11 +7,11 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 function Footer() {
   return (
     <div className="footer">
-      <nav className="navbar">
-        <ul className="nav-links">
+      <nav className="footer-navbar">
+        <ul className="footer-nav-links">
           <li><a href="/">Home</a></li>
-          <li><a href="/level">Level Page</a></li>
-          <li><a href="/about">About Us</a></li>
+          <li><a href="/SelectLevelsPage">Level Page</a></li>
+          <li><a href="/AboutUsPage">About Us</a></li>
           <li><a href="/contact">Contact Us</a></li>
         </ul>
       </nav>

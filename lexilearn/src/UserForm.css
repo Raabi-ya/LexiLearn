@@ -5,7 +5,7 @@
   align-items: center;
   min-height: 100vh;
   font-family: Georgia, "Times New Roman", Times, serif;
-  background: linear-gradient(to bottom, skyblue, cornflowerblue);
+  background-color: #FAF3DD;
 }
 
 /* Center the content in the middle */

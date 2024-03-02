@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './SelectLevelsPage.css';
-
+import Footer from './Footer';
 function SelectLevelsPage() {
-  const [selectedLevel, setSelectedLevel] = useState(null);
+  const [SelectedLevel, setSelectedLevel] = useState(null);
 
   const handleLevelSelect = (level) => {
     setSelectedLevel(level);
@@ -10,6 +10,7 @@ function SelectLevelsPage() {
   };
 
   return (
+    <div>
     <div className="Selected-Levels-Page">
       <header className="Selected-Levels-Page-header">
         <div className="content">
@@ -30,6 +31,8 @@ function SelectLevelsPage() {
           </div>
       </div>
       </header>
+    </div>
+    <div>< Footer /></div>
     </div>
   );
 }

@@ -1,18 +1,17 @@
 .Selected-Levels-Page {
   text-align: center;
-  padding: 20px;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .Selected-Levels-Page-header {
-  background-color: #7796d4;
+  background-color: #FAF3DD;;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color:black;
 }
 
 .Level-button {
@@ -23,7 +22,7 @@
   align-items: center;
 }
 
-button {
+.Selected-Levels-Page button {
   margin: 10px;
   padding: 10px 20px;
   font-size: 16px;
@@ -35,19 +34,19 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.Selected-Levels-Page button:hover {
   background-color: #0056b3;
   transform: scale(1.1);
 }
 
-button:focus {
+.Selected-Levels-Page button:focus {
   outline: none;
 }
 
-h1 {
+.Selected-Levels-Page h1 {
   margin-bottom: 20px;
 }
-.image {
+.Selected-Levels-Page .image {
   position: absolute;
   right: 0;
   flex: 1; 
@@ -55,16 +54,16 @@ h1 {
   margin-left: 20px; 
 }
 
-.image img {
+.Selected-Levels-Page .image img {
   width: 50%; 
   height: 50%; 
 }
-.content {
+.Selected-Levels-Page .content {
   display: flex; /* Use flexbox */
   justify-content: space-between; /* Space items evenly */
   align-items: center; /* Center items vertically */
 }
-.image2 {
+.Selected-Levels-Page .image2 {
   flex: 1; 
   max-width: 35%; 
   margin-left: 20px; 
@@ -72,7 +71,7 @@ h1 {
   left: 0;
 }
 
-.image2 img {
+.Selected-Levels-Page .image2 img {
   width: 80%; 
   height: 80%; 
   

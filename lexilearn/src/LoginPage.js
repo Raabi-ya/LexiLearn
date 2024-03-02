@@ -3,11 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faLock } from '@fortawesome/free-solid-svg-icons';
 import { doSignInWithEmailAndPassword, doSendEmailVerification } from './firebase/auth'; // Added doSendEmailVerification
 import { useAuth } from './contexts/authContexts';
-import { Navigate, useNavigate } from 'react-router-dom'; // Imported Navigate and useNavigate
+import { Link } from 'react-router-dom'; // Imported Navigate and useNavigate
 import './Login.css'; // Import CSS for styling
 
 function LoginPage() {
-  const navigate = useNavigate();
   const { userLoggedIn } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -21,7 +20,7 @@ function LoginPage() {
       try {
         await doSignInWithEmailAndPassword(email, password);
         await doSendEmailVerification(); // Added await
-        navigate('/Home'); // Navigate to Home after successful login
+        Link('/Home'); // Navigate to Home after successful login
       } catch (error) {
         setErrorMessage(error.message);
         setIsSigningIn(false);
@@ -30,8 +29,8 @@ function LoginPage() {
   };
 
   return (
-    <>
-      {userLoggedIn && <Navigate to={'/Home'} replace={true} />} {/* Moved inside fragment */}
+    <div>
+      {userLoggedIn && <Link to={'/Home'} replace={true} />} {/* Moved inside fragment */}
       <div className="login-page">
         {/* Picture Section */}
         <div className="left-section">
@@ -71,13 +70,13 @@ function LoginPage() {
             {errorMessage && <div className="error-message">{errorMessage}</div>}
             {/* Text and button for sign in option and password reset */}
             <div className="additional-options">
-              <p>Don't have an account? <a href='signup'>Sign Up</a></p>
-              <p>Forgot your password? <a href='reset'>Reset Password</a></p>
+              <p>Don't have an account? <Link to="./Signup">Sign Up</Link></p>
+              <p>Forgot your password? <Link to="#">Reset Password</Link></p>
             </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
