@@ -1,17 +1,19 @@
 /* Common styles for form elements */
 .signup-form-group label {
     display: block;
+    padding-bottom: 5px;
     margin-bottom: 2 px;
-    font-size: 14px;
+    font-size: 16px;
   }
 
  .signup-form-group input {
     width: 100%;
     border: 1px solid #f7eded;
     border-radius: 20px;
-    font-size: 14px;
+    font-size: 15px;
     transition: border-color 0.3s ease;
-    height: 30px;
+    height: 40px;
+    padding: 5px;
     
 }
   
@@ -28,9 +30,10 @@
   
   /* Signup page styles */
   .signup-page {
+    padding: 20px;
     height:fit-content;
     font-family:Georgia, 'Times New Roman', Times, serif;
-    background: linear-gradient(to bottom,skyblue, cornflowerblue);
+    background-color: #FAF3DD;
   }
   
   /* Grouping the form and image together */
@@ -43,7 +46,6 @@
   /* Left section styles */
   .signup-left-section {
     padding: 20px;
-    text-align: left;
   }
   
   .signup-left-section img {
@@ -51,15 +53,6 @@
     border-radius: 30px;
     width: 500px;
     transition: transform 0.3s ease-in-out;
-  }
-  
-  /* Add hover effect to the entire container */
-  .signup-container:hover .left-section img {
-    transform: scale(1.1);
-  }
-  
-  .Signup-container:hover .login-form {
-    transform: scale(1.05);
   }
   
   /* Right section styles */
@@ -91,15 +84,14 @@
     padding-left: 30px;
     padding-right: 30px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width:400px;
+    width:550px;
     height: fit-content;
-    transition: transform 0.3s ease-in-out;
    
   }
   
   /* Submit button styles */
   .confirm-button-group button {
-    background-color: blue;
+    background-color: royalblue;
     color: #fff;
     font-family: Georgia, 'Times New Roman', Times, serif;
     padding: 15px 30px;
@@ -111,7 +103,7 @@
     
 }
    .confirm-button-group button:hover {
-    background-color: royalblue;
+    background-color: cornflowerblue;
   }
 
   .confirm-button-group {

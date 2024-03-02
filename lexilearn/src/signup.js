@@ -19,6 +19,7 @@ function SignupPage() {
   };
 
   return (
+    <div>
     <div className="signup-page">
       {/* Grouping the form and image together */}
       <div className="signup-container">
@@ -122,7 +123,8 @@ function SignupPage() {
           </div>
         </div>
       </div>
-      <div><Footer /></div>
+    </div>
+    <div><Footer /></div>
     </div>
     
   );
