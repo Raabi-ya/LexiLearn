@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import './SelectLevelsPage.css';
-//import climbImage from './climb.png'; // Import the image file
-//import ladder from './ladder.png'; 
 
 function SelectLevelsPage() {
   const [selectedLevel, setSelectedLevel] = useState(null);
@@ -12,10 +10,10 @@ function SelectLevelsPage() {
   };
 
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="Selected-Levels-Page">
+      <header className="Selected-Levels-Page-header">
         <div className="content">
-          <div className="buttons">
+          <div className="Level-button">
             <h1>Levels</h1>
             <p>Select Level to Play :</p>
             
