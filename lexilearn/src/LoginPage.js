@@ -1,23 +1,38 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faLock } from '@fortawesome/free-solid-svg-icons';
+import { doSignInWithEmailAndPassword, doSendEmailVerification } from './firebase/auth'; // Added doSendEmailVerification
+import { useAuth } from './contexts/authContexts';
+import { Navigate, useNavigate } from 'react-router-dom'; // Imported Navigate and useNavigate
 import './Login.css'; // Import CSS for styling
 
 function LoginPage() {
-  const [username, setUsername] = useState('');
+  const navigate = useNavigate();
+  const { userLoggedIn } = useAuth();
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [submitted, setSubmitted] = useState(false);
+  const [isSigningIn, setIsSigningIn] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
-  const handleLogin = () => {
-    // Here, you can add your logic for handling the login action, such as sending a request to the server to authenticate the user.
-    // For simplicity, let's just set submitted to true
-    setSubmitted(true);
+  const handleLogin = async (e) => { // Added async keyword and e parameter
+    e.preventDefault();
+    if (!isSigningIn) {
+      setIsSigningIn(true);
+      try {
+        await doSignInWithEmailAndPassword(email, password);
+        await doSendEmailVerification(); // Added await
+        navigate('/Home'); // Navigate to Home after successful login
+      } catch (error) {
+        setErrorMessage(error.message);
+        setIsSigningIn(false);
+      }
+    }
   };
 
   return (
-    <div className="login-page">
-      {/* Grouping the form and image together */}
-      <div className="login-container">
+    <>
+      {userLoggedIn && <Navigate to={'/Home'} replace={true} />} {/* Moved inside fragment */}
+      <div className="login-page">
         {/* Picture Section */}
         <div className="left-section">
           <img src="/login.jpg" alt="Child Learning" />
@@ -28,12 +43,12 @@ function LoginPage() {
           <div className="login-form">
             <form onSubmit={handleLogin}>
               <div className="form-group">
-                <label htmlFor="username"><FontAwesomeIcon icon={faUser} /> Username</label>
+                <label htmlFor="email"><FontAwesomeIcon icon={faUser} /> Email</label>
                 <input
                   type="text"
-                  id="username"
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
+                  id="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   required
                 />
               </div>
@@ -49,10 +64,11 @@ function LoginPage() {
                 />
               </div>
               <div className="button-group">
-                <button type="button" onClick={handleLogin}>Login</button>
+                <button type="submit">Login</button> {/* Changed type to "submit" */}
               </div>
             </form>
-            {submitted}
+            {/* Display error message if there's any */}
+            {errorMessage && <div className="error-message">{errorMessage}</div>}
             {/* Text and button for sign in option and password reset */}
             <div className="additional-options">
               <p>Don't have an account? <a href='signup'>Sign Up</a></p>
@@ -61,7 +77,7 @@ function LoginPage() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
