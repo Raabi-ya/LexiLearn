@@ -1,0 +1,50 @@
+.home {
+    background-color: #FAF3DD;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  .headerContainer {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .home h1 {
+    margin-bottom: 10px;
+    color: #3498db; /* Light blue color */
+  }
+  
+  p {
+    margin-bottom: 20px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
+
+  .homeImageContainer {
+    position: absolute;
+    right: 0;
+    flex: 1; 
+    max-width: 50%; 
+    margin-left: 20px; 
+  }
+
+  .homeImageContainer img {
+    width: 50%; 
+    height: 50%; 
+  }
+  
+  .homeText {
+    flex: 1;
+  }

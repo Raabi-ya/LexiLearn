@@ -1,0 +1,38 @@
+/* AboutUsPage.css */
+
+.about-us-page {
+  padding: 50px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background: linear-gradient(to bottom,royalblue, cornflowerblue);
+}
+
+.about-us-page h1 {
+  text-align: center;
+  font-size: 30px;
+  color: black;
+}
+
+.section {
+  margin-bottom: 40px;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: #98ABEE; /* Matching shade of blue */
+  transition: transform 0.3s ease; /* Add transition for smooth animation */
+}
+
+.section:hover {
+  transform: translateY(-10px); /* Move section up by 5px on hover */
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.section-paragraph {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
