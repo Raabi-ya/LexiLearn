@@ -21,7 +21,7 @@ function Home() {
           </ul>
         </div>
         <div className="homeImageContainer">
-            <img src="home1.jpg" alt="child" />
+            <img src="HomePageImage.png" alt="child" />
         </div>
       </div>
       
