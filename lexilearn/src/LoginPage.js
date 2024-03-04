@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faLock } from '@fortawesome/free-solid-svg-icons';
 import { signInWithEmailAndPassword  } from "firebase/auth";
@@ -6,12 +6,16 @@ import { auth } from './firebase';
 import { useNavigate } from 'react-router-dom';
 import Footer from './Footer';
 import './Login.css'; // Import CSS for styling
+import { AuthContext } from './context/AuthContext';
+
 
 function LoginPage() {
   const [error,setError]=useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+
+  const {dispatch} = useContext(AuthContext)
   
 
   const handleLogin = (e) => {
@@ -20,6 +24,7 @@ function LoginPage() {
   .then((userCredential) => {
     // Signed up 
     const user = userCredential.user;
+    dispatch({type:"LOGIN", payload:user})
     navigate("/")
     // ...
   })
