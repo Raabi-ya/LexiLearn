@@ -25,7 +25,7 @@ function SignupPage() {
       <div className="signup-container">
         {/* Picture Section */}
         <div className="signup-left-section">
-          <img src="/signup.png" alt="Signup" />
+          <img src="/SignUpImg.jpg" alt="Signup" />
         </div>
         {/* Signup Form Section */}
         <div className="signup-right-section">
