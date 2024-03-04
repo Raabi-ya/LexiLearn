@@ -16,11 +16,10 @@
     padding: 5px;
     
 }
-  
-  
-  .signup-form-group input:focus {
+
+signup-form-group input:focus {
     border-color: #0714ca;
-  }
+}
   
   .continue-button-group {
     display: flex;
@@ -91,7 +90,7 @@
   
   /* Submit button styles */
   .confirm-button-group button {
-    background-color: royalblue;
+    background-color: blue;
     color: #fff;
     font-family: Georgia, 'Times New Roman', Times, serif;
     padding: 15px 30px;
@@ -103,7 +102,7 @@
     
 }
    .confirm-button-group button:hover {
-    background-color: cornflowerblue;
+    background-color: royalblue;
   }
 
   .confirm-button-group {

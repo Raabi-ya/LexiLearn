@@ -4,6 +4,7 @@ import { faUser, faLock } from '@fortawesome/free-solid-svg-icons';
 import { signInWithEmailAndPassword  } from "firebase/auth";
 import { auth } from './firebase';
 import { useNavigate } from 'react-router-dom';
+import Footer from './Footer';
 import './Login.css'; // Import CSS for styling
 
 function LoginPage() {
@@ -30,6 +31,7 @@ function LoginPage() {
   };
 
   return (
+    <div>
     <div className="login-page">
       {/* Picture Section */}
       <div className="left-section">
@@ -72,6 +74,8 @@ function LoginPage() {
         </div>
         </div>
       </div>
+    </div>
+    <div>< Footer /></div>
     </div>
   );
 }
