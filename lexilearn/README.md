@@ -1,1 +1,1 @@
-# LexiLearnSDGP
+# LexiLearn
