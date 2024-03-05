@@ -19,9 +19,13 @@ const UserForm = () => {
     <div>
     <div className="UserForm">
       <div className="content-container">
-        <div className="logo-section">
-          <img src="path/to/your/logo.png" alt="Logo" />
-        </div>
+      <div className="image-section">
+        <img 
+          src="https://i.pinimg.com/736x/e5/9e/51/e59e51dcbba47985a013544769015f25.jpg" 
+          alt="Image" 
+          style={{ width: "200px", height: "auto" }} // Set the width to a smaller value
+         />
+      </div>
         <div className="profile-section">
           <h2>Your Profile</h2>
           <div className="user-save-form">
