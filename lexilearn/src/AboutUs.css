@@ -12,11 +12,27 @@
 }
 
 .section {
+  display: flex; /* Add display flex */
+  flex-direction: column; /* Set flex direction to column */
+  align-items: center; /* Center items horizontally */
   margin-bottom: 40px;
   border-radius: 15px;
   padding: 15px;
   background: linear-gradient(to right, burlywood, #e8d9c3);
   transition: transform 0.3s ease;  
+}
+
+.image-div {
+  height: 150px;
+  width: 150px;
+  margin-bottom: 15px; /* Add margin bottom for spacing */
+}
+
+.image-div img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Ensure the image is a block element */
+  margin: 0 auto; /* Center the image horizontally */
 }
 
 .section:hover {
@@ -27,6 +43,7 @@
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 15px;
+  text-align: center;
 }
 
 .section-paragraph {
@@ -34,8 +51,9 @@
   line-height: 1.5;
   color: #333;
 }
-.about-us-page div{
+.about-us-page div {
   margin: 0;
   padding: 0;
 }
+
 
