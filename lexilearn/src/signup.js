@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import './Signup.css'; // Import CSS for styling
 import Footer from './Footer';
+import {addDoc, collection, doc, serverTimestamp, setDoc, } from "firebase/firestore";
+import { auth, db } from "./firebase";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from 'react-router-dom';
 
 function SignupPage() {
   const [fullName, setFullName] = useState('');
@@ -58,8 +62,32 @@ function SignupPage() {
     }
   };
 
-  const handleSignup = (e) => {
+  const navigate = useNavigate();
+
+  const handleAdd = async(e) => {
     e.preventDefault();
+
+    try{
+      const res = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      await setDoc(doc(db, "users", res.user.uid), {
+        fullName: fullName,
+        age: age,
+        email: email,
+        username: username,
+        timeStamp: serverTimestamp(),
+      });
+      //setSubmitted(true);
+
+      // Navigate to the home page
+      navigate('/Home');
+    }
+    catch(err){
+      console.log(err);
+    }
 
     // Reset previous error messages
     setFullNameError('');
@@ -102,7 +130,7 @@ function SignupPage() {
             <div className="Signup-form">
               <h2>Let's Get Started!!</h2>
               <h4>Sign up your account </h4>
-              <form onSubmit={handleSignup}>
+              <form onSubmit={handleAdd}>
                 <div className="signup-form-group">
                   <label htmlFor="fullName">Full Name</label>
                   <input
@@ -187,20 +215,20 @@ function SignupPage() {
                   )}
                 </div>
                 <div className="confirm-button-group">
-                  <button type="button" onClick={handleSignup}>
-                    Continue
+                  <button type="submit">
+                    Register
                   </button>
                 </div>
               </form>
               {submitted}
               {/* Text and button for sign in option and password reset */}
               <div className="signup-additional-options">
-                <p>By continuing you agree to our </p>
+                <p>By registering you agree to our </p>
                 <p>
                   <b>Terms & Conditions </b> and <b> Privacy Policy</b>{' '}
                 </p>
                 <p>
-                  Already have an account? <a href="/login">Log In</a>
+                  Already have an account? <a href="/LoginPage">Log In</a>
                 </p>
               </div>
             </div>
