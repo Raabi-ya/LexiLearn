@@ -24,7 +24,7 @@ function Navbar() {
           <Link to="/">Home</Link>
           <Link to="/SelectLevelsPage">Levels</Link>
           <Link to="/UserForm">User Profile</Link>
-          <Link to="/AboutUsPage">About Us</Link>
+          <Link to="/AboutUsPage">Progress</Link>
           <Link to="/LoginPage">Sign In</Link>
           <Link to="/Signup">Sign Up</Link>
           <Link to={handleSignOut}>Sign Out</Link>
@@ -34,7 +34,7 @@ function Navbar() {
         <Link to="/">Home</Link>
         <Link to="/SelectLevelsPage">Levels</Link>
         <Link to="/UserForm">User Profile</Link>
-        <Link to="/AboutUsPage">About Us</Link>
+        <Link to="/AboutUsPage">Progress</Link>
         <Link to="/LoginPage">Sign In</Link>
         <Link to="/Signup">Sign Up</Link>
         <Link to={handleSignOut}>Sign Out</Link>
