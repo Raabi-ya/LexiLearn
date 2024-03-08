@@ -40,7 +40,7 @@ function LoginPage() {
     <div className="login-page">
       {/* Picture Section */}
       <div className="left-section">
-        <img src="/login.jpg" alt="Child Learning" />
+        <img src="/login-img.png" alt="Child Learning" />
       </div>
       {/* Login Form Section */}
       <div className="right-section">
