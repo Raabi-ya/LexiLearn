@@ -12,8 +12,8 @@ body {
 }
 
 .image-level1 {
-  height: 150px;
-  width: 150px;
+  height: 300px;
+  width: 300px;
   margin: 0 auto;
 }
 
@@ -23,34 +23,28 @@ body {
 }
 
 .level1-instructions {
-  padding: 10px;
-  border-radius: 10px;
   text-align: center;
-}
-
-.level1-instructions p {
+  color: brown;
   font-size: 18px;
-  color: royalblue;
-  margin-bottom: 10px;
 }
-
+.level1 h2{
+  font-size: 40px;
+}
 .question {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .question input[type="text"] {
-  padding: 10px;
+  padding: 15px;
   font-size: 16px;
   border: 2px solid #ccc;
   border-radius: 20px;
-  width: 200px;
+  width: 250px;
   max-width: 100%;
   box-sizing: border-box;
   margin-top: 10px;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
-
-
+  font-family:Verdana, Geneva, Tahoma, sans-serif
 }
 
 .question input[type="text"]:focus {
@@ -58,28 +52,16 @@ body {
   outline: none;
 }
 
-.img-hint {
-  height: 200px;
-  width: 200px;
-  margin-top: 20px;
-}
-
-.img-hint img {
-  height: auto;
-  max-width: 100%;
-}
-
 .navigation-buttons {
   display: flex;
   justify-content: center;
   margin-top: 20px;
+  padding: 50px;
 }
 
 button {
   font-family:Verdana, Geneva, Tahoma, sans-serif;
-
-
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .navigation-buttons button {
@@ -108,4 +90,16 @@ button {
 
 .navigation-buttons button svg {
   margin-right: 10px;
+}
+.question-image{
+  height: 200px;
+  width: 200px;
+}
+.question-image img{
+  max-width: 100%;
+  height: auto;
+
+}
+.score-level1{
+  color: orangered;
 }

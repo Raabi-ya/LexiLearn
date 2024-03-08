@@ -8,6 +8,7 @@ import Navbar from './NavBar';
 import SelectLevelsPage from './SelectLevelsPage';
 import Signup from './Signup';
 import { AuthContext } from "./context/AuthContext";
+import Level1 from './Level1';
 
 function App() {
 
@@ -43,6 +44,10 @@ function App() {
             </RequireAuth>
           } />
           <Route path="/Signup" element={<Signup />}/>
+          <Route path="/Level1" element={<RequireAuth><Level1 /></RequireAuth>} />
+          {/*<Route path="/level2" element={<RequireAuth><Level2 /></RequireAuth>} />
+          <Route path="/level3" element={<RequireAuth><Level3 /></RequireAuth>} />
+        <Route path="/level4" element={<RequireAuth><Level4 /></RequireAuth>} />*/}
         </Routes>
       </div>
     </Router>
