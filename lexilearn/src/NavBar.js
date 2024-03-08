@@ -1,17 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from './context/AuthContext';
+import { auth } from "./firebase";
 import "./NavBar.css";
+
 function Navbar() {
   const [openLinks, setOpenLinks] = useState(false);
+  const { dispatch } = useContext(AuthContext);
+  const { navigate } = useNavigate();
 
   const toggleNavbar = () => {
     setOpenLinks(!openLinks);
   };
 
   const handleSignOut = () => {
-    // Implement sign-out logic here
-    // For example, clearing session/local storage, updating state, etc.
-  };
+    auth.signOut().then(() => {
+      dispatch({ type: "LOGOUT" }); // Assuming you have a "LOGOUT" action in your reducer
+      navigate("/login"); // Redirect to login page or any other appropriate route
+    }).catch((error) => {
+      console.error('Error signing out:', error);
+    });
+  }
 
   return (
     <div className={`navbar ${openLinks ? "open" : "close"}`}>
@@ -24,25 +34,23 @@ function Navbar() {
           <Link to="/">Home</Link>
           <Link to="/SelectLevelsPage">Levels</Link>
           <Link to="/UserForm">User Profile</Link>
-          <Link to="/AboutUsPage">About Us</Link>
+          <Link to="/AboutUsPage">Progress</Link>
           <Link to="/LoginPage">Sign In</Link>
           <Link to="/Signup">Sign Up</Link>
-          <Link to={handleSignOut}>Sign Out</Link>
+          <Link to="#" onClick={handleSignOut}>Sign Out</Link>
         </div>
       </div>
       <div className="rightSide">
         <Link to="/">Home</Link>
         <Link to="/SelectLevelsPage">Levels</Link>
         <Link to="/UserForm">User Profile</Link>
-        <Link to="/AboutUsPage">About Us</Link>
+        <Link to="/AboutUsPage">Progress</Link>
         <Link to="/LoginPage">Sign In</Link>
         <Link to="/Signup">Sign Up</Link>
-        <Link to={handleSignOut}>Sign Out</Link>
+        <Link to="#" onClick={handleSignOut}>Sign Out</Link>
       </div>
     </div>
   );
 }
 
 export default Navbar;
-
-

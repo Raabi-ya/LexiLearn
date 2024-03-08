@@ -14,19 +14,23 @@ function App() {
   const {currentUser} = useContext(AuthContext);
 
   const RequireAuth = ({children}) => {
+    console.log(currentUser); // Add this line for debugging
     return currentUser ? children : <Navigate to="/LoginPage" />;
   };
 
-  console.log(currentUser)
+  
 
   return (
     <Router>
       <div className="App">
         <Navbar />
-        
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/AboutUspage" element={<AboutUsPage />} />
+          <Route path="/AboutUspage" element={
+            <RequireAuth>
+              <AboutUsPage />
+            </RequireAuth>
+          } />
           <Route path="/LoginPage" element={<LoginPage />} />
           <Route path="/UserForm" element={
             <RequireAuth>

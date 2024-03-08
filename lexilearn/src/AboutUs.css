@@ -1,7 +1,9 @@
 /* AboutUsPage.css */
 .about-us-page {
   padding: 50px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+
   background-color: #FAF3DD;
 }
 
@@ -49,7 +51,7 @@
 .section-paragraph {
   font-size: 16px;
   line-height: 1.5;
-  color: #333;
+  color:black;
 }
 .about-us-page div {
   margin: 0;

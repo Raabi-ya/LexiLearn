@@ -30,7 +30,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
   background-color: #FAF3DD;
   overflow: hidden;
 }
@@ -83,7 +83,9 @@
 .login-page .button-group button {
   background-color: blue;
   color: #fff;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+
   padding: 15px 30px;
   border: none;
   border-radius: 20px;

@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
   background-color: #FAF3DD;
 }
 
@@ -43,11 +43,13 @@
 
 .user-save-form:hover {
   transform: scale(1.1);
+  width: 600px;
+  height: 350px; /* Adjust height to auto to fit the content */
 }
 
 .form-group input {
   width: 90%;
-  padding: 12px;
+  padding: 15px 20px;
   border: 1px solid #ccc;
   border-radius: 20px;
   font-size: 14px;
@@ -56,6 +58,7 @@
 
 .form-group .display-value {
   padding: 20px;
+  padding: 15px;
   border: 1px solid #ccc;
   border-radius: 20px;
   font-size: 14px;
@@ -63,19 +66,76 @@
 
 .save-button,
 .edit-button {
-  background-color: #4caf50;
+  background-color:blue;
   color: white;
   padding: 10px 20px;
   border: none;
-  border-radius: 5px;
+  border-radius: 30px;
   cursor: pointer;
   margin-top: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   transition: background-color 0.3s ease-in-out;
 }
 
 .save-button:hover,
 .edit-button:hover {
-  background-color: #45a049;
+  background-color:royalblue;
+}
+
+.user-img-section{
+  height: 100px;
+  width: 100px;
+}
+
+.user-img-section img{
+  height: auto;
+  max-width: 100%;
+}
+.delete-section {
+  margin-top: 20px; /* Adjust margin as needed */
+  text-align: center;
+  background-color: #FAF3DD;
+}
+
+.delete-button {
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.delete-button:hover {
+  background-color: darkred;
+}
+
+.delete-dialog {
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  text-align: center;
+}
+
+.delete-dialog p {
+  margin-bottom: 10px;
+}
+
+.delete-dialog button {
+  margin: 0 5px;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.delete-dialog button:hover {
+  background-color: #f0f0f0;
 }
 .image-section {
   margin-top: 20px; /* Add some spacing above the image */

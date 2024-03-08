@@ -8,6 +8,7 @@ const UserForm = () => {
   const [dob, setDOB] = useState("");
   const [username, setUsername] = useState("");
   const [isEditing, setIsEditing] = useState(false);
+  const [isDeleteOpen, setIsDeleteOpen] = useState(false); // New state variable for delete confirmation dialog
 
   const handleSave = () => {
     // Add logic to save the user's profile details
@@ -15,17 +16,24 @@ const UserForm = () => {
     setIsEditing(false);
   };
 
+  const handleDelete = () => {
+    // Add logic to delete the user's account
+    console.log("Account deleted!");
+    // Reset form fields after deletion (optional)
+    setFullName("");
+    setEmail("");
+    setDOB("");
+    setUsername("");
+    setIsEditing(false);
+  };
+
   return (
     <div>
     <div className="UserForm">
       <div className="content-container">
-      <div className="image-section">
-        <img 
-          src="https://i.pinimg.com/736x/e5/9e/51/e59e51dcbba47985a013544769015f25.jpg" 
-          alt="Image" 
-          style={{ width: "200px", height: "auto" }} // Set the width to a smaller value
-         />
-      </div>
+        <div className="logo-section">
+          <img src="path/to/your/logo.png" alt="Logo" />
+        </div>
         <div className="profile-section">
           <h2>Your Profile</h2>
           <div className="user-save-form">
