@@ -1,14 +1,22 @@
-/* UserForm page styles */
+:root {
+  --primary-color: royalblue;
+  --hover-color: cornflowerblue;
+  --form-width: 450px;
+  --delete-confirmation-bg: #fff;
+  --delete-confirmation-border: 1px solid #ccc;
+  --delete-confirmation-radius: 10px;
+  --delete-confirmation-padding: 20px;
+}
+
 .UserForm {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
   background-color: #FAF3DD;
 }
 
-/* Center the content in the middle */
 .content-container {
   display: flex;
   justify-content: center;
@@ -17,10 +25,9 @@
   text-align: center;
 }
 
-/* Media queries for responsiveness */
 @media only screen and (max-width: 768px) {
   .user-save-form {
-    width: 90%; /* Adjust form width */
+    width: 90%;
   }
 
   .content-container {
@@ -34,22 +41,20 @@
 .user-save-form {
   background-color: #f0f0f0;
   border-radius: 20px;
-  padding: 30px; 
+  padding: 30px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 450px; 
-  height: auto; 
+  width: var(--form-width);
+  height: auto;
   transition: transform 0.3s ease-in-out;
 }
 
 .user-save-form:hover {
   transform: scale(1.1);
-  width: 600px;
-  height: 350px; /* Adjust height to auto to fit the content */
 }
 
 .form-group input {
   width: 90%;
-  padding: 15px 20px;
+  padding: 12px;
   border: 1px solid #ccc;
   border-radius: 20px;
   font-size: 14px;
@@ -58,100 +63,56 @@
 
 .form-group .display-value {
   padding: 20px;
-  padding: 15px;
   border: 1px solid #ccc;
   border-radius: 20px;
   font-size: 14px;
 }
 
 .save-button,
-.edit-button {
-  background-color:blue;
+.edit-button,
+.delete-button {
+  background-color: var(--primary-color);
   color: white;
   padding: 10px 20px;
   border: none;
-  border-radius: 30px;
+  border-radius: 5px;
   cursor: pointer;
   margin-top: 20px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   transition: background-color 0.3s ease-in-out;
 }
 
 .save-button:hover,
-.edit-button:hover {
-  background-color:royalblue;
-}
-
-.user-img-section{
-  height: 100px;
-  width: 100px;
-}
-
-.user-img-section img{
-  height: auto;
-  max-width: 100%;
-}
-.delete-section {
-  margin-top: 20px; /* Adjust margin as needed */
-  text-align: center;
-  background-color: #FAF3DD;
-}
-
-.delete-button {
-  background-color: red;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  transition: background-color 0.3s ease-in-out;
-}
-
+.edit-button:hover,
 .delete-button:hover {
-  background-color: darkred;
+  background-color: var(--hover-color);
 }
 
-.delete-dialog {
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin-top: 10px;
+/* Delete Confirmation Styles */
+.delete-confirmation {
+  background-color: var(--delete-confirmation-bg);
+  border: var(--delete-confirmation-border);
+  border-radius: var(--delete-confirmation-radius);
+  padding: var(--delete-confirmation-padding);
+  margin-top: 20px;
   text-align: center;
 }
 
-.delete-dialog p {
+.delete-confirmation p {
   margin-bottom: 10px;
 }
 
-.delete-dialog button {
-  margin: 0 5px;
-  padding: 8px 20px;
+.delete-confirmation button {
+  margin-right: 10px;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px 24px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
-.delete-dialog button:hover {
-  background-color: #f0f0f0;
-}
-.image-section {
-  margin-top: 20px; /* Add some spacing above the image */
-  border-radius: 10px; /* Add rounded corners to the image container */
-  overflow: hidden; /* Hide any overflowing content */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for depth */
-}
-
-.image-section img {
-  width: 100%; /* Make the image fill the container width */
-  height: auto; /* Allow the height to adjust proportionally */
-  display: block;
-  border-radius: 10px; /* Add rounded corners to the image */
-  transition: transform 0.3s ease-in-out; /* Add a smooth transition on hover */
-}
-
-.image-section:hover img {
-  transform: scale(1.1); /* Scale the image on hover for a zoom effect */
+.delete-confirmation button:hover {
+  background-color: var(--hover-color);
+  color: #fff;
 }
