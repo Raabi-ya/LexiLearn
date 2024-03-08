@@ -5,6 +5,7 @@ import {addDoc, collection, doc, serverTimestamp, setDoc, } from "firebase/fires
 import { auth, db } from "./firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
+import { signInWithEmailAndPassword  } from "firebase/auth";
 
 function SignupPage() {
   const [fullName, setFullName] = useState('');
@@ -73,6 +74,10 @@ function SignupPage() {
         email,
         password
       );
+
+      // Log in the user immediately after signing up
+      await signInWithEmailAndPassword(auth, email, password);
+
       await setDoc(doc(db, "users", res.user.uid), {
         fullName: fullName,
         age: age,
@@ -80,10 +85,9 @@ function SignupPage() {
         username: username,
         timeStamp: serverTimestamp(),
       });
-      //setSubmitted(true);
 
       // Navigate to the home page
-      navigate('/Home');
+      navigate('/');
     }
     catch(err){
       console.log(err);
