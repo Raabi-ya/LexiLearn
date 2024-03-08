@@ -2,10 +2,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color:#1446A0; /* Light blue background color */
+    background-color:darkcyan; 
     padding: 15px 20px;
-    color: #fff; /* White text color */
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #fff; 
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
   }
   
   .navbar .leftSide {

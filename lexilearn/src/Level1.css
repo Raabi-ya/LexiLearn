@@ -2,7 +2,7 @@ body {
   background-color: #FAF3DD;
   margin: 0;
   padding: 0;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .level1 {
@@ -48,7 +48,9 @@ body {
   max-width: 100%;
   box-sizing: border-box;
   margin-top: 10px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+
 }
 
 .question input[type="text"]:focus {
@@ -74,7 +76,9 @@ body {
 }
 
 button {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+
   font-size: 14px;
 }
 
