@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Footer from "./Footer";
 import "./UserForm.css"; // Import CSS file
+import { db, auth } from './firebase';
 
 const UserForm = () => {
   const [fullName, setFullName] = useState("");
@@ -13,6 +14,34 @@ const UserForm = () => {
   const [dobError, setDOBError] = useState("");
   const [emptyFieldError, setEmptyFieldError] = useState("");
   const [yearError, setYearError] = useState("");
+  const [userData, setUserData] = useState(null);
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      const user = auth().currentUser;
+
+      if (user) {
+        const userId = user.uid;
+
+        try {
+          const doc = await db.collection('users').doc(userId).get();
+
+          if (doc.exists) {
+            const userDataFromFirestore = doc.data();
+            setUserData(userDataFromFirestore);
+          } else {
+            console.log('No such document!');
+          }
+        } catch (error) {
+          console.log('Error getting document:', error);
+        }
+      } else {
+        console.log('No user is signed in!');
+      }
+    };
+
+    fetchUserData();
+  }, []);
 
   const handleSave = () => {
     // Validate empty fields
@@ -99,7 +128,7 @@ const UserForm = () => {
         <div className="content-container">
           <div className="profile-section">
             <img
-              src="./user.png"
+              src="https://img.freepik.com/premium-vector/set-kids-faces-avatars-children-heads-different-nationality-flat-style_283146-615.jpg"
               alt="Profile"
               style={{ width: "250px", height: "auto", borderRadius: "50%", marginBottom: "20px" }}
             />
@@ -116,7 +145,8 @@ const UserForm = () => {
                     required
                   />
                 ) : (
-                  <div className="display-value">{fullName}</div>
+                  //<div className="display-value">{fullName}</div>
+                  <input type="text" id="fullName" value={userData?.fullName || ''} readOnly />
                 )}
               </div>
               <div className="form-group">
@@ -136,11 +166,12 @@ const UserForm = () => {
                     <div className="error-message">{emailError}</div>
                   </>
                 ) : (
-                  <div className="display-value">{email}</div>
+                  //<div className="display-value">{email}</div>
+                  <input type="email" id="email" value={userData?.email || ''} readOnly />
                 )}
               </div>
               <div className="form-group">
-                <label htmlFor="dob">Date of Birth:</label>
+                <label htmlFor="dob">Age</label>
                 {isEditing ? (
                   <>
                     <input
@@ -154,7 +185,8 @@ const UserForm = () => {
                     {!dobError && <div className="error-message">{yearError}</div>}
                   </>
                 ) : (
-                  <div className="display-value">{dob}</div>
+                  //<div className="display-value">{dob}</div>
+                  <input type="number" id="age" value={userData?.age || ''} readOnly />
                 )}
               </div>
               <div className="form-group">
@@ -168,7 +200,8 @@ const UserForm = () => {
                     required
                   />
                 ) : (
-                  <div className="display-value">{username}</div>
+                  //<div className="display-value">{username}</div>
+                  <input type="text" id="username" value={userData?.username || ''} readOnly />
                 )}
               </div>
               {isEditing ? (
