@@ -128,7 +128,7 @@ const UserForm = () => {
         <div className="content-container">
           <div className="profile-section">
             <img
-              src="https://img.freepik.com/premium-vector/set-kids-faces-avatars-children-heads-different-nationality-flat-style_283146-615.jpg"
+              src="./user.png"
               alt="Profile"
               style={{ width: "150px", height: "150px", marginBottom: "20px" }}
             />
