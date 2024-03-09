@@ -1,51 +1,50 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Footer from "./Footer";
 import "./UserForm.css"; // Import CSS file
-import { db, auth } from './firebase';
+import { doc, getDoc } from "firebase/firestore";
+import { db, auth } from "./firebase";
 
 const UserForm = () => {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
-  const [dob, setDOB] = useState("");
+  const [age, setAge] = useState("");
   const [username, setUsername] = useState("");
   const [isEditing, setIsEditing] = useState(false);
   const [isDeleteConfirmationVisible, setIsDeleteConfirmationVisible] = useState(false);
   const [emailError, setEmailError] = useState("");
-  const [dobError, setDOBError] = useState("");
+  //const [dobError, setDOBError] = useState("");
   const [emptyFieldError, setEmptyFieldError] = useState("");
-  const [yearError, setYearError] = useState("");
-  const [userData, setUserData] = useState(null);
+  const [ageError, setAgeError] = useState("");
+  //const [yearError, setYearError] = useState("");
+
+  const getUser = async () => {
+    const user = auth.currentUser;
+    if(user){
+    const docRef = doc(db, "users", user.uid);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      console.log("Document data:", docSnap.data());
+      const userData = docSnap.data();
+      setFullName(userData.fullName);
+      setEmail(userData.email);
+      setAge(userData.age);
+      setUsername(userData.username);
+    } else {
+     // docSnap.data() will be undefined in this case
+     console.log("No such document!");
+    }
+    
+  }
+  };
 
   useEffect(() => {
-    const fetchUserData = async () => {
-      const user = auth().currentUser;
-
-      if (user) {
-        const userId = user.uid;
-
-        try {
-          const doc = await db.collection('users').doc(userId).get();
-
-          if (doc.exists) {
-            const userDataFromFirestore = doc.data();
-            setUserData(userDataFromFirestore);
-          } else {
-            console.log('No such document!');
-          }
-        } catch (error) {
-          console.log('Error getting document:', error);
-        }
-      } else {
-        console.log('No user is signed in!');
-      }
-    };
-
-    fetchUserData();
+    getUser()
   }, []);
 
   const handleSave = () => {
     // Validate empty fields
-    if (!fullName || !email || !dob || !username) {
+    if (!fullName || !email || !age || !username) {
       setEmptyFieldError("Please fill in all required fields.");
       return;
     } else {
@@ -61,7 +60,7 @@ const UserForm = () => {
     }
 
     // Validate age
-    if (!isValidDOB(dob)) {
+    /*if (!isValidDOB(dob)) {
       setDOBError("Please enter a valid date of birth.");
       return;
     } else {
@@ -74,6 +73,14 @@ const UserForm = () => {
       return;
     } else {
       setYearError("");
+    }*/
+
+    // Validate age
+    if (!isValidAge(age)) {
+      setAgeError("Age should be between 6 and 12.");
+      return;
+    } else {
+      setAgeError("");
     }
 
     // Add logic to save the user's profile details
@@ -92,7 +99,13 @@ const UserForm = () => {
     return isValid;
   };
 
-  const isValidDOB = (value) => {
+  const isValidAge = (value) => {
+    // Validate age between 6 and 12
+    const ageValue = parseInt(value);
+    return ageValue >= 6 && ageValue <= 12;
+  };
+
+  /*const isValidDOB = (value) => {
     // Validate date of birth (YYYY-MM-DD)
     const dateOfBirth = new Date(value);
     const currentDate = new Date();
@@ -104,7 +117,7 @@ const UserForm = () => {
     // Validate year (YYYY)
     const year = value.substring(0, 4); // Extract first 4 characters
     return /^\d{4}$/.test(year) && parseInt(year) >= 2012 && parseInt(year) <= 2018;
-  };
+  };*/
 
   const handleDelete = () => {
     // Prompt the user for confirmation before deleting the account
@@ -128,9 +141,9 @@ const UserForm = () => {
         <div className="content-container">
           <div className="profile-section">
             <img
-              src="./user.png"
+              src="https://img.freepik.com/premium-vector/set-kids-faces-avatars-children-heads-different-nationality-flat-style_283146-615.jpg"
               alt="Profile"
-              style={{ width: "150px", height: "150px", marginBottom: "20px" }}
+              style={{ width: "250px", height: "auto", borderRadius: "50%", marginBottom: "20px" }}
             />
             <h2>Your Profile</h2>
             <div className="user-save-form">
@@ -145,8 +158,7 @@ const UserForm = () => {
                     required
                   />
                 ) : (
-                  //<div className="display-value">{fullName}</div>
-                  <input type="text" id="fullName" value={userData?.fullName || ''} readOnly />
+                  <div className="display-value">{fullName}</div>
                 )}
               </div>
               <div className="form-group">
@@ -166,27 +178,25 @@ const UserForm = () => {
                     <div className="error-message">{emailError}</div>
                   </>
                 ) : (
-                  //<div className="display-value">{email}</div>
-                  <input type="email" id="email" value={userData?.email || ''} readOnly />
+                  <div className="display-value">{email}</div>
                 )}
               </div>
               <div className="form-group">
-                <label htmlFor="dob">Age</label>
+                <label htmlFor="age">Age</label>
                 {isEditing ? (
                   <>
                     <input
-                      type="date"
-                      id="dob"
-                      value={dob}
-                      onChange={(e) => setDOB(e.target.value)}
+                      type="number"
+                      id="age"
+                      value={age}
+                      onChange={(e) => setAge(e.target.value)}
                       required
                     />
-                    <div className="error-message">{dobError}</div>
-                    {!dobError && <div className="error-message">{yearError}</div>}
+                    <div className="error-message">{ageError}</div>
+                    {/*!dobError && <div className="error-message">{yearError}</div>*/}
                   </>
                 ) : (
-                  //<div className="display-value">{dob}</div>
-                  <input type="number" id="age" value={userData?.age || ''} readOnly />
+                  <div className="display-value">{age}</div>
                 )}
               </div>
               <div className="form-group">
@@ -200,8 +210,7 @@ const UserForm = () => {
                     required
                   />
                 ) : (
-                  //<div className="display-value">{username}</div>
-                  <input type="text" id="username" value={userData?.username || ''} readOnly />
+                  <div className="display-value">{username}</div>
                 )}
               </div>
               {isEditing ? (
@@ -225,7 +234,7 @@ const UserForm = () => {
                 </>
               )}
               {isDeleteConfirmationVisible && (
-                <div className="delete-confirmation-dialog">
+                <div>
                   <p>Are you sure you want to delete your account?</p>
                   <button onClick={confirmDelete}>Yes</button>
                   <button onClick={cancelDelete}>No</button>
