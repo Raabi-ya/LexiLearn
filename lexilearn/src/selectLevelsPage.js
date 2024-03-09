@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './SelectLevelsPage.css';
 import Footer from './Footer';
-import Level1 from './Level1'; // Import Level1Page component
 
 function SelectLevelsPage() {
   return (
@@ -14,10 +13,12 @@ function SelectLevelsPage() {
               <h1>Levels</h1>
               <p>Select Level to Play :</p>
               <div>
-                <Link to="/pretest"><button>Pre Test</button></Link>
-                <Link to="/Level1"><button>Level 1</button></Link>
-                <Link to="/level2"><button>Level 2</button></Link>
-                <Link to="/level3"><button>Level 3</button></Link>
+                <ul>
+                <li><Link to="/pretest"><button>Pre Test</button></Link></li>
+                <li><Link to="/Level1"><button>Level 1</button></Link></li>
+                <li><Link to="/level2"><button>Level 2</button></Link></li>
+                <li><Link to="/level3"><button>Level 3</button></Link></li>
+                </ul>
             </div>
             </div>
             <div className="image">

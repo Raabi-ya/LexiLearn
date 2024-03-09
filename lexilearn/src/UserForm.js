@@ -130,7 +130,7 @@ const UserForm = () => {
             <img
               src="https://img.freepik.com/premium-vector/set-kids-faces-avatars-children-heads-different-nationality-flat-style_283146-615.jpg"
               alt="Profile"
-              style={{ width: "250px", height: "auto", borderRadius: "50%", marginBottom: "20px" }}
+              style={{ width: "150px", height: "150px", marginBottom: "20px" }}
             />
             <h2>Your Profile</h2>
             <div className="user-save-form">
@@ -225,7 +225,7 @@ const UserForm = () => {
                 </>
               )}
               {isDeleteConfirmationVisible && (
-                <div>
+                <div className="delete-confirmation-dialog">
                   <p>Are you sure you want to delete your account?</p>
                   <button onClick={confirmDelete}>Yes</button>
                   <button onClick={cancelDelete}>No</button>
