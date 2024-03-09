@@ -1,0 +1,80 @@
+/* contactUs.css */
+
+.contactUs {
+  display: flex;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  margin-top: 50px;
+  background-color: #FAF3DD;
+}
+
+/*body{
+  background-color: #FAF3DD;
+}*/
+
+.contactUs .contact {
+  flex: 1;
+  margin-left: 20px; /* Add margin between image and form */
+}
+
+.contactUs h2 {
+  text-align: center; /* Center the heading */
+}
+
+.contactUs label {
+  margin-bottom: 8px;
+}
+
+.contactForm input,
+.contactForm textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+.contact {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc; /* Add border to the form */
+  border-radius: 20px;
+}
+
+.contactUs button {
+  background-color: blue;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  color: #fff;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 20px;
+  max-width: 25%;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.contactUs button:hover {
+  background-color: royalblue;
+}
+
+.contactUs .contactImage {
+  text-align: center;
+  width: 500px;
+  height: 500px;
+}
+
+.contactUs .contactImage img {
+  max-width: 100%;
+  height: auto;
+}
+
+.contactUs .contactForm {
+  flex: 1; /* Make the form container take up the remaining space */
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.contactForm textarea {
+  height: 150px; /* Adjust the height as needed */
+}

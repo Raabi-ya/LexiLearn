@@ -9,6 +9,7 @@ import SelectLevelsPage from './SelectLevelsPage';
 import Signup from './Signup';
 import { AuthContext } from "./context/AuthContext";
 import Level1 from './Level1';
+import ContactUs from './ContactUs';
 
 function App() {
 
@@ -45,6 +46,7 @@ function App() {
           } />
           <Route path="/Signup" element={<Signup />}/>
           <Route path="/Level1" element={<RequireAuth><Level1 /></RequireAuth>} />
+          <Route path="/ContactUs" element={<ContactUs />}/>
           {/*<Route path="/level2" element={<RequireAuth><Level2 /></RequireAuth>} />
           <Route path="/level3" element={<RequireAuth><Level3 /></RequireAuth>} />
         <Route path="/level4" element={<RequireAuth><Level4 /></RequireAuth>} />*/}

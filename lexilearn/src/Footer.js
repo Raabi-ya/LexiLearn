@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
+
 function Footer() {
   return (
     <div className="footer">
@@ -12,7 +13,7 @@ function Footer() {
           <li><a href="/">Home</a></li>
           <li><a href="/SelectLevelsPage">Level Page</a></li>
           <li><a href="/AboutUsPage">About Us</a></li>
-          <li><a href="/contact">Contact Us</a></li>
+          <li><a href="/ContactUs">Contact Us</a></li>
         </ul>
       </nav>
       <div className="social-icons">
