@@ -7,7 +7,7 @@ import "./NavBar.css";
 
 function Navbar() {
   const [openLinks, setOpenLinks] = useState(false);
-  const { dispatch } = useContext(AuthContext);
+  const { currentUser, dispatch } = useContext(AuthContext);
   const { navigate } = useNavigate();
 
   const toggleNavbar = () => {
@@ -35,8 +35,16 @@ function Navbar() {
           <Link to="/SelectLevelsPage">Levels</Link>
           <Link to="/UserForm">User Profile</Link>
           <Link to="/AboutUsPage">Progress</Link>
+          {/*<Link to="/LoginPage">Sign In</Link>*/}
+          {currentUser ? (
+          <span>Welcome, {currentUser.email}</span>
+        ) : (
           <Link to="/LoginPage">Sign In</Link>
-          <Link to="/Signup">Sign Up</Link>
+        )}
+          {/*<Link to="/Signup">Sign Up</Link>*/}
+
+          {/* Conditionally render Sign Up link based on the user's login status */}
+          {!currentUser && <Link to="/Signup">Sign Up</Link>}
           <Link to="#" onClick={handleSignOut}>Sign Out</Link>
         </div>
       </div>
@@ -45,8 +53,16 @@ function Navbar() {
         <Link to="/SelectLevelsPage">Levels</Link>
         <Link to="/UserForm">User Profile</Link>
         <Link to="/AboutUsPage">Progress</Link>
-        <Link to="/LoginPage">Sign In</Link>
-        <Link to="/Signup">Sign Up</Link>
+        {/*<Link to="/LoginPage">Sign In</Link>*/}
+        {currentUser ? (
+          <span>Welcome, {currentUser.email}</span>
+        ) : (
+          <Link to="/LoginPage">Sign In</Link>
+        )}
+        {/*<Link to="/Signup">Sign Up</Link>*/}
+
+        {/* Conditionally render Sign Up link based on the user's login status */}
+        {!currentUser && <Link to="/Signup">Sign Up</Link>}
         <Link to="#" onClick={handleSignOut}>Sign Out</Link>
       </div>
     </div>

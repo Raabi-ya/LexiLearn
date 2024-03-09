@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './Signup.css'; // Import CSS for styling
 import Footer from './Footer';
 import {addDoc, collection, doc, serverTimestamp, setDoc, } from "firebase/firestore";
 import { auth, db } from "./firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { AuthContext } from './context/AuthContext';  // Import AuthContext
 import { useNavigate } from 'react-router-dom';
 import { signInWithEmailAndPassword  } from "firebase/auth";
 
@@ -65,6 +66,8 @@ function SignupPage() {
 
   const navigate = useNavigate();
 
+  const { dispatch } = useContext(AuthContext);
+
   const handleAdd = async(e) => {
     e.preventDefault();
 
@@ -77,6 +80,9 @@ function SignupPage() {
 
       // Log in the user immediately after signing up
       await signInWithEmailAndPassword(auth, email, password);
+
+      // Update the context with the current user information
+      dispatch({ type: "LOGIN", payload: res.user });
 
       await setDoc(doc(db, "users", res.user.uid), {
         fullName: fullName,

@@ -13,6 +13,13 @@
     align-items: center;
   }
   
+  .navbar span{
+    margin-left: 20px;
+    color: burlywood;
+    text-decoration: none;
+    font-style: italic;
+  }
+
   .navbar .hiddenLinks {
     display: flex;
     flex-direction: column;
