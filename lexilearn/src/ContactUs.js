@@ -48,7 +48,7 @@ const ContactUs = () => {
           </label>
           <br />
           <label>
-            Email:
+            Email :
           <input
             type="email"
             name="email"
@@ -59,7 +59,7 @@ const ContactUs = () => {
         </label>
         <br />
         <label>
-          Subject:
+          Subject :
           <input
             type="text"
             name="subject"
@@ -70,7 +70,7 @@ const ContactUs = () => {
         </label>
         <br />
         <label>
-          Message:
+          Message :
           <textarea
             name="message"
             value={formData.message}
@@ -78,6 +78,7 @@ const ContactUs = () => {
             required
           />
         </label>
+        <br />
         <br />
         <button type="button" onClick={handleEmailClick}>
           Submit via Email

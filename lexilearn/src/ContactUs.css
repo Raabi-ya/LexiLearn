@@ -1,18 +1,20 @@
-/* contactUs.css */
-
 .contactUs {
   display: flex;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin-top: 50px;
   background-color: #FAF3DD;
+  padding-bottom: 50px;
 }
 
-/*body{
-  background-color: #FAF3DD;
-}*/
-
-.contactUs .contact {
+.image-left {
   flex: 1;
+}
+
+.form-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-left: 20px; /* Add margin between image and form */
 }
 
@@ -26,29 +28,28 @@
 
 .contactForm input,
 .contactForm textarea {
-  width: 100%;
+  width: 90%;
   padding: 8px;
   margin-bottom: 16px;
-  border: 1px solid #ccc;
+  border: 1px solid royalblue; /* Add style and color */
   border-radius: 20px;
 }
 
 .contact {
-  background-color: #f0f0f0;
+  background-color: burlywood;
   border: 1px solid #ccc; /* Add border to the form */
   border-radius: 20px;
 }
 
 .contactUs button {
   background-color: blue;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #fff;
-  padding: 15px 20px;
+  padding: 10px 15px;
   border: none;
-  border-radius: 20px;
-  max-width: 25%;
-  margin: 0 auto;
+  border-radius: 30px;
   cursor: pointer;
+  margin: 0 auto;
 }
 
 .contactUs button:hover {
@@ -57,8 +58,6 @@
 
 .contactUs .contactImage {
   text-align: center;
-  width: 500px;
-  height: 500px;
 }
 
 .contactUs .contactImage img {
@@ -67,12 +66,8 @@
 }
 
 .contactUs .contactForm {
-  flex: 1; /* Make the form container take up the remaining space */
-  display: flex;
-  flex-direction: column;
-  width: 500px;
-  max-width: 80%;
-  margin: 0 auto;
+  width: 600px;
+  margin-left: 20px;
 }
 
 .contactForm textarea {

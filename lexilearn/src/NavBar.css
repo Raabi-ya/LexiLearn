@@ -15,9 +15,8 @@
   
   .navbar span{
     margin-left: 20px;
-    color: burlywood;
+    color:burlywood;
     text-decoration: none;
-    font-style: italic;
   }
 
   .navbar .hiddenLinks {
@@ -26,7 +25,7 @@
     position: absolute;
     top: 60px;
     left: 0;
-    background-color: #1446A0; /* Light blue background color */
+    background-color:darkcyan; /* Light blue background color */
     width: 100%;
     padding: 10px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
