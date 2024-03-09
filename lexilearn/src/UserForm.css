@@ -4,7 +4,7 @@
   --form-width: 450px;
   --delete-confirmation-bg: #fff;
   --delete-confirmation-border: 1px solid #ccc;
-  --delete-confirmation-radius: 10px;
+  --delete-confirmation-radius: 20px;
   --delete-confirmation-padding: 20px;
 }
 
@@ -13,7 +13,7 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
   background-color: #FAF3DD;
 }
 
@@ -45,11 +45,6 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: var(--form-width);
   height: auto;
-  transition: transform 0.3s ease-in-out;
-}
-
-.user-save-form:hover {
-  transform: scale(1.1);
 }
 
 .form-group input {
