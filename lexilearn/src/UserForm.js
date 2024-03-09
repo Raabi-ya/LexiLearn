@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Footer from "./Footer";
 import "./UserForm.css"; // Import CSS file
-import { doc, getDoc } from "firebase/firestore";
+import { doc, getDoc, setDoc, serverTimestamp, deleteDoc } from "firebase/firestore";
 import { db, auth } from "./firebase";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from './context/AuthContext';
 
 const UserForm = () => {
   const [fullName, setFullName] = useState("");
@@ -12,10 +14,10 @@ const UserForm = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [isDeleteConfirmationVisible, setIsDeleteConfirmationVisible] = useState(false);
   const [emailError, setEmailError] = useState("");
-  //const [dobError, setDOBError] = useState("");
   const [emptyFieldError, setEmptyFieldError] = useState("");
   const [ageError, setAgeError] = useState("");
-  //const [yearError, setYearError] = useState("");
+  const { dispatch } = useContext(AuthContext);
+  const { navigate } = useNavigate();
 
   const getUser = async () => {
     const user = auth.currentUser;
@@ -42,7 +44,7 @@ const UserForm = () => {
     getUser()
   }, []);
 
-  const handleSave = () => {
+  const handleSave = async() => {
     // Validate empty fields
     if (!fullName || !email || !age || !username) {
       setEmptyFieldError("Please fill in all required fields.");
@@ -60,28 +62,29 @@ const UserForm = () => {
     }
 
     // Validate age
-    /*if (!isValidDOB(dob)) {
-      setDOBError("Please enter a valid date of birth.");
-      return;
-    } else {
-      setDOBError("");
-    }
-
-    // Validate year
-    if (!isValidYear(dob)) {
-      setYearError("Oops! It looks like you're not eligible to access this content.");
-      return;
-    } else {
-      setYearError("");
-    }*/
-
-    // Validate age
     if (!isValidAge(age)) {
       setAgeError("Age should be between 6 and 12.");
       return;
     } else {
       setAgeError("");
     }
+
+    const user = auth.currentUser;
+
+    // Add a new document in collection "cities"
+    await setDoc(doc(db, "users", user.uid), {
+      fullName,
+      email,
+      age, 
+      username,
+      timeStamp: serverTimestamp(),     
+    });
+
+    // Update the state variables with the new values
+    setFullName(fullName);
+    setEmail(email);
+    setAge(age);
+    setUsername(username);
 
     // Add logic to save the user's profile details
     console.log("Profile details saved!");
@@ -105,28 +108,20 @@ const UserForm = () => {
     return ageValue >= 6 && ageValue <= 12;
   };
 
-  /*const isValidDOB = (value) => {
-    // Validate date of birth (YYYY-MM-DD)
-    const dateOfBirth = new Date(value);
-    const currentDate = new Date();
-    const age = currentDate.getFullYear() - dateOfBirth.getFullYear();
-    return age >= 4 && age <= 120; // Assuming a reasonable age range
-  };
-
-  const isValidYear = (value) => {
-    // Validate year (YYYY)
-    const year = value.substring(0, 4); // Extract first 4 characters
-    return /^\d{4}$/.test(year) && parseInt(year) >= 2012 && parseInt(year) <= 2018;
-  };*/
-
   const handleDelete = () => {
     // Prompt the user for confirmation before deleting the account
     setIsDeleteConfirmationVisible(true);
   };
 
-  const confirmDelete = () => {
+  const confirmDelete = async() => {
+    const user = auth.currentUser;
+    await deleteDoc(doc(db, "users", user.uid));
+
     // Add logic to delete the user's account
     console.log("Account deleted!");
+
+    // Call handleSignOut after confirming the deletion
+    handleSignOut();
     setIsDeleteConfirmationVisible(false);
   };
 
@@ -134,6 +129,16 @@ const UserForm = () => {
     // Cancel the delete operation
     setIsDeleteConfirmationVisible(false);
   };
+
+  const handleSignOut = () => {
+    auth.signOut().then(() => {
+      dispatch({ type: "LOGOUT" }); // Assuming you have a "LOGOUT" action in your reducer
+      navigate("/"); // Redirect to home page
+    }).catch((error) => {
+      console.error('Error signing out:', error);
+    });
+  }
+
 
   return (
     <div>
