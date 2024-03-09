@@ -1,11 +1,7 @@
 :root {
-  --primary-color: royalblue;
-  --hover-color: cornflowerblue;
-  --form-width: 450px;
-  --delete-confirmation-bg: #fff;
-  --delete-confirmation-border: 1px solid #ccc;
-  --delete-confirmation-radius: 20px;
-  --delete-confirmation-padding: 20px;
+  --primary-color: blue;
+  --hover-color: royalblue;
+  --form-width: 500px;
 }
 
 .UserForm {
@@ -15,6 +11,7 @@
   min-height: 100vh;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
   background-color: #FAF3DD;
+  padding-bottom: 50px;
 }
 
 .content-container {
@@ -64,50 +61,43 @@
 }
 
 .save-button,
-.edit-button,
-.delete-button {
+.edit-button
+{
   background-color: var(--primary-color);
   color: white;
   padding: 10px 20px;
   border: none;
-  border-radius: 5px;
+  border-radius: 20px;
   cursor: pointer;
   margin-top: 20px;
+  margin-left: 10px;
   transition: background-color 0.3s ease-in-out;
+}
+.delete-button {
+  background-color:red;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-left: 10px;
+  transition: background-color 0.3s ease-in-out;
+}
+.delete-button:hover {
+  background-color:firebrick;
 }
 
 .save-button:hover,
-.edit-button:hover,
-.delete-button:hover {
+.edit-button:hover{
   background-color: var(--hover-color);
 }
 
-/* Delete Confirmation Styles */
-.delete-confirmation {
-  background-color: var(--delete-confirmation-bg);
-  border: var(--delete-confirmation-border);
-  border-radius: var(--delete-confirmation-radius);
-  padding: var(--delete-confirmation-padding);
-  margin-top: 20px;
-  text-align: center;
-}
-
-.delete-confirmation p {
-  margin-bottom: 10px;
-}
-
-.delete-confirmation button {
-  margin-right: 10px;
-  background-color: var(--primary-color);
-  color: white;
-  padding: 12px 24px;
+.delete-confirmation-dialog button{
+  background-color:coral;
   border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-}
+  border-radius: 30px;
+  padding: 10px 20px;
+  margin-left: 5px;
 
-.delete-confirmation button:hover {
-  background-color: var(--hover-color);
-  color: #fff;
 }
