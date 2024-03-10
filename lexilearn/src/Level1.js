@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getDoc,doc, serverTimestamp, setDoc,updateDoc } from "firebase/firestore";
+import { getDoc, doc, serverTimestamp, setDoc, updateDoc } from "firebase/firestore";
 import "./Level1.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
@@ -7,34 +7,33 @@ import Footer from './Footer';
 import { db, auth } from './firebase';
 
 const questions = [
-  { question: '__ at', answer: 'c', image: 'cat.png' },
-  { question: '__ at', answer: 'b', image: 'bat.png' },
-  { question: 'be __', answer: 'd', image: 'bed.png' },
-  { question: '__ at', answer: 'h', image: 'hat.png' },
-  { question: '__ ot', answer: 'p', image: 'pot.png' },
-  { question: '__ ee', answer: 'b', image: 'bee.png' },
-  { question: '__ ig', answer: 'p', image: 'pig.png' },
-  { question: '__ ug', answer: 'm', image: 'mug.png' },
-  { question: '__ og', answer: 'd', image: 'dog.png' },
-  { question: 'su __', answer: 'n', image: 'sun.png' },
-  { question: 'ca __', answer: 'p', image: 'cap.png' },
-  { question: 'a __ t', answer: 'n', image: 'ant.png'},  
-  { question: 'co __', answer: 'w', image: 'cow.png'},  
-  { question: '__ ox', answer: 'b', image: 'box.png'},  
-  { question: '__ ey', answer: 'k', image: 'key.png'},  
-  { question: '__ ag', answer: 'b', image: 'bag.png'},  
-  { question: 'fa __', answer: 'n', image: 'fan.png'},  
-  { question: '__ us', answer: 'b', image: 'bus.png'},  
-  { question: 'pe __', answer: 'n', image: 'pen.png'},  
-  { question: 'he __', answer: 'n', image: 'hen.png'},  
+  { question: '__ at', answer: 'c', image: 'cat.png' }, //Test c:cat
+  { question: '__ at', answer: 'b', image: 'bat.png' }, //Test b:bat
+  { question: 'be __', answer: 'd', image: 'bed.png' }, //Test d:bed
+  { question: '__ at', answer: 'h', image: 'hat.png' }, //Test h:hat
+  { question: '__ ot', answer: 'p', image: 'pot.png' }, //Test p:pot
+  { question: '__ ee', answer: 'b', image: 'bee.png' }, //Test b:bee
+  { question: '__ ig', answer: 'p', image: 'pig.png' }, //Test p:pig
+  { question: '__ ug', answer: 'm', image: 'mug.png' }, //Test m:mug
+  { question: '__ og', answer: 'd', image: 'dog.png' }, //Test d:dog
+  { question: 'su __', answer: 'n', image: 'sun.png' }, //Test n:sun
+  { question: 'ca __', answer: 'p', image: 'cap.png' }, //Test p:cap
+  { question: 'a __ t', answer: 'n', image: 'ant.png'}, //Test n:ant
+  { question: 'co __', answer: 'w', image: 'cow.png'},  //Test w:cow
+  { question: '__ ox', answer: 'b', image: 'box.png'},  //Test b:box
+  { question: '__ ey', answer: 'k', image: 'key.png'},  //Test k:key
+  { question: '__ ag', answer: 'b', image: 'bag.png'},  //Test b:bag
+  { question: 'fa __', answer: 'n', image: 'fan.png'},  //Test n:fan
+  { question: '__ us', answer: 'b', image: 'bus.png'},  //Test b:bus
+  { question: 'pe __', answer: 'n', image: 'pen.png'},  //Test n:pen
+  { question: 'he __', answer: 'n', image: 'hen.png'},  //Test n:hen
 ];
-
+  
 const Level1Page = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [userAnswers, setUserAnswers] = useState(Array(5).fill(''));
   const [displayedQuestions, setDisplayedQuestions] = useState([]);
   const [score, setScore] = useState(null);
-
 
   useEffect(() => {
     const selectedQuestions = questions.sort(() => Math.random() - 0.5).slice(0, 5);
@@ -78,8 +77,12 @@ const Level1Page = () => {
     let currentAttempt = 1;
     if (attemptDocSnap.exists()) {
       const data = attemptDocSnap.data();
-      if (data && typeof data.attempt === 'number') {
+      if (data && typeof data.attempt === 'number' && !isNaN(data.attempt)) {
         currentAttempt = data.attempt + 1; // Increment the attempt number
+      }
+      // Add this condition to handle NaN or missing attempt data
+      else {
+        currentAttempt = 1;
       }
     }
   
