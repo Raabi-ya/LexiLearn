@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faLock } from '@fortawesome/free-solid-svg-icons';
-import { sendPasswordResetEmail, signInWithEmailAndPassword  } from "firebase/auth";
+import { sendPasswordResetEmail, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from './firebase';
 import { useNavigate } from 'react-router-dom';
 import Footer from './Footer';
@@ -36,11 +36,7 @@ function LoginPage() {
   };
 
   const handlePasswordReset = () =>{
-    /*const email= prompt("Please enter your email!");
-    sendPasswordResetEmail(auth,email)
-    alert("Please check your inbox for the reset password instructions!")*/
-    // Check if the user clicked cancel
-
+    
     const email = prompt("Please enter your email!")
     if (email === null) {
       // User clicked cancel, do nothing
@@ -63,7 +59,7 @@ function LoginPage() {
     <div className="login-page">
       {/* Picture Section */}
       <div className="left-section">
-        <img src="./login-img.png" alt="Child Learning" />
+        <img src="./login-img.png" alt="Login" />
       </div>
       {/* Login Form Section */}
       <div className="right-section">

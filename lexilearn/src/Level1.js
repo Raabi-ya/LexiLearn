@@ -58,7 +58,7 @@ const Level1Page = () => {
     let totalScore = 0;
     displayedQuestions.forEach((question, index) => {
       if (userAnswers[index]?.toLowerCase() === question.answer) {
-        totalScore += 2;
+        totalScore += 1;
       }
     });
     setScore(totalScore);
@@ -77,8 +77,8 @@ const Level1Page = () => {
     let currentAttempt = 1;
     if (attemptDocSnap.exists()) {
       const data = attemptDocSnap.data();
-      if (data && typeof data.attempt === 'number' && !isNaN(data.attempt)) {
-        currentAttempt = data.attempt + 1; // Increment the attempt number
+      if (data && typeof data.level1_attempt === 'number' && !isNaN(data.level1_attempt)) {
+        currentAttempt = data.level1_attempt + 1; // Increment the attempt number
       }
       // Add this condition to handle NaN or missing attempt data
       else {
@@ -88,7 +88,7 @@ const Level1Page = () => {
   
     // Save score and updated attempt number
     await Promise.all([
-      updateDoc(attemptDocRef, { attempt: currentAttempt }),
+      updateDoc(attemptDocRef, { level1_attempt: currentAttempt }),
       setDoc(doc(db, `level1-scores/${user.uid}_${currentAttempt}`), {
         attempt: currentAttempt,
         score: totalScore,
@@ -138,7 +138,7 @@ const Level1Page = () => {
         </div>
         {score !== null && (
           <div className='score-level1'>
-            <h3>Your Score: {score}/10</h3>
+            <h3>Your Score: {score}/5</h3>
           </div>
         )}
       </div>
