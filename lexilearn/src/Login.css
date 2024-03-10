@@ -74,7 +74,7 @@
   padding: 30px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 400px;
-  height: 300px;
+  height: 320px;
   margin: 0 auto;
   transition: transform 0.3s ease-in-out;
 }
@@ -84,7 +84,7 @@
   background-color: blue;
   color: #fff;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  padding: 15px 30px;
+  padding: 10px 20px;
   border: none;
   border-radius: 20px;
   cursor: pointer;
