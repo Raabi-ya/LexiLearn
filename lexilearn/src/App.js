@@ -10,6 +10,7 @@ import Signup from './Signup';
 import { AuthContext } from "./context/AuthContext";
 import Level1 from './Level1';
 import ContactUs from './ContactUs';
+import Level3 from './Level3';
 
 function App() {
 
@@ -47,8 +48,8 @@ function App() {
           <Route path="/Signup" element={<Signup />}/>
           <Route path="/Level1" element={<RequireAuth><Level1 /></RequireAuth>} />
           <Route path="/ContactUs" element={<ContactUs />}/>
+          <Route path="/Level3" element={<RequireAuth><Level3 /></RequireAuth>} />
           {/*<Route path="/level2" element={<RequireAuth><Level2 /></RequireAuth>} />
-          <Route path="/level3" element={<RequireAuth><Level3 /></RequireAuth>} />
         <Route path="/pretest" element={<RequireAuth><PreTest /></RequireAuth>} />*/}
         </Routes>
       </div>
