@@ -1,0 +1,113 @@
+/* Center the content vertically and horizontally */
+.l2-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+  /* Style for the top image */
+  .l2-top-image {
+    width: 250px; /* Adjust as needed */
+    height: auto;
+    margin-bottom: 5px; /* Add space below the image */
+  }
+  
+  /* Style for the hint image */
+  .l2-hint-image {
+    width: 300px; /* Adjust as needed */
+    height: auto;
+    margin-bottom: 20px; /* Add space below the image */
+  }
+  
+  /* Style for the fill in the blanks section */
+  .l2-fill-in-the-blanks {
+    margin-bottom: 20px; /* Add space below the fill in the blanks */
+    text-align: center;
+  }
+  
+  /* Style for the dropdown section */
+  .l2-dropdown {
+    margin-bottom: 20px; /* Add space below the dropdown */
+  }
+  
+  /* Style for the feedback message */
+  .l2-feedback {
+    margin-bottom: 20px; /* Add space below the feedback message */
+  }
+  .l2-hint-button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .l2-hint-button {
+    margin-bottom: 10px; /* Adjust as needed */
+    padding: 10px 20px;
+    background-color: #174f8a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .l2-centered-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+  }
+  
+  /* Style for the navigation buttons */
+  .l2-navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 200px; /* Adjust as needed */
+    align-items: center;
+  }
+  
+  /* Style for individual navigation buttons */
+  .l2-navigation-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Style for disabled navigation buttons */
+  .l2-navigation-button[disabled] {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  button:hover {
+      background-color: #0c345f;
+      transform: scale(1.1);
+  }
+  
+  .l2-game-over-container {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .l2-game-over-container h1 {
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .l2-game-over-container p {
+    font-size: 16px;
+    color: #666;
+    margin: 10px 0;
+  }
+  
+  .l2-game-over-container .feedback {
+    font-style: italic;
+  }
+  
+  
+  
