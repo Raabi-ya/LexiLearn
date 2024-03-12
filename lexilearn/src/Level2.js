@@ -1,31 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import './App.css'
-import level2Image from './level2.png';
-import moonImage from './moon.gif';
-import babyImage from './baby.gif';
-import nurseImage from './nurse.gif';
-import watchImage from './watch.gif';
-import dollImage from './doll.gif';
-import queenImage from './queen.gif';
-import underImage from './under.gif';
-import pandaImage from './panda.gif';
-import mouseImage from './mouse.gif';
-import walkImage from './walk.gif';
-import nestImage from './nest.gif';
-import bookImage from './book.gif';
-import drumImage from './drum.gif';
-import pizzaImage from './pizza.gif';
-import queueImage from './queue.gif';
-import boatImage from './boat.gif';
-import zebraImage from './zebra.gif';
-import starImage from './star.gif';
-import sandImage from './sand.gif';
-import zipperImage from './zipper.gif';
-import gameImage from './game.gif';
-import feedbackImage1 from './feedback1.gif';
-import feedbackImage2 from './feedback2.gif';
-import feedbackImage3 from './feedback3.gif';
-
+import './Level2.css'
+import Footer from './Footer';
 
 const questionsData = [
   { 
@@ -35,7 +10,7 @@ const questionsData = [
       { value: 'w', label: 'w' },
     ],
     correctAnswer: 'm',
-    hintImage: moonImage
+    hintImage: 'moon.gif'
   },
   {
     question: '_ a b y',
@@ -44,7 +19,7 @@ const questionsData = [
       { value: 'd', label: 'd' },
     ],
     correctAnswer: 'b',
-    hintImage: babyImage
+    hintImage: 'baby.gif'
   },
   {
     question: '_ u r s e',
@@ -53,7 +28,7 @@ const questionsData = [
       { value: 'n', label: 'n' },
     ],
     correctAnswer: 'n',
-    hintImage: nurseImage
+    hintImage: 'nurse.gif'
   },
   {
     question: '_ a t c h',
@@ -62,7 +37,7 @@ const questionsData = [
       { value: 'm', label: 'm' },
     ],
     correctAnswer: 'w',
-    hintImage: watchImage
+    hintImage: 'watch.gif'
   },
   {
     question: '_ o l l',
@@ -71,7 +46,7 @@ const questionsData = [
       { value: 'b', label: 'b' },
     ],
     correctAnswer: 'd',
-    hintImage: dollImage
+    hintImage: 'doll.gif'
   },
   {
     question: '_ u e e n',
@@ -80,7 +55,7 @@ const questionsData = [
       { value: 'q', label: 'q' },
     ],
     correctAnswer: 'q',
-    hintImage: queenImage
+    hintImage: 'queen.gif'
   },
   {
     question: '_ n d e r',
@@ -89,7 +64,7 @@ const questionsData = [
       { value: 'u', label: 'u' },
     ],
     correctAnswer: 'u',
-    hintImage: underImage
+    hintImage: 'under.gif'
   },
   {
     question: '_ a n d a',
@@ -98,7 +73,7 @@ const questionsData = [
       { value: 'p', label: 'p' },
     ],
     correctAnswer: 'p',
-    hintImage: pandaImage
+    hintImage: 'panda.gif'
   },
   {
     question: '_ o u s e',
@@ -107,7 +82,7 @@ const questionsData = [
       { value: 'w', label: 'w' },
     ],
     correctAnswer: 'm',
-    hintImage: mouseImage
+    hintImage: 'mouse.gif'
   },
   {
     question: '_ a l k',
@@ -116,7 +91,7 @@ const questionsData = [
       { value: 'w', label: 'w' },
     ],
     correctAnswer: 'w',
-    hintImage: walkImage
+    hintImage: 'walk.gif'
   },
   {
     question: '_ e s t',
@@ -125,7 +100,7 @@ const questionsData = [
       { value: 'u', label: 'u' },
     ],
     correctAnswer: 'n',
-    hintImage: nestImage
+    hintImage: 'nest.gif'
   },
   {
     question: '_ o o k',
@@ -134,7 +109,7 @@ const questionsData = [
       { value: 'd', label: 'd' },
     ],
     correctAnswer: 'b',
-    hintImage: bookImage
+    hintImage: 'book.gif'
   },
   {
     question: '_ r u m',
@@ -143,7 +118,7 @@ const questionsData = [
       { value: 'd', label: 'd' },
     ],
     correctAnswer: 'd',
-    hintImage: drumImage
+    hintImage: 'drum.gif'
   },
   {
     question: '_ i z z a',
@@ -152,7 +127,7 @@ const questionsData = [
       { value: 'p', label: 'p' },
     ],
     correctAnswer: 'p',
-    hintImage: pizzaImage
+    hintImage: 'pizza.gif'
   },
   {
     question: '_ u e u e',
@@ -161,7 +136,7 @@ const questionsData = [
       { value: 'p', label: 'p' },
     ],
     correctAnswer: 'q',
-    hintImage: queueImage
+    hintImage: 'queue.gif'
   },
   {
     question: '_ o a t',
@@ -170,7 +145,7 @@ const questionsData = [
       { value: 'd', label: 'd' },
     ],
     correctAnswer: 'b',
-    hintImage: boatImage
+    hintImage: 'boat.gif'
   },
   {
     question: '_ e b r a',
@@ -179,7 +154,7 @@ const questionsData = [
       { value: 'z', label: 'z' },
     ],
     correctAnswer: 'z',
-    hintImage: zebraImage
+    hintImage: 'zebra.gif'
   },
   {
     question: '_ t a r',
@@ -188,7 +163,7 @@ const questionsData = [
       { value: 'z', label: 'z' },
     ],
     correctAnswer: 's',
-    hintImage: starImage
+    hintImage: 'star.gif'
   },
   {
     question: '_ a n d',
@@ -197,7 +172,7 @@ const questionsData = [
       { value: 's', label: 's' },
     ],
     correctAnswer: 's',
-    hintImage: sandImage
+    hintImage: 'sand.gif'
   },
   {
     question: '_ i p p e r',
@@ -206,7 +181,7 @@ const questionsData = [
       { value: 's', label: 's' },
     ],
     correctAnswer: 'z',
-    hintImage: zipperImage
+    hintImage: 'zipper.gif'
   },
 
 ];
@@ -261,19 +236,18 @@ const DropdownPage = () => {
     let feedback = '';
     if (score === questions.length) {
       feedback = 'Perfect! You answered all questions correctly! Move to Level 3!';
-      fbImage = feedbackImage3
+      fbImage = './feedback1.gif'
     } else if (score >= questions.length / 2) {
       feedback = 'Good job! You got most of the questions right!';
-      fbImage = feedbackImage2
+      fbImage = 'feedback2.gif'
     } else {
       feedback = 'Keep practicing! You can do better!';
-      fbImage = feedbackImage1
+      fbImage = './feedback3.gif'
     }
     
     return (
  
       <div className="l2-game-over-container">
-        <img src={gameImage} alt="game"/>
         <h2>Score: {score} / 7</h2>
         <h1 className='l2-feedback'>{feedback}</h1>
         <img src={fbImage} alt="FeedbackImage"/>
@@ -286,7 +260,7 @@ const DropdownPage = () => {
 
   return (
     <div className="l2-container">
-      <img src={level2Image} alt="Level2Logo" className="l2-top-image" /> 
+      <img src="./level2.png" alt="Level2Logo" className="l2-top-image" /> 
       <div className="l2-fill-in-the-blanks">
       <h2>  Find the missing letter ⌕ </h2>  
       <h1>{currentQuestion.question}</h1>
@@ -317,6 +291,7 @@ const DropdownPage = () => {
         </div>
         </div>
       </div>
+      <div><Footer/></div>
     </div>
   );
 };
