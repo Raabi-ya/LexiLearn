@@ -8,17 +8,15 @@ function Home() {
     <div className="home">
       <div className="headerContainer">
         <div className="homeText">
-          <h1>LexiLearn</h1>
-          <p>
-            <b>Personalized Web-Based Educational Support Application for Dyslexic Children</b>
-          </p>
-          <ul>
-            <li>Personalized learning path</li>
-            <li>Real-time motivation in text and speech</li>
-            <li>Gamified levels</li>
-            <li>Reading alphabets</li>
-            <li>Progress tracking</li>
-          </ul>
+          <div className="circlemain">
+            <b>Web-Based Educational Support Application for Dyslexic Children</b>
+          </div>
+          <div>
+            <span className="circle">Personalized Learning Path</span>
+            <span className="circle">Real-time Motivation in Text and Speech</span>
+            <span className="circle">Gamified Levels</span>
+            <span className="circle">Progress Tracking</span>
+          </div>
         </div>
         <div className="homeImageContainer">
             <img src="HomePageImage.png" alt="child" />
