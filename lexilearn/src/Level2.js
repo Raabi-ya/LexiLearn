@@ -192,7 +192,7 @@ const getRandomQuestions = (questions) => {
   return shuffledQuestions.slice(0, 7);
 };
 
-const DropdownPage = () => {
+const Level2Page = () => {
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState('');
@@ -308,4 +308,4 @@ const DropdownPage = () => {
 
 
 
-export default DropdownPage;
+export default Level2Page;
