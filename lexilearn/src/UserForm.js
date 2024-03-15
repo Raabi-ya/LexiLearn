@@ -5,6 +5,7 @@ import { doc, getDoc, setDoc, serverTimestamp, deleteDoc } from "firebase/firest
 import { db, auth } from "./firebase";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from './context/AuthContext';
+import { deleteUser } from "firebase/auth";
 
 const UserForm = () => {
   const [fullName, setFullName] = useState("");
@@ -119,6 +120,11 @@ const UserForm = () => {
 
     // Add logic to delete the user's account
     console.log("Account deleted!");
+
+    // Delete user account from Firebase Authentication
+    await deleteUser(user);
+    console.log("User account deleted from Authentication.");
+
 
     // Call handleSignOut after confirming the deletion
     handleSignOut();
