@@ -117,7 +117,6 @@ const Level3 = () => {
   const [finished, setFinished] = useState(false);
   // eslint-disable-next-line
   const [musicVolume, setMusicVolume] = useState(0);
-  const [musicPlaying, setMusicPlaying] = useState(false); 
 
   useEffect(() => {
     const selectQuestions = () => {
@@ -126,7 +125,6 @@ const Level3 = () => {
       setCurrentQuestionIndex(0);
       setScore(0);
       setFinished(false);
-      setMusicPlaying(true);
     };
 
     selectQuestions();
@@ -222,7 +220,6 @@ const Level3 = () => {
 
   const finishQuiz = () => {
     setFinished(true);
-    setMusicPlaying(false);
   };
 
   return (

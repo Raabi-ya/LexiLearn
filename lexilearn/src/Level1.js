@@ -110,6 +110,7 @@ const Level1 = () => {
   return (
     <div>
       <div className="level1">
+      <audio src={`${process.env.PUBLIC_URL}/level1-background-track.mp3`} autoPlay loop />
         <div className="level1-instructions">
           <div className='image-level1'>
             <img src="./level1.png" alt='Level 1 logo'/>

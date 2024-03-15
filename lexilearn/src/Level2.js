@@ -267,6 +267,7 @@ const Level2Page = () => {
   return (
     <div>
     <div className="l2-container">
+    <audio src={`${process.env.PUBLIC_URL}/level2-background-track.mp3`} autoPlay loop />
       <img src="./level2.png" alt="Level2Logo" className="l2-top-image" /> 
       <div className="l2-fill-in-the-blanks">
       <h2 className="l2-mainque">  Find the missing letter ⌕ </h2>  
