@@ -41,7 +41,7 @@
 .circlemain:hover {
   background-color: #93a7d0;
   border:#5c83d2;
-  color: white;;
+  color: white;
 }
 
 /* Define a CSS variable for the line color */
@@ -133,7 +133,7 @@
 }
 
 .circle:nth-child(3):hover {
-  background-color: #e9e692;
+  background-color: #d4cf49;
   border: #fff502;
   color: white;
 }
