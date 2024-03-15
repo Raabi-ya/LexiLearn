@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Level2.css'
 import Footer from './Footer';
 
+
 const questionsData = [
   { 
     question: '_ o o n',
@@ -191,7 +192,7 @@ const getRandomQuestions = (questions) => {
   return shuffledQuestions.slice(0, 7);
 };
 
-const DropdownPage = () => {
+const Level2Page = () => {
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState('');
@@ -232,6 +233,7 @@ const DropdownPage = () => {
   const currentQuestion = questions[currentQuestionIndex];
   let fbImage;
   
+  
   if (currentQuestionIndex === questions.length) {
     let feedback = '';
     if (score === questions.length) {
@@ -242,31 +244,36 @@ const DropdownPage = () => {
       fbImage = 'feedback2.gif'
     } else {
       feedback = 'Keep practicing! You can do better!';
-      fbImage = './feedback3.gif'
+      fbImage = 'feedback3.gif'
     }
     
     return (
- 
+      <div>
       <div className="l2-game-over-container">
         <h2>Score: {score} / 7</h2>
         <h1 className='l2-feedback'>{feedback}</h1>
         <img src={fbImage} alt="FeedbackImage"/>
 
       </div>
+      <div><Footer/></div>
+      </div>
     );
     
   }
   
+ 
+  
 
   return (
+    <div>
     <div className="l2-container">
       <img src="./level2.png" alt="Level2Logo" className="l2-top-image" /> 
       <div className="l2-fill-in-the-blanks">
-      <h2>  Find the missing letter ⌕ </h2>  
+      <h2 className="l2-mainque">  Find the missing letter ⌕ </h2>  
       <h1>{currentQuestion.question}</h1>
       </div>
       <div className="l2-dropdown">
-      <select value={selectedOption} onChange={handleSelectChange}>
+      <select value={selectedOption} onChange={handleSelectChange} className="l2-dropdownbox">
         <option value="">Select letter</option>
         {currentQuestion.options.map(option => (
           <option key={option.value} value={option.value}>
@@ -277,7 +284,7 @@ const DropdownPage = () => {
       </div>
       <div className="l2-button-container">
         <div className="l2-hint-button-container">    
-        <button onClick={handleHintClick} className="l2-hint-button">Hint</button>
+        <button onClick={handleHintClick} className="l2-hint-button">Hint 💡 </button>
         {showHint && <img src={currentQuestion.hintImage} alt="Hint"  className="l2-hint-image"/>} 
         </div>
         <div class="l2-centered-container">
@@ -291,10 +298,14 @@ const DropdownPage = () => {
         </div>
         </div>
       </div>
-      <div><Footer/></div>
+      
+    </div>
+    <div><Footer/></div>
     </div>
   );
+  
 };
 
 
-export default DropdownPage;
+
+export default Level2Page;

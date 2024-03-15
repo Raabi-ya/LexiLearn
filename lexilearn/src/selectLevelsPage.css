@@ -85,4 +85,22 @@
   list-style-type: none;
 }
 
+.image1-button {
+  display: flex;
+  justify-content: center; /* Align content horizontally at the center */
+  align-items: center; 
+  width: 120px; 
+  height: 120px;
+  position: relative 
+}
+
+.image1-button img {
+
+  max-width: 300px; 
+  max-height: 250px; 
+  position: absolute; 
+  top: 25%; 
+  left: 65%; 
+  transform: translate(-50%, -50%);
+}
 

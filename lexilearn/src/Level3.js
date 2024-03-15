@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import "./Level3.css"
+import Footer from './Footer';
 
 const QuestionBank = [
   {
@@ -7,105 +8,105 @@ const QuestionBank = [
     blanks: [''],
     answerOptions: ['table', 'chair', 'bed'],
     correctAnswer: 'bed',
-    imageUrl:"./"
+    imageUrl:"./cat-bed.gif"
   },
   {
     text: 'Tim is wearing a __________',
     blanks: [''],
     answerOptions: ['hat', 'tap', 'cup'],
     correctAnswer: 'hat',
-    imageUrl:"./"
+    imageUrl:"./tim-hat.gif"
   },
   {
     text: 'I have a pet __________',
     blanks: [''],
     answerOptions: ['dot', 'bog', 'dog'],
     correctAnswer: 'dog',
-    imageUrl:"./"
+    imageUrl:"./pet-dog.gif"
   },
   {
     text: 'I play the __________',
     blanks: [''],
     answerOptions: ['piano', 'peyano', 'qiano'],
     correctAnswer: 'piano',
-    imageUrl:"./"
+    imageUrl:"./play-piano.gif"
   },
   {
-    text: 'Helen has a red __________',
+    text: 'Max has a red __________',
     blanks: [''],
     answerOptions: ['dag', 'bag', 'baj'],
     correctAnswer: 'bag',
-    imageUrl:"./"
+    imageUrl:"./red-bag.gif"
   },
   {
     text: 'Cow eats ___________',
     blanks: [''],
     answerOptions: ['drass', 'grass', 'rass'],
     correctAnswer: 'grass',
-    imageUrl:"./"
+    imageUrl:"./cow-grass.gif"
   },
   {
     text: 'Pig loves ___________',
     blanks: [''],
     answerOptions: ['dum', 'mud', 'mad'],
     correctAnswer: 'mud',
-    imageUrl:"./"
+    imageUrl:"./pig-mud.gif"
   },
   {
-    text: 'kid plays with a ___________',
+    text: 'kids play with a ___________',
     blanks: [''],
     answerOptions: ['ball', 'dall', 'boll'],
     correctAnswer: 'ball',
-    imageUrl:"./"
+    imageUrl:"./play-ball.gif"
   },
   {
     text: ' ___________ swims',
     blanks: [''],
     answerOptions: ['turtle', 'tertul', 'tortal'],
     correctAnswer: 'turtle',
-    imageUrl:"./"
+    imageUrl:"./turtle-swims.gif"
   },
   {
     text: ' ___________ sails',
     blanks: [''],
     answerOptions: ['snip', 'sip', 'ship'],
     correctAnswer: 'ship',
-    imageUrl:"./"
+    imageUrl:"./ship-sail.gif"
   },
   {
     text: ' ___________ fly',
     blanks: [''],
     answerOptions: ['dribs', 'birds', 'brids'],
     correctAnswer: 'birds',
-    imageUrl:"./"
+    imageUrl:"./bird-fly.gif"
   },
   {
     text: ' ___________ shines',
     blanks: [''],
     answerOptions: ['sun', 'sum', 'san'],
     correctAnswer: 'sun',
-    imageUrl:"./"
+    imageUrl:"./sun-shine.gif"
   },
   {
     text: 'The ___________ twinkles',
     blanks: [''],
     answerOptions: ['satr', 'star', 'car'],
     correctAnswer: 'star',
-    imageUrl:"./"
+    imageUrl:"./stars-twinkle.gif"
   }, 
   {
     text: 'Lucy rides a _______________',
     blanks: [''],
     answerOptions: ['cibycle', 'car', 'bicycle'],
     correctAnswer: 'bicycle',
-    imageUrl:"./"
+    imageUrl:"./lucy-bicycle.gif"
   }, 
   {
     text: 'The ___________ is blue',
     blanks: [''],
     answerOptions: ['syk', 'sky', 'sand'],
     correctAnswer: 'sky',
-    imageUrl:"./"
+    imageUrl:"./sky-blue.gif"
   }, 
   
 ];
@@ -154,13 +155,16 @@ const Level3 = () => {
 
   const renderQuestion = (question, index) => {
     return (
+      <div className="l3-container">  
+      <img src="./level3.png" alt="Level3Logo" className="l3-top-image" /> 
+      <h2 className="l3-mainque">Drag and drop to fill in the blanks!</h2>
       <div key={index}>
         {/* Image related to the question */}
         <div className="question-image">
           <img src={question.imageUrl} alt={`Question ${index + 1}`} />
         </div>
         {/* Question text */}
-        <div className="question">{question.text}</div>
+        <div className="l3-question-container">
         <div className="blanks">
           {question.blanks.map((blank, blankIndex) => (
             <div
@@ -171,7 +175,10 @@ const Level3 = () => {
             >
               {blank ? <span>{blank}</span> : null}
             </div>
+            
           ))}
+          <div className="question">{question.text}</div>
+        </div>
         </div>
         <div className="answer-options">
           {question.answerOptions.map((option, optionIndex) => (
@@ -181,10 +188,11 @@ const Level3 = () => {
               draggable
               onDragStart={e => handleDragStart(e, option)}
             >
-              <span>{option}</span>
+              <span className="answer-option-text">{option}</span>
             </div>
           ))}
         </div>
+      </div>
       </div>
     );
   };
@@ -204,19 +212,20 @@ const Level3 = () => {
 
   return (
     <div>
+    <div className="l3-container">
       {questions.length === 0 ? (
         <button onClick={selectQuestions}>Start Quiz</button>
       ) : (
         <div>
           {renderQuestion(questions[currentQuestionIndex], currentQuestionIndex)}
-          {!finished && <div>Score: {score}/10</div>}
+          {/* {{!finished && <div>Score: {score}/10</div>}*/}
           {finished && <div>Final Score: {score}/10</div>}
-          <div>
+          <div className="l3-buttons">
             <button onClick={goToPreviousQuestion} disabled={currentQuestionIndex === 0 || finished}>
-              Previous
+            ← Previous
             </button>
             <button onClick={goToNextQuestion} disabled={currentQuestionIndex === 9 || finished}>
-              Next
+              Next →
             </button>
             {currentQuestionIndex === 9 && (
               <button onClick={finishQuiz}>Finish</button>
@@ -224,6 +233,8 @@ const Level3 = () => {
           </div>
         </div>
       )}
+    </div>
+    <div><Footer/></div>
     </div>
   );
 };

@@ -6,19 +6,20 @@
     justify-content: center;
     height: 100vh;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #FAF3DD;
   }
   
   /* Style for the top image */
   .l2-top-image {
     width: 250px; /* Adjust as needed */
     height: auto;
-    margin-bottom: 5px; /* Add space below the image */
+    margin-bottom: 1px; /* Add space below the image */
   }
   
   /* Style for the hint image */
   .l2-hint-image {
-    width: 300px; /* Adjust as needed */
-    height: auto;
+    width: 250px; /* Adjust as needed */
+    height: 200px;
     margin-bottom: 20px; /* Add space below the image */
   }
   
@@ -26,6 +27,10 @@
   .l2-fill-in-the-blanks {
     margin-bottom: 20px; /* Add space below the fill in the blanks */
     text-align: center;
+  }
+
+  .l2-mainque {
+    color: brown;
   }
   
   /* Style for the dropdown section */
@@ -47,10 +52,10 @@
   .l2-hint-button {
     margin-bottom: 10px; /* Adjust as needed */
     padding: 10px 20px;
-    background-color: #174f8a;
+    background-color: #c86c17;
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
     cursor: pointer;
   }
   
@@ -64,7 +69,7 @@
   .l2-navigation-buttons {
     display: flex;
     justify-content: space-between;
-    width: 200px; /* Adjust as needed */
+    width: 300px; /* Adjust as needed */
     align-items: center;
   }
   
@@ -74,8 +79,9 @@
     background-color: #007bff;
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
     cursor: pointer;
+    margin-bottom: 100px;
   }
   
   /* Style for disabled navigation buttons */
@@ -84,14 +90,13 @@
     cursor: not-allowed;
   }
   
-  button:hover {
-      background-color: #0c345f;
-      transform: scale(1.1);
+  .l2-hint-button:hover {
+    background-color: #eddf41;
+    transform: scale(1.1);
   }
   
   .l2-game-over-container {
     text-align: center;
-    margin-top: 50px;
   }
   
   .l2-game-over-container h1 {
@@ -108,6 +113,15 @@
   .l2-game-over-container .feedback {
     font-style: italic;
   }
+  .l2-dropdownbox {
+    background-color: rgb(62, 62, 185);
+    border-radius: 20px;
+    padding: 5px;
+    color: white; 
+  }
+  
+
+
   
   
   
