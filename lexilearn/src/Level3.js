@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./Level3.css"
 import Footer from './Footer';
 
@@ -108,7 +108,6 @@ const QuestionBank = [
     correctAnswer: 'sky',
     imageUrl:"./sky-blue.gif"
   }, 
-  
 ];
 
 const Level3 = () => {
@@ -116,14 +115,36 @@ const Level3 = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [finished, setFinished] = useState(false);
+  // eslint-disable-next-line
+  const [musicVolume, setMusicVolume] = useState(0);
+  const [musicPlaying, setMusicPlaying] = useState(false); 
 
-  const selectQuestions = () => {
-    const shuffledQuestions = shuffleArray(QuestionBank).slice(0, 10);
-    setQuestions(shuffledQuestions);
-    setCurrentQuestionIndex(0);
-    setScore(0);
-    setFinished(false);
-  };
+  useEffect(() => {
+    const selectQuestions = () => {
+      const shuffledQuestions = shuffleArray(QuestionBank).slice(0, 10);
+      setQuestions(shuffledQuestions);
+      setCurrentQuestionIndex(0);
+      setScore(0);
+      setFinished(false);
+      setMusicPlaying(true);
+    };
+
+    selectQuestions();
+
+    // Fade in the music when component mounts
+    const fadeDuration = 3000; // 3 seconds
+    const fadeInInterval = setInterval(() => {
+      setMusicVolume(prevVolume => {
+        const newVolume = Math.min(prevVolume + 0.01, 1); // Increase volume gradually
+        if (newVolume >= 1) clearInterval(fadeInInterval); // Stop when volume reaches 1
+        return newVolume;
+      });
+    }, fadeDuration / 100); // Adjust the interval to control the speed of fade-in
+    return () => clearInterval(fadeInInterval); // Clean up the interval
+  }, []);
+
+
+  
 
   const shuffleArray = array => {
     // Fisher-Yates shuffle algorithm
@@ -140,63 +161,56 @@ const Level3 = () => {
 
   const handleDrop = (e, questionIndex, blankIndex, optionId) => {
     const currentQuestion = questions[questionIndex];
-    console.log("Current question: ", currentQuestion);
-    console.log("Option ID: ", optionId);
-    const droppedOptionId = e.dataTransfer.getData('optionId');
-    console.log("Dropped Option ID: ", droppedOptionId);
-    if (currentQuestion.correctAnswer === droppedOptionId) {
+    if (currentQuestion.correctAnswer === optionId) {
       setScore(prevScore => prevScore + 1);
     }
     const updatedQuestions = [...questions];
-    updatedQuestions[questionIndex].blanks[blankIndex] = droppedOptionId;
+    updatedQuestions[questionIndex].blanks[blankIndex] = optionId; // Change this line
     setQuestions(updatedQuestions);
   };
-  
 
   const renderQuestion = (question, index) => {
     return (
-      <div className="l3-container">  
-      <img src="./level3.png" alt="Level3Logo" className="l3-top-image" /> 
-      <h2 className="l3-mainque">Drag and drop to fill in the blanks!</h2>
-      <div key={index}>
-        {/* Image related to the question */}
-        <div className="question-image">
-          <img src={question.imageUrl} alt={`Question ${index + 1}`} />
-        </div>
-        {/* Question text */}
-        <div className="l3-question-container">
-        <div className="blanks">
-          {question.blanks.map((blank, blankIndex) => (
-            <div
-              key={blankIndex}
-              className="drop-zone"
-              onDrop={e => handleDrop(e, index, blankIndex, question.answerOptions[blankIndex])}
-              onDragOver={e => e.preventDefault()}
-            >
-              {blank ? <span>{blank}</span> : null}
+      <div className="l3-container" key={index}>
+        <img src="./level3.png" alt="Level3Logo" className="l3-top-image" />
+        <h2 className="l3-mainque">Drag and drop to fill in the blanks!</h2>
+        <div>
+          {/* Image related to the question */}
+          <div className="question-image">
+            <img src={question.imageUrl} alt={`Question ${index + 1}`} />
+          </div>
+          {/* Question text */}
+          <div className="l3-question-container">
+            <div className="blanks">
+              {question.blanks.map((blank, blankIndex) => (
+                <div
+                  key={blankIndex}
+                  className="drop-zone"
+                  onDrop={e => handleDrop(e, index, blankIndex, e.dataTransfer.getData('optionId'))} // Change this line
+                  onDragOver={e => e.preventDefault()}
+                >
+                  {blank ? <span>{blank}</span> : null}
+                </div>
+              ))}
+              <div className="question">{question.text}</div>
             </div>
-            
-          ))}
-          <div className="question">{question.text}</div>
+          </div>
+          <div className="answer-options">
+            {question.answerOptions.map((option, optionIndex) => (
+              <div
+                key={optionIndex}
+                className="answer-option"
+                draggable
+                onDragStart={e => handleDragStart(e, option)}
+              >
+                <span className="answer-option-text">{option}</span>
+              </div>
+            ))}
+          </div>
         </div>
-        </div>
-        <div className="answer-options">
-          {question.answerOptions.map((option, optionIndex) => (
-            <div
-              key={optionIndex}
-              className="answer-option"
-              draggable
-              onDragStart={e => handleDragStart(e, option)}
-            >
-              <span className="answer-option-text">{option}</span>
-            </div>
-          ))}
-        </div>
-      </div>
       </div>
     );
   };
-  
 
   const goToNextQuestion = () => {
     setCurrentQuestionIndex(prevIndex => prevIndex + 1);
@@ -208,33 +222,32 @@ const Level3 = () => {
 
   const finishQuiz = () => {
     setFinished(true);
+    setMusicPlaying(false);
   };
 
   return (
     <div>
-    <div className="l3-container">
-      {questions.length === 0 ? (
-        <button onClick={selectQuestions}>Start Quiz</button>
-      ) : (
-        <div>
-          {renderQuestion(questions[currentQuestionIndex], currentQuestionIndex)}
-          {/* {{!finished && <div>Score: {score}/10</div>}*/}
-          {finished && <div>Final Score: {score}/10</div>}
-          <div className="l3-buttons">
-            <button onClick={goToPreviousQuestion} disabled={currentQuestionIndex === 0 || finished}>
-            ← Previous
-            </button>
-            <button onClick={goToNextQuestion} disabled={currentQuestionIndex === 9 || finished}>
-              Next →
-            </button>
-            {currentQuestionIndex === 9 && (
-              <button onClick={finishQuiz}>Finish</button>
-            )}
+      <div className="l3-container">
+      <audio src={`${process.env.PUBLIC_URL}/level3-background-track.mp3`} autoPlay loop />
+        {questions.length > 0 && (
+          <div>
+            {renderQuestion(questions[currentQuestionIndex], currentQuestionIndex)}
+            {finished && <div>Final Score: {score}/10</div>}
+            <div className="l3-buttons">
+              <button onClick={goToPreviousQuestion} disabled={currentQuestionIndex === 0 || finished}>
+                ← Previous
+              </button>
+              <button onClick={goToNextQuestion} disabled={currentQuestionIndex === 9 || finished}>
+                Next →
+              </button>
+              {currentQuestionIndex === 9 && (
+                <button onClick={finishQuiz}>Finish</button>
+              )}
+            </div>
           </div>
-        </div>
-      )}
-    </div>
-    <div><Footer/></div>
+        )}
+      </div>
+      <div><Footer /></div>
     </div>
   );
 };
