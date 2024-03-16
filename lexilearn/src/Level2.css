@@ -35,7 +35,7 @@
   
   /* Style for the dropdown section */
   .l2-dropdown {
-    margin-bottom: 40px; /* Add space below the dropdown */
+    margin-bottom: 20px; /* Add space below the dropdown */
   }
   
   /* Style for the feedback message */
@@ -51,7 +51,6 @@
   }
   
   .l2-hint-button {
-    margin-bottom: 10px; /* Adjust as needed */
     padding: 10px 20px;
     background-color: #c86c17;
     color: #fff;
@@ -72,6 +71,7 @@
     justify-content: space-between;
     width: 300px; /* Adjust as needed */
     align-items: center;
+    padding-bottom: 20px;
   }
   
   /* Style for individual navigation buttons */
@@ -118,7 +118,7 @@
     background-color: rgb(62, 62, 185);
     border-radius: 20px;
     padding: 5px;
-    font-size: 16px;
+    font-size: 14px;
     color: white; 
   }
   
