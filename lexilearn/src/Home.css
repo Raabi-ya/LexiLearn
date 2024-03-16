@@ -30,7 +30,7 @@
   padding: 0;
   text-align: center;
   position: absolute;
-  top: 370px; /* Position at 50% from the top */
+  top: 1110px; /* Position at 50% from the top */
   left: 440px; /* Position at 50% from the left */
   transform: translate(-50%, -50%); /* Center the element perfectly */
   justify-content: center; /* Center horizontally */
@@ -99,7 +99,7 @@
 }
 
 .circle:nth-child(1) {
-  top: 90px;
+  top: 830px;
   left: 350px;
   background-color: #e18d8f;
   color: #68060a;
@@ -109,7 +109,7 @@
 .circle:nth-child(1)::before {
   top: 150px;
   left: 150px;
-  transform: rotate(45deg); /* Rotate the line to connect circles */
+  transform: rotate(-135deg); /* Rotate the line to connect circles */
 } 
 
 /*.circle:nth-child(1):hover {
@@ -118,7 +118,7 @@
 }*/
 
 .circle:nth-child(2) {
-  top: 490px;
+  top: 1230px;
   left: 350px;
   background-color: #a0a0b0;
   /*background-color: #9471ff;*/
@@ -126,8 +126,8 @@
 }
 
 .circle:nth-child(2)::before {
-  top: 20px;
-  left: -150px;
+  top: 0px;
+  left: -140px;
   transform: rotate(-135deg); /* Rotate the line to connect circles */  
 } 
 
@@ -138,7 +138,7 @@
 }
 */
 .circle:nth-child(3) {
-  top: 300px;
+  top: 1020px;
   left: 600px;
   background-color: #b88d94;
   color: white;
@@ -157,16 +157,16 @@
 }*/
 
 .circle:nth-child(4) {
-  top: 300px;
+  top: 1025px;
   left: 100px;
   background-color: #eea6ca;
   color: #551f3a;
 }
 
 .circle:nth-child(4)::before {
-  top: -60px;
+  top: -55px;
   left: 110px;
-  transform: rotate(-45deg); /* Rotate the line to connect circles */
+  transform: rotate(135deg); /* Rotate the line to connect circles */
 }
 
 /*.circle:nth-child(4):hover {
@@ -250,7 +250,6 @@
 
 .home h3{
   color: #800000; /* Maroon */
-  margin-left: 20px;
 }
 
 .home p{
@@ -290,4 +289,55 @@
   animation: pulse 2s infinite; /* Run the animation continuously */
 }
 
+.welcome-msg-home {
+  font-family: "Comic Sans MS", cursive; /* font-family */
+  font-size: 60px; /*  font size */
+  margin-top: 10px;
+}
 
+.home h2{
+  color: rgb(113, 64, 64);
+  font-size: 30px;
+  font-family: "Comic Sans MS", cursive; /* font-family */
+  margin-left: 500px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+.welcome-msg-home2{
+  font-family: "Comic Sans MS", cursive; /* font-family */
+  font-size: 20px;
+  margin-left: 500px;
+}
+
+.welcome-img img{
+  margin-top: -250px;
+}
+
+/* CSS for the smaller size of the home game image */
+.welcome-img2 img {
+  width: 200px; /* Adjust the width to your desired size */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* CSS for positioning the home game image on the right side */
+.welcome-img2 {
+  position: absolute;
+  top: 80%; /* Adjust the top position as needed */
+  right: 100px; /* Adjust the right position as needed */
+  transform: translateY(-50%); /* Center vertically */
+}
+
+/* CSS for the smaller size of the home game image */
+.welcome-img3 img {
+  width: 150px; /* Adjust the width to your desired size */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* CSS for positioning the home game image on the right side */
+.welcome-img3 {
+  position: absolute;
+  top: 90%; /* Adjust the top position as needed */
+  right: 500px; /* Adjust the right position as needed */
+  transform: translateY(-50%); /* Center vertically */
+}

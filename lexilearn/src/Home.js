@@ -8,6 +8,24 @@ function Home() {
     <div>
     <div className="home">
       <section className="homesection">
+        <div className="homeWelcome">
+          <h1 className="welcome-msg-home">Welcome to LexiLearn!</h1>
+          <h2>Get ready to have fun while becoming a super reader!</h2>
+          <h3 className="welcome-msg-home2">Explore our awesome games and activities that make reading easy and exciting for kids.</h3>
+          <h3 className="welcome-msg-home2">Let's dive in and discover the magic of stories together!</h3>
+          <div className="welcome-img">
+            <img src="homeGirl.png" alt="girl"/>
+          </div>
+          <div className="welcome-img2">
+            <img src="homeGame.png" alt="girl"/>
+          </div>
+          <div className="welcome-img3">
+            <img src="homebooks.png" alt="book"/>
+          </div>
+        </div>
+      </section>
+
+      <section className="homesection">
       <div className="headerContainer">
         <div className="homeText">
           <div className="circlemain">
@@ -28,7 +46,7 @@ function Home() {
 
       <section className="homesection">
       <div className="home-level">
-        <h1>Let's Get Started!</h1>
+        <h1 className="home-topic">Let's Get Started!</h1>
         <div className='home-sticker'>
           <img src="./homeLevel.png" alt='Sticker'/>
         </div>
@@ -51,7 +69,7 @@ function Home() {
 
       <section className="homesection">
         <div className="home-contactUs">
-          <h1>Getting touch with us...</h1>
+          <h1 className="home-topic">Getting touch with us...</h1>
           <div className='home-sticker'>
             <Link to="/ContactUs"> {/* Use Link for navigation */}
               <img src="./homeContact.png" alt='Sticker'/>
@@ -68,7 +86,7 @@ function Home() {
 
       <section className="homesection">
         <div className="home-aboutUs">
-          <h1>Get to know about us...</h1>
+          <h1 className="home-topic">Get to know about us...</h1>
           <div className='home-sticker'>
             <img src="./homeTeam.png" alt='Sticker'/>
           </div>
