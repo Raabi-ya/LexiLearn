@@ -25,11 +25,8 @@ body {
 .level1-instructions {
   text-align: center;
   color: brown;
-  font-size: 18px;
 }
-.level1 h2{
-  font-size: 40px;
-}
+
 .question {
   text-align: center;
   margin-top: 10px;

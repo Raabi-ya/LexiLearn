@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { getDoc, doc, serverTimestamp, setDoc, updateDoc } from "firebase/firestore";
+import { db, auth } from './firebase';
 import "./Level3.css"
 import Footer from './Footer';
 
@@ -140,10 +142,7 @@ const Level3 = () => {
     }, fadeDuration / 100); // Adjust the interval to control the speed of fade-in
     return () => clearInterval(fadeInInterval); // Clean up the interval
   }, []);
-
-
   
-
   const shuffleArray = array => {
     // Fisher-Yates shuffle algorithm
     for (let i = array.length - 1; i > 0; i--) {
@@ -218,8 +217,37 @@ const Level3 = () => {
     setCurrentQuestionIndex(prevIndex => prevIndex - 1);
   };
 
-  const finishQuiz = () => {
+  const finishQuiz = async () => {
     setFinished(true);
+
+    const user = auth.currentUser;
+
+    if (!user) {
+      console.error("User not authenticated.");
+      return;
+    }
+
+    const attemptDocRef = doc(db, "users", user.uid);
+    const attemptDocSnap = await getDoc(attemptDocRef);
+
+    let currentAttempt = 1;
+    if (attemptDocSnap.exists()) {
+      const data = attemptDocSnap.data();
+      if (data && typeof data.level3_attempt === 'number' && !isNaN(data.level3_attempt)) {
+        currentAttempt = data.level3_attempt + 1;
+      } else {
+        currentAttempt = 1;
+      }
+    }
+
+    await Promise.all([
+      updateDoc(attemptDocRef, { level3_attempt: currentAttempt }),
+      setDoc(doc(db, `level3-scores/${user.uid}_${currentAttempt}`), {
+        attempt: currentAttempt,
+        score: score,
+        timeStamp: serverTimestamp(),
+      })
+    ]);
   };
 
   return (
