@@ -115,7 +115,7 @@ const Level1 = () => {
           <div className='image-level1'>
             <img src="./level1.png" alt='Level 1 logo'/>
           </div>
-          <p>Help us fill in the missing letters!</p>
+          <h2 className='l1-mainque'>Help us fill in the missing letters!</h2>
         </div>
         {currentDisplayedQuestion && (
           <div className='question'>

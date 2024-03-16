@@ -1,7 +1,7 @@
 import React from 'react';
 import './Footer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 
@@ -22,9 +22,6 @@ function Footer() {
         </a>
         <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon icon={faInstagram} />
-        </a>
-        <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
-          <FontAwesomeIcon icon={faGithub} />
         </a>
         <a href="mailto:youremail@example.com">
           <FontAwesomeIcon icon={faEnvelope} />
