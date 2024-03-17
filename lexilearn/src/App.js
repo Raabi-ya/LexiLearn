@@ -12,6 +12,7 @@ import Level1 from './Level1';
 import ContactUs from './ContactUs';
 import Level2 from './Level2';
 import Level3 from './Level3';
+import Level4 from './Level4';
 
 
 function App() {
@@ -52,6 +53,7 @@ function App() {
           <Route path="/ContactUs" element={<ContactUs />}/>
           <Route path="/Level3" element={<RequireAuth><Level3 /></RequireAuth>} />
           <Route path="/Level2" element={<RequireAuth><Level2 /></RequireAuth>} />
+          <Route path="/Level4" element={<RequireAuth><Level4 /></RequireAuth>} />
         {/*<Route path="/pretest" element={<RequireAuth><PreTest /></RequireAuth>} />*/}
         </Routes>
       </div>

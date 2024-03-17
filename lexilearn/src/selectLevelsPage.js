@@ -20,6 +20,7 @@ function SelectLevelsPage() {
                 <li><Link to="/Level1"><button>Level 1</button></Link></li>
                 <li><Link to="/level2"><button>Level 2</button></Link></li>
                 <li><Link to="/Level3"><button>Level 3</button></Link></li>
+                <li><Link to="/Level4"><button>Level 4</button></Link></li>
                 </ul>
             </div>
             </div>
