@@ -10,6 +10,11 @@
 }
 
 .l4-top-image-small img{
+    height: auto;
+    max-width: 100%;
+}
+
+.l4-top-image-small img{
     margin-top: -50px;
 }
 
