@@ -5,17 +5,16 @@
 }
 
 .l4-top-image-small {
-    width: 150px; /* Adjust the width as needed */
+    width: 150px;
     margin-bottom: 20px;
 }
-
 .l4-image-container {
     margin-bottom: 20px;
 }
 
 .l4-question-image {
-    width: 200px; /* Adjust the width as needed */
-    height: auto; /* Maintain aspect ratio */
+    width: 200px; 
+    height: auto; 
     border-radius: 20px;
 }
 
