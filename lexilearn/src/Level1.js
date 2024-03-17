@@ -8,26 +8,26 @@ import { db, auth } from './firebase';
 
 //Question bank
 const questions = [
-  { question: '__ at', answer: 'c', image: 'cat.png' }, //Test c:cat
-  { question: '__ at', answer: 'b', image: 'bat.png' }, //Test b:bat
-  { question: 'be __', answer: 'd', image: 'bed.png' }, //Test d:bed
-  { question: '__ at', answer: 'h', image: 'hat.png' }, //Test h:hat
-  { question: '__ ot', answer: 'p', image: 'pot.png' }, //Test p:pot
-  { question: '__ ee', answer: 'b', image: 'bee.png' }, //Test b:bee
-  { question: '__ ig', answer: 'p', image: 'pig.png' }, //Test p:pig
-  { question: '__ ug', answer: 'm', image: 'mug.png' }, //Test m:mug
-  { question: '__ og', answer: 'd', image: 'dog.png' }, //Test d:dog
-  { question: 'su __', answer: 'n', image: 'sun.png' }, //Test n:sun
-  { question: 'ca __', answer: 'p', image: 'cap.png' }, //Test p:cap
-  { question: 'a __ t', answer: 'n', image: 'ant.png'}, //Test n:ant
-  { question: 'co __', answer: 'w', image: 'cow.png'},  //Test w:cow
-  { question: '__ ox', answer: 'b', image: 'box.png'},  //Test b:box
-  { question: '__ ey', answer: 'k', image: 'key.png'},  //Test k:key
-  { question: '__ ag', answer: 'b', image: 'bag.png'},  //Test b:bag
-  { question: 'fa __', answer: 'n', image: 'fan.png'},  //Test n:fan
-  { question: '__ us', answer: 'b', image: 'bus.png'},  //Test b:bus
-  { question: 'pe __', answer: 'n', image: 'pen.png'},  //Test n:pen
-  { question: 'he __', answer: 'n', image: 'hen.png'},  //Test n:hen
+  { question: '__ at', answer: 'c', image: 'cat.gif' }, //Test c:cat
+  { question: '__ at', answer: 'b', image: 'bat.gif' }, //Test b:bat
+  { question: 'be __', answer: 'd', image: 'bed.gif' }, //Test d:bed
+  { question: '__ at', answer: 'h', image: 'hat.gif' }, //Test h:hat
+  { question: '__ ot', answer: 'p', image: 'pot.gif' }, //Test p:pot
+  { question: '__ ee', answer: 'b', image: 'bee.gif' }, //Test b:bee
+  { question: '__ ig', answer: 'p', image: 'pig.gif' }, //Test p:pig
+  { question: '__ ug', answer: 'm', image: 'mug.gif' }, //Test m:mug
+  { question: '__ og', answer: 'd', image: 'dog.gif' }, //Test d:dog
+  { question: 'su __', answer: 'n', image: 'sun.gif' }, //Test n:sun
+  { question: 'ca __', answer: 'p', image: 'cap.gif' }, //Test p:cap
+  { question: 'a __ t', answer: 'n', image: 'ant.gif'}, //Test n:ant
+  { question: 'co __', answer: 'w', image: 'cow.gif'},  //Test w:cow
+  { question: '__ ox', answer: 'b', image: 'box.gif'},  //Test b:box
+  { question: '__ ey', answer: 'k', image: 'key.gif'},  //Test k:key
+  { question: '__ ag', answer: 'b', image: 'bag.gif'},  //Test b:bag
+  { question: 'fa __', answer: 'n', image: 'fan.gif'},  //Test n:fan
+  { question: '__ us', answer: 'b', image: 'bus.gif'},  //Test b:bus
+  { question: 'pe __', answer: 'n', image: 'pen.gif'},  //Test n:pen
+  { question: 'he __', answer: 'n', image: 'hen.gif'},  //Test n:hen
 ];
 
 //Rendering Level 1
