@@ -168,7 +168,7 @@ const Level3 = () => {
 
   const renderQuestion = (question, index) => {
     return (
-      <div className="l3-container" key={index}>
+      <div className="l3-container-top" key={index}>
         <img src="./level3.png" alt="Level3Logo" className="l3-top-image" />
         <h2 className="l3-mainque">Drag and drop to fill in the blanks!</h2>
         <div>

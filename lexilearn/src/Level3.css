@@ -1,19 +1,23 @@
-.l3-container {
+.l3-container-top {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
+  margin-top:50px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 /* Style for the top image */
 .l3-top-image {
-  width: 250px; 
+  width: 300px; 
+  height: 300px;
+  margin: 0 auto;
+}
+
+.l3-top-image img{
+  max-width: 100%;
   height: auto;
-  position: absolute;
-  top: 0; 
-  margin-bottom: 20px;
 }
 
 .question-image img {
@@ -47,7 +51,7 @@
   border: 2px dashed blue;
   padding: 5px;
   margin:0 auto;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   border-radius: 20px;
   cursor: pointer;
   display: flex;
