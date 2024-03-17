@@ -1,4 +1,4 @@
-Simport React, { useState, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import './Signup.css'; // Import CSS for styling
 import Footer from './Footer';
 import { doc, serverTimestamp, setDoc, } from "firebase/firestore";
