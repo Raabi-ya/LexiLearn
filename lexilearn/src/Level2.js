@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './Level2.css'
 import Footer from './Footer';
+import { getDoc, doc, serverTimestamp, setDoc, updateDoc } from "firebase/firestore";
+import { db, auth } from './firebase';
 
 
 const questionsData = [
@@ -225,6 +227,36 @@ const Level2Page = () => {
     setCurrentQuestionIndex(prevIndex => prevIndex - 1);
   };
 
+  const saveScoreToFirestore = async () => {
+    const user = auth.currentUser;
+
+    if (!user) {
+      console.error("User not authenticated.");
+      return;
+    }
+
+    const attemptDocRef = doc(db, "users", user.uid);
+    const attemptDocSnap = await getDoc(attemptDocRef);
+
+    let currentAttempt = 1;
+    if (attemptDocSnap.exists()) {
+      const data = attemptDocSnap.data();
+      if (data && typeof data.level2_attempt === 'number' && !isNaN(data.level2_attempt)) {
+        currentAttempt = data.level2_attempt + 1;
+      } else {
+        currentAttempt = 1;
+      }
+    }
+
+    await Promise.all([
+      updateDoc(attemptDocRef, { level2_attempt: currentAttempt }),
+      setDoc(doc(db, `level2-scores/${user.uid}_${currentAttempt}`), {
+        attempt: currentAttempt,
+        score: score,
+        timeStamp: serverTimestamp(),
+      })
+    ]);
+  };
 
   if (questions.length === 0) {
     return <div>Loading...</div>;
@@ -235,6 +267,7 @@ const Level2Page = () => {
   
   
   if (currentQuestionIndex === questions.length) {
+    saveScoreToFirestore();
     let feedback = '';
     if (score === questions.length) {
       feedback = 'Perfect! You answered all questions correctly! Move to Level 3!';
@@ -255,18 +288,15 @@ const Level2Page = () => {
         <img src={fbImage} alt="FeedbackImage"/>
 
       </div>
-      <div><Footer/></div>
       </div>
     );
     
   }
-  
- 
-  
 
   return (
     <div>
     <div className="l2-container">
+    <audio src={`${process.env.PUBLIC_URL}/level2-background-track.mp3`} autoPlay loop />
       <img src="./level2.png" alt="Level2Logo" className="l2-top-image" /> 
       <div className="l2-fill-in-the-blanks">
       <h2 className="l2-mainque">  Find the missing letter ⌕ </h2>  
@@ -305,7 +335,5 @@ const Level2Page = () => {
   );
   
 };
-
-
 
 export default Level2Page;

@@ -36,16 +36,22 @@ function Navbar() {
           <Link to="/UserForm">User Profile</Link>
           <Link to="/AboutUsPage">Progress</Link>
           {/*<Link to="/LoginPage">Sign In</Link>*/}
-          {currentUser ? (
-          <span>Welcome, {currentUser.email}</span>
+          {/*{currentUser ? (
+          <span>Welcome, {username}</span>
+          
         ) : (
-          <Link to="/LoginPage">Sign In</Link>
-        )}
+          <Link to="/LoginPage">Login</Link>
+        )}*/}
+
+          {currentUser && <span>Welcome, {currentUser.email}</span>}
+          {currentUser && <Link to="#" onClick={handleSignOut}>Sign Out</Link>}
+          {!currentUser && <Link to="/LoginPage">Login</Link>}
+
           {/*<Link to="/Signup">Sign Up</Link>*/}
 
           {/* Conditionally render Sign Up link based on the user's login status */}
-          {!currentUser && <Link to="/Signup">Sign Up</Link>}
-          <Link to="#" onClick={handleSignOut}>Sign Out</Link>
+          {/*{!currentUser && <Link to="/Signup">Sign Up</Link>}*/}
+          {/*<Link to="#" onClick={handleSignOut}>Sign Out</Link>*/}
         </div>
       </div>
       <div className="rightSide">
@@ -54,16 +60,21 @@ function Navbar() {
         <Link to="/UserForm">User Profile</Link>
         <Link to="/AboutUsPage">Progress</Link>
         {/*<Link to="/LoginPage">Sign In</Link>*/}
-        {currentUser ? (
-          <span>Welcome, {currentUser.email}</span>
+        {/*{currentUser ? (
+          <span>Welcome, {username}</span>
         ) : (
-          <Link to="/LoginPage">Sign In</Link>
-        )}
+          <Link to="/LoginPage">Login</Link>
+        )}*/}
+
+        {currentUser && <span>Welcome, {currentUser.email}</span>}
+        {currentUser && <Link to="#" onClick={handleSignOut}>Sign Out</Link>}
+        {!currentUser && <Link to="/LoginPage">Login</Link>}
+
         {/*<Link to="/Signup">Sign Up</Link>*/}
 
         {/* Conditionally render Sign Up link based on the user's login status */}
-        {!currentUser && <Link to="/Signup">Sign Up</Link>}
-        <Link to="#" onClick={handleSignOut}>Sign Out</Link>
+        {/*{!currentUser && <Link to="/Signup">Sign Up</Link>}*/}
+        {/*<Link to="#" onClick={handleSignOut}>Sign Out</Link>*/}
       </div>
     </div>
   );

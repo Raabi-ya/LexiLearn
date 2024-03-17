@@ -6,6 +6,7 @@ import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import Footer from './Footer';
 import { db, auth } from './firebase';
 
+//Question bank
 const questions = [
   { question: '__ at', answer: 'c', image: 'cat.png' }, //Test c:cat
   { question: '__ at', answer: 'b', image: 'bat.png' }, //Test b:bat
@@ -28,32 +29,40 @@ const questions = [
   { question: 'pe __', answer: 'n', image: 'pen.png'},  //Test n:pen
   { question: 'he __', answer: 'n', image: 'hen.png'},  //Test n:hen
 ];
-  
-const Level1Page = () => {
+
+//Rendering Level 1
+const Level1 = () => {
+  // State variables to track the current question, user answers, displayed questions, and score
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [userAnswers, setUserAnswers] = useState(Array(5).fill(''));
   const [displayedQuestions, setDisplayedQuestions] = useState([]);
   const [score, setScore] = useState(null);
+  const [quizFinished, setQuizFinished] = useState(false);
 
+  // Function to initialize the displayed questions when the component mounts
   useEffect(() => {
     const selectedQuestions = questions.sort(() => Math.random() - 0.5).slice(0, 5);
     setDisplayedQuestions(selectedQuestions);
   }, []);
 
+  // Function to handle input change for user answers
   const handleChange = (event) => {
     const newAnswers = [...userAnswers];
     newAnswers[currentQuestion] = event.target.value;
     setUserAnswers(newAnswers);
   };
 
+  //Function to navigate to the previous question
   const handleBack = () => {
     setCurrentQuestion(Math.max(currentQuestion - 1, 0));
   };
 
+  //Function to navigate to the previus question
   const handleNext = () => {
     setCurrentQuestion(Math.min(currentQuestion + 1, displayedQuestions.length - 1));
   };
 
+  //Function to handle the submission of the quiz : calculating the score, saving the score to the database
   const handleSubmit = async () => {
     let totalScore = 0;
     displayedQuestions.forEach((question, index) => {
@@ -62,15 +71,15 @@ const Level1Page = () => {
       }
     });
     setScore(totalScore);
+    setQuizFinished(true);
+
     const user = auth.currentUser;
   
-    // Ensure user is authenticated
     if (!user) {
       console.error("User not authenticated.");
       return;
     }
   
-    // Fetch current attempt number
     const attemptDocRef = doc(db, "users", user.uid);
     const attemptDocSnap = await getDoc(attemptDocRef);
   
@@ -78,15 +87,12 @@ const Level1Page = () => {
     if (attemptDocSnap.exists()) {
       const data = attemptDocSnap.data();
       if (data && typeof data.level1_attempt === 'number' && !isNaN(data.level1_attempt)) {
-        currentAttempt = data.level1_attempt + 1; // Increment the attempt number
-      }
-      // Add this condition to handle NaN or missing attempt data
-      else {
+        currentAttempt = data.level1_attempt + 1;
+      } else {
         currentAttempt = 1;
       }
     }
   
-    // Save score and updated attempt number
     await Promise.all([
       updateDoc(attemptDocRef, { level1_attempt: currentAttempt }),
       setDoc(doc(db, `level1-scores/${user.uid}_${currentAttempt}`), {
@@ -96,18 +102,20 @@ const Level1Page = () => {
       })
     ]);
   };
-  
-  
-  const currentDisplayedQuestion = displayedQuestions[currentQuestion];
 
+  const currentDisplayedQuestion = displayedQuestions[currentQuestion];
+  const isQuizActive = !quizFinished || currentQuestion < displayedQuestions.length - 1;
+
+  //Rendering the Level1 component
   return (
     <div>
       <div className="level1">
+      <audio src={`${process.env.PUBLIC_URL}/level1-background-track.mp3`} autoPlay loop />
         <div className="level1-instructions">
           <div className='image-level1'>
             <img src="./level1.png" alt='Level 1 logo'/>
           </div>
-          <p>Help us fill in the missing letters!</p>
+          <h2 className='l1-mainque'>Help us fill in the missing letters!</h2>
         </div>
         {currentDisplayedQuestion && (
           <div className='question'>
@@ -122,18 +130,19 @@ const Level1Page = () => {
               value={userAnswers[currentQuestion]}
               onChange={handleChange}
               placeholder="Type the missing letter!"
+              disabled={!isQuizActive}
             />
           </div>
         )}
         <div className="navigation-buttons">
-          <button onClick={handleBack} disabled={currentQuestion === 0}>
+          <button onClick={handleBack} disabled={currentQuestion === 0 || !isQuizActive}>
             <FontAwesomeIcon icon={faArrowLeft} /> Back
           </button>
-          <button onClick={handleNext} disabled={currentQuestion === displayedQuestions.length - 1}>
+          <button onClick={handleNext} disabled={currentQuestion === displayedQuestions.length - 1 || !isQuizActive}>
             Next <FontAwesomeIcon icon={faArrowRight} />
           </button>
           {currentQuestion === displayedQuestions.length - 1 && (
-            <button onClick={handleSubmit}>Finish!</button>
+            <button onClick={handleSubmit} disabled={!isQuizActive}>Finish!</button>
           )}
         </div>
         {score !== null && (
@@ -147,5 +156,4 @@ const Level1Page = () => {
   );
 };
 
-export default Level1Page;
-
+export default Level1;

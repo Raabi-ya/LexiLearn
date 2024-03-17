@@ -11,6 +11,7 @@ function SelectLevelsPage() {
       <div className="Selected-Levels-Page">
         <header className="Selected-Levels-Page-header">
           <div className="content">
+          <audio src={`${process.env.PUBLIC_URL}/select-level-background-track.mp3`} autoPlay loop />
             <div className="Level-button">
               <h1>Levels</h1>
               <p>Select Level to Play :</p>
