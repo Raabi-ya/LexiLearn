@@ -4,8 +4,10 @@ import './SelectLevelsPage.css';
 import Footer from './Footer';
 
 function SelectLevelsPage() {
+ 
+
   return (
-    <div>
+      <div>
       <div className="Selected-Levels-Page">
         <header className="Selected-Levels-Page-header">
           <div className="content">
@@ -29,7 +31,7 @@ function SelectLevelsPage() {
             </div>
             <div className="image2">
               <img src="/ladder.png" alt="Ladder" />
-            </div>
+  </div>
           </div>
         </header>
       </div>
@@ -37,5 +39,6 @@ function SelectLevelsPage() {
     </div>
   );
 }
+
 
 export default SelectLevelsPage;

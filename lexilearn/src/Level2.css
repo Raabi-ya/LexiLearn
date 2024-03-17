@@ -21,6 +21,7 @@
     width: 250px; /* Adjust as needed */
     height: 200px;
     margin-bottom: 20px; /* Add space below the image */
+    margin-top: 20px;
   }
   
   /* Style for the fill in the blanks section */
@@ -35,7 +36,7 @@
   
   /* Style for the dropdown section */
   .l2-dropdown {
-    margin-bottom: 20px; /* Add space below the dropdown */
+    margin-bottom: 10px; /* Add space below the dropdown */
   }
   
   /* Style for the feedback message */
@@ -46,8 +47,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20px;
-    margin-top: 30px;
+    margin-top: 20px;
   }
   
   .l2-hint-button {
@@ -82,7 +82,7 @@
     border: none;
     border-radius: 20px;
     cursor: pointer;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
   }
   
   /* Style for disabled navigation buttons */
