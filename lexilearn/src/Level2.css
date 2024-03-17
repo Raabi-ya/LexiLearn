@@ -104,6 +104,10 @@
     font-size: 24px;
     color: #333;
   }
+
+  .l2-game-over-container h2{
+    color: rgb(137, 79, 79);
+  }
   
   .l2-game-over-container p {
     font-size: 16px;
@@ -121,8 +125,69 @@
     font-size: 14px;
     color: white; 
   }
+ 
+  .feedback-button-l2 {
+    background-color: blue; /* Background color */
+    border: 2px solid white; /* Border color */
+    border-radius: 50%; /* Make it round */
+    padding: 10px; /* Padding */
+    cursor: pointer; /* Cursor style */
+    transition: background-color 0.3s, color 0.3s; /* Transition effect */
+    position: fixed; /* Position the button relative to the browser window */
+    bottom: 70px; /* Adjust as needed */
+    right: 700px; /* Adjust as needed */
+  }
   
+  .feedback-button-l2:hover {
+    background-color: royalblue; /* Darker background color on hover */
+    color: #ffffff; /* White text on hover */
+  }
 
+  .feedback-button-l2 img {
+    width: 50px; /* Adjust the width of the PNG icon */
+    height: 50px; /* Adjust the height of the PNG icon */
+  }
+
+  .l2-level-selection{
+    background-color: blue;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    position: fixed; /* Position the button relative to the browser window */
+    bottom: 20px; /* Adjust as needed */
+    right: 750px; /* Adjust as needed */
+  }
+
+  .l2-level-selection{
+    background-color: royalblue;
+  }
+
+  .l2-level-selection2{
+    background-color: blue;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    position: fixed; /* Position the button relative to the browser window */
+    bottom: 20px; /* Adjust as needed */
+    right: 625px; /* Adjust as needed */
+  }
+
+  .l2-level-selection2{
+    background-color: royalblue;
+  }
+
+  
+  
 
   
   

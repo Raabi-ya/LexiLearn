@@ -200,9 +200,51 @@ const Level2Page = () => {
   const [selectedOption, setSelectedOption] = useState('');
   const [showHint, setShowHint] = useState(false);
   const [score, setScore] = useState(0);
+  const [feedbackAudio, setFeedbackAudio] = useState(null);
+  const [username, setUsername] = useState("");
 
   useEffect(() => {
     setQuestions(getRandomQuestions(questionsData));
+  }, []);
+
+  useEffect(() => {
+    if (currentQuestionIndex === questions.length) {
+      saveScoreToFirestore();
+      let fbAudio;
+      if (score === questions.length) {
+        fbAudio = './level2-1fb.mp3';
+      } else if (score >= questions.length / 2) {
+        fbAudio = '/level2-2fb.mp3';
+      } else {
+        fbAudio = '/level2-3fb.mp3';
+      }
+
+      // Load feedback audio
+      const audio = new Audio(fbAudio);
+      setFeedbackAudio(audio);
+    }
+  }, [currentQuestionIndex, questions.length, score]);
+
+  const getUser = async () => {
+    const user = auth.currentUser;
+    if(user){
+    const docRef = doc(db, "users", user.uid);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      console.log("Document data:", docSnap.data());
+      const userData = docSnap.data();
+      setUsername(userData.username);
+    } else {
+     // docSnap.data() will be undefined in this case
+     console.log("No such document!");
+    }
+    
+  }
+  };
+
+  useEffect(() => {
+    getUser()
   }, []);
 
   const handleSelectChange = (event) => {
@@ -226,6 +268,14 @@ const Level2Page = () => {
   const handleBackClick = () => {
     setCurrentQuestionIndex(prevIndex => prevIndex - 1);
   };
+
+  const handleFeedbackAudioClick = () => {
+    // If feedback audio exists, play it
+    if (feedbackAudio) {
+      feedbackAudio.play();
+    }
+  };
+
 
   const saveScoreToFirestore = async () => {
     const user = auth.currentUser;
@@ -263,8 +313,7 @@ const Level2Page = () => {
   }
 
   const currentQuestion = questions[currentQuestionIndex];
-  let fbImage;
-  
+  let fbImage; 
   
   if (currentQuestionIndex === questions.length) {
     saveScoreToFirestore();
@@ -283,9 +332,13 @@ const Level2Page = () => {
     return (
       <div>
       <div className="l2-game-over-container">
-        <h2>Score: {score} / 7</h2>
+        <h1>{username},</h1>
+        <h2>Your score: {score} / 7</h2>
         <h1 className='l2-feedback'>{feedback}</h1>
         <img src={fbImage} alt="FeedbackImage"/>
+        <button className='feedback-button-l2' onClick={handleFeedbackAudioClick}><img src="/speaker.png" alt='speaker'/></button>
+        <button className='l2-level-selection'>Select Level</button>
+        <button className='l2-level-selection2'>Level 3</button>
 
       </div>
       </div>

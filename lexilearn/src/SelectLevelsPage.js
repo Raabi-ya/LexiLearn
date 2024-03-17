@@ -17,7 +17,7 @@ function SelectLevelsPage() {
               <p>Select Level to Play :</p>
               <div>
                 <ul>
-                <li><Link to="/pretest"><button className="image1-button">
+                <li><Link to="/PlacementTest"><button className="image1-button">
                 <img src="/pretest.png" alt="Level 1" /></button></Link></li>
                 <li><Link to="/Level1"><button>Level 1</button></Link></li>
                 <li><Link to="/level2"><button>Level 2</button></Link></li>

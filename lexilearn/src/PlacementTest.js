@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './placementTest.css';
+import './PlacementTest.css';
 
 const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);

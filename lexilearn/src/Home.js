@@ -69,7 +69,7 @@ function Home() {
 
       <section className="homesection">
         <div className="home-contactUs">
-          <h1 className="home-topic">Getting touch with us...</h1>
+          <h1 className="home-topic">Get in touch with us...</h1>
           <div className='home-sticker'>
             <Link to="/ContactUs"> {/* Use Link for navigation */}
               <img src="./homeContact.png" alt='Sticker'/>
