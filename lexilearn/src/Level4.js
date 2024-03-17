@@ -11,49 +11,49 @@ const QuestionBank = [
         correctAnswer: 'grapes',
     },
     {
-        text: "I like to ride my _________ around the neighborhood.",
-        image: "bike.gif",
-        correctAnswer: 'bike',
+        text: "Look! Up in the sky! It's a bird, it's a plane, no, it's a _________.",
+        image: "https://i.pinimg.com/originals/d5/0a/b1/d50ab17486f6b16899ea70898e858105.gif",
+        correctAnswer: 'butterfly',
     },
     {
-        text: "I can see _________ birds outside my window.",
-        image: "bird.gif",
-        correctAnswer: 'two',
+        text: "Every morning, I wake up to the cheerful chirping of a _________ outside my window.",
+        image: "https://cdn.pixabay.com/animation/2023/01/16/09/19/09-19-03-257_512.gif",
+        correctAnswer: 'bird',
     },
     {
         text: "The _________ changed its color to blend with the surroundings.",
-        image: "chameleon.gif",
+        image: "https://cdn.dribbble.com/users/555720/screenshots/6395932/dr.gif",
         correctAnswer: 'chameleon',
     },
     {
-        text: "The long-necked _________ roamed the earth millions of years ago.",
-        image: "dinosaur.gif",
-        correctAnswer: 'dinosaur',
+        text: "The _________ roamed the earth millions of years ago.",
+        image: "https://i.pinimg.com/originals/3c/87/8e/3c878e909da089ea091b537854a8ac3d.gif",
+        correctAnswer: 'dinosaurs',
     },
     {
         text: "I like to play with my toy _________ on the tracks.",
-        image: "train.gif",
+        image: "https://i.pinimg.com/originals/83/88/c9/8388c9a03a4700d66c5eaa0dd24063e1.gif",
         correctAnswer: 'train',
     },
     {
-        text: "I am going to take a _________ in the pool.",
-        image: "splash.gif",
+        text: "The water will _________ if I jump on the puddle.",
+        image: "https://i.pinimg.com/originals/65/9b/fd/659bfda6513a67a12ff9adc8b1b371c9.gif",
         correctAnswer: 'splash',
     },
     {
-        text: "My favorite pet is a fluffy _________.",
-        image: "bunny.gif",
+        text: "My favorite pet to have is a fluffy _________.",
+        image: "https://i.pinimg.com/originals/85/ea/03/85ea03871e20873c3f4318201fefdd33.gif",
         correctAnswer: 'bunny',
     },
     {
         text: "Let's go for a walk by the _________.",
-        image: "river.gif",
-        correctAnswer: 'river',
+        image: "https://i.pinimg.com/originals/5f/87/96/5f8796516ba9cf7a65728943f4daf058.gif",
+        correctAnswer: 'park',
     },
     {
-        text: "I want to learn about stars and _________ in the sky.",
-        image: "astronomy.gif",
-        correctAnswer: 'astronomy',
+        text: "If it is raining I should always carry an _________.",
+        image: "https://i.pinimg.com/originals/42/c1/81/42c181123d09cee442d5b594e7ba396c.gif",
+        correctAnswer: 'umbrella',
     },
     {
         text: "I love to play with my toy _________ in the bathtub.",
@@ -66,54 +66,54 @@ const QuestionBank = [
         correctAnswer: 'water',
     },
     {
-        text: "My best _________ is coming over to play today.",
-        image: "friend.gif",
-        correctAnswer: 'friend',
+        text: "I love to eat the fruit known as _________.",
+        image: "https://cdn.dribbble.com/users/2111878/screenshots/4303016/fruits_watermelon.gif",
+        correctAnswer: 'watermelon',
     },
     {
         text: "I saw a huge _________ flying in the sky.",
-        image: "kite.gif",
+        image: "https://3.bp.blogspot.com/-Sw8XqUxOGok/WkaNYLLodYI/AAAAAAAAHmo/4wJ_0c0IbAoOwYS3GssA_FA0aKUjMvj_wCLcBGAs/s1600/unnamed.gif",
         correctAnswer: 'kite',
     },
     {
-        text: "I can't find my _________ in the garden.",
-        image: "shovel.gif",
+        text: "I can't find my blue _________ in the garden.",
+        image: "https://media.tenor.com/QUWmzlGbxlAAAAAM/planinarenje-hiking.gif",
         correctAnswer: 'shovel',
     },
     {
-        text: "Let's build a sandcastle on the _________",
-        image: "beach.gif",
-        correctAnswer: 'beach',
+        text: "I saw the tall _________ reach for the yummy leaves from the tree.",
+        image: "https://i.pinimg.com/originals/4a/8a/59/4a8a59fc2f1ba3a5bf7a3568e6e0f407.gif",
+        correctAnswer: 'giraffe',
     },
     {
         text: "I heard a loud _________ in the forest.",
-        image: "thunder.gif",
+        image: "https://mir-s3-cdn-cf.behance.net/project_modules/disp/a444f336714977.573119858ca7f.gif",
         correctAnswer: 'thunder',
     },
     {
-        text: "I like to watch the _________ in the pond.",
-        image: "frog.gif",
+        text: "I like to watch the _________ jump.",
+        image: "https://i.pinimg.com/originals/19/85/c7/1985c729dd6a7c77382e9a58021e4566.gif",
         correctAnswer: 'frog',
     },
     {
-        text: "I can hear the sound of _________ chirping in the trees.",
-        image: "cricket.gif",
-        correctAnswer: 'crickets',
+        text: "I saw a monkey eating a _________.",
+        image: "https://static.vecteezy.com/system/resources/previews/000/367/742/non_2x/vector-little-monkey-eating-banana.jpg",
+        correctAnswer: 'banana',
     },
     {
         text: "I am going to plant some colorful _________ in the garden.",
-        image: "flowers.gif",
+        image: "https://cdn.dribbble.com/users/786639/screenshots/3471316/dribbble.gif",
         correctAnswer: 'flowers',
     },
     {
-        text: "I want to build a big _________ out of blocks.",
-        image: "castle.gif",
+        text: "I want to build a big sand_________ in the beach.",
+        image: "https://cdn.dribbble.com/users/16431/screenshots/2192341/media/43a95825a3b911a3f7ddfc7f2193e09b.gif",
         correctAnswer: 'castle',
     },
     {
-        text: "I love to eat crunchy _________ with milk for breakfast.",
-        image: "cereal.gif",
-        correctAnswer: 'cereal',
+        text: "I _________ my hands with water before and after eating.",
+        image: "https://irp-cdn.multiscreensite.com/044cd2e6/dms3rep/multi/gif-01.gif",
+        correctAnswer: 'hands',
     },
     {
         text: "I saw a bright shooting _________ in the night sky.",
@@ -148,7 +148,7 @@ const Level4Page = () => {
 
     const handleNextClick = () => {
         const correctAnswer = questions[currentQuestionIndex].correctAnswer;
-        if (userAnswer.toLowerCase() === correctAnswer) {
+        if (userAnswer.toLowerCase() === correctAnswer || userAnswer.toUpperCase() === correctAnswer) {
             setScore(prevScore => prevScore + 1);
         }
         setUserAnswer('');

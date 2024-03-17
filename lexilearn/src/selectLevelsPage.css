@@ -1,112 +1,78 @@
-.bg-img {
-  background-image: 'level1.jpg'; /* Adjust path accordingly */
-  background-size: cover;
-  background-position: center;
-  /* Add any other styles you need */
-}
-
-.Selected-Levels-Page {
+/* General Styles */
+.l4-container {
   text-align: center;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
-
+  margin: auto;
+  padding: 20px;
 }
 
-.Selected-Levels-Page-header {
-  background-color: #FAF3DD;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color:black;
-}
-
-.Level-button {
-  text-align: center;
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.Level-button button {
-  margin: 10px;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
-
-
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-.Selected-Levels-Page button:hover {
-  background-color: #0056b3;
-  transform: scale(1.1);
-}
-
-.Selected-Levels-Page button:focus {
-  outline: none;
-}
-
-.Selected-Levels-Page h1 {
+/* Logo Styles */
+.l4-top-image-small {
+  width: 150px; /* Adjust the width as needed */
   margin-bottom: 20px;
 }
-.Selected-Levels-Page .image {
-  position: absolute;
-  right: 0;
-  flex: 1; 
-  max-width: 50%; 
-  margin-left: 20px; 
+
+/* Image Styles */
+.l4-image-container {
+  margin-bottom: 20px;
 }
 
-.Selected-Levels-Page .image img {
-  width: 50%; 
-  height: 50%; 
-}
-.Selected-Levels-Page .content {
-  display: flex; /* Use flexbox */
-  justify-content: space-between; /* Space items evenly */
-  align-items: center; /* Center items vertically */
-}
-.Selected-Levels-Page .image2 {
-  flex: 1; 
-  max-width: 35%; 
-  margin-left: 20px; 
-  position: absolute;
-  left: 0;
+.l4-question-image {
+  width: 200px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 20px;
 }
 
-.Selected-Levels-Page .image2 img {
-  width: 80%; 
-  height: 80%; 
-  
+/* Question Text Styles */
+.l4-fill-in-the-blanks h1 {
+  font-size: 24px;
+  margin-bottom: 20px; /* Add some space below the question */
 }
 
-.Selected-Levels-Page ul{
-  list-style-type: none;
+/* Input Styles */
+.l4-input-container {
+  margin-bottom: 20px;
 }
 
-.image1-button {
+.l4-input-container input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Button Styles */
+.l4-button-container {
   display: flex;
-  justify-content: center; /* Align content horizontally at the center */
-  align-items: center; 
-  width: 120px; 
-  height: 120px;
-  position: relative 
+  justify-content: center;
 }
 
-.image1-button img {
-
-  max-width: 300px; 
-  max-height: 250px; 
-  position: absolute; 
-  top: 25%; 
-  left: 65%; 
-  transform: translate(-50%, -50%);
+.l4-navigation-buttons {
+  display: flex;
 }
 
+.l4-navigation-button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.l4-navigation-button:hover {
+  background-color: #0056b3; /* Darker shade of primary color */
+}
+
+/* Game Over Styles */
+.l4-game-over-container {
+  margin-top: 50px;
+}
+
+.l4-feedback {
+  font-size: 24px;
+  margin-top: 20px;
+}
