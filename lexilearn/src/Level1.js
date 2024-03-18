@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { getDoc, doc, serverTimestamp, setDoc, updateDoc } from "firebase/firestore";
 import "./Level1.css";
-//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-//import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import Footer from './Footer';
 import { db, auth } from './firebase';
+import {Link} from "react-router-dom";
 
 //Question bank
 const Questions = [
@@ -40,7 +39,7 @@ const Level1Page = () => {
 
   useEffect(() => {
       // Shuffle the question bank and select 12 random questions
-      const shuffledQuestions = shuffleArray(Questions).slice(0, 12);
+      const shuffledQuestions = shuffleArray(Questions).slice(0, 5);
       setQuestions(shuffledQuestions);
   }, []);
 
@@ -171,14 +170,18 @@ const Level1Page = () => {
           <div>
               <div className="l1-game-over-container">
                   <h1>{username},</h1>
-                  <h2>Your score: {score} / 12</h2>
+                  <h2>Your score: {score} / 5</h2>
                   <h1 className='l1-feedback'>{feedback}</h1>
                   <div className='l1-feedback-img'>
                       <img src={fbImage} alt="FeedbackImage" />
                   </div>
                   <button className='feedback-button-l1' onClick={handleFeedbackAudioClick}><img src="/speaker.png" alt='speaker' /></button>
+                  <Link to="/SelectLevelsPage">
                   <button className='l1-level-selection'>Select Level</button>
-                  <button className='l2-level-selection2'>Level 3</button>
+                  </Link>
+                  <Link to="/Level2">
+                  <button className='l2-level-selection2'>Level 2</button>
+                  </Link>
               </div>
           </div>
       );

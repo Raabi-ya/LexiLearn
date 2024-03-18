@@ -3,6 +3,7 @@ import './Level4.css';
 import Footer from './Footer';
 import { getDoc, doc, serverTimestamp, setDoc, updateDoc } from "firebase/firestore";
 import { db, auth } from './firebase';
+import {Link} from "react-router-dom";
 
 const QuestionBank = [
     {
@@ -271,7 +272,9 @@ const Level4Page = () => {
                     <img src={fbImage} alt="FeedbackImage"/>
                     </div>
                     <button className='feedback-button-l4' onClick={handleFeedbackAudioClick}><img src="/speaker.png" alt='speaker'/></button>
+                    <Link to="/SelectLevelsPage">
                     <button className='l4-level-selection'>Select Level</button>
+                    </Link>
                 </div>
             </div>
         );

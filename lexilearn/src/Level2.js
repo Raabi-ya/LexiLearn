@@ -3,6 +3,7 @@ import './Level2.css'
 import Footer from './Footer';
 import { getDoc, doc, serverTimestamp, setDoc, updateDoc } from "firebase/firestore";
 import { db, auth } from './firebase';
+import {Link} from "react-router-dom";
 
 
 const questionsData = [
@@ -337,8 +338,12 @@ const Level2Page = () => {
         <h1 className='l2-feedback'>{feedback}</h1>
         <img src={fbImage} alt="FeedbackImage"/>
         <button className='feedback-button-l2' onClick={handleFeedbackAudioClick}><img src="/speaker.png" alt='speaker'/></button>
+        <Link to="/SelectLevelsPage">
         <button className='l2-level-selection'>Select Level</button>
+        </Link>
+        <Link to="/Level3">
         <button className='l2-level-selection2'>Level 3</button>
+        </Link>
       </div>
       </div>
     );
