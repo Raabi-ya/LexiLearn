@@ -126,12 +126,55 @@ const Level4Page = () => {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [userAnswer, setUserAnswer] = useState('');
     const [score, setScore] = useState(0);
+    const [feedbackAudio, setFeedbackAudio] = useState(null);
+    const [username, setUsername] = useState("");
 
     useEffect(() => {
         // Shuffle the question bank and select 12 random questions
         const shuffledQuestions = shuffleArray(QuestionBank).slice(0, 12);
         setQuestions(shuffledQuestions);
     }, []);
+
+    useEffect(() => {
+        if (currentQuestionIndex === questions.length) {
+          saveScoreToFirestore();
+          let fbAudio;
+          if (score === questions.length) {
+            fbAudio = './level4-1fb.mp3';
+          } else if (score >= questions.length / 2) {
+            fbAudio = '/level4-2fb.mp3';
+          } else {
+            fbAudio = '/level4-3fb.mp3';
+          }
+    
+          // Load feedback audio
+          const audio = new Audio(fbAudio);
+          setFeedbackAudio(audio);
+        }
+      }, [currentQuestionIndex, questions.length, score]);
+    
+      const getUser = async () => {
+        const user = auth.currentUser;
+        if(user){
+        const docRef = doc(db, "users", user.uid);
+        const docSnap = await getDoc(docRef);
+    
+        if (docSnap.exists()) {
+          console.log("Document data:", docSnap.data());
+          const userData = docSnap.data();
+          setUsername(userData.username);
+        } else {
+         // docSnap.data() will be undefined in this case
+         console.log("No such document!");
+        }
+        
+      }
+      };
+    
+      useEffect(() => {
+        getUser()
+      }, []);
+    
 
     const shuffleArray = array => {
         // Fisher-Yates shuffle algorithm
@@ -157,6 +200,13 @@ const Level4Page = () => {
 
     const handleBackClick = () => {
         setCurrentQuestionIndex(prevIndex => prevIndex - 1);
+    };
+
+    const handleFeedbackAudioClick = () => {
+        // If feedback audio exists, play it
+        if (feedbackAudio) {
+          feedbackAudio.play();
+        }
     };
 
     const saveScoreToFirestore = async () => {
@@ -195,23 +245,33 @@ const Level4Page = () => {
     }
 
     const currentQuestion = questions[currentQuestionIndex];
+    let fbImage;
 
     if (currentQuestionIndex === questions.length) {
         saveScoreToFirestore();
         let feedback = '';
         if (score === questions.length) {
             feedback = 'Perfect! You answered all questions correctly!';
+            fbImage = './feedback1.gif'
         } else if (score >= questions.length / 2) {
             feedback = 'Good job! You got most of the questions right!';
+            fbImage = './feedback1.gif'
         } else {
             feedback = 'Keep practicing! You can do better!';
+            fbImage = './feedback1.gif'
         }
 
         return (
             <div>
                 <div className="l4-game-over-container">
-                    <h2>Score: {score} / {questions.length}</h2>
-                    <h1 className="l4-feedback">{feedback}</h1>
+                    <h1>{username},</h1>
+                    <h2>Your score: {score} / 12</h2>
+                    <h1 className='l4-feedback'>{feedback}</h1>
+                    <div className='l4-feedback-img'>
+                    <img src={fbImage} alt="FeedbackImage"/>
+                    </div>
+                    <button className='feedback-button-l4' onClick={handleFeedbackAudioClick}><img src="/speaker.png" alt='speaker'/></button>
+                    <button className='l4-level-selection'>Select Level</button>
                 </div>
             </div>
         );
