@@ -95,13 +95,14 @@ const Level1Page = () => {
   };
 
   const handleNextClick = () => {
-      const correctAnswer = questions[currentQuestionIndex].correctAnswer;
-      if (userAnswer.toLowerCase() === correctAnswer || userAnswer.toUpperCase() === correctAnswer) {
-          setScore(prevScore => prevScore + 1);
-      }
-      setUserAnswer('');
-      setCurrentQuestionIndex(prevIndex => prevIndex + 1);
-  };
+    const correctAnswer = questions[currentQuestionIndex].answer; // Use 'answer' property
+    if (userAnswer.toLowerCase() === correctAnswer || userAnswer.toUpperCase() === correctAnswer) {
+        setScore(prevScore => prevScore + 1);
+    }
+    setUserAnswer('');
+    setCurrentQuestionIndex(prevIndex => prevIndex + 1);
+};
+
 
   const handleBackClick = () => {
       setCurrentQuestionIndex(prevIndex => prevIndex - 1);
@@ -191,7 +192,8 @@ const Level1Page = () => {
       <div>
           <div className="l1-container">
               <audio src={`${process.env.PUBLIC_URL}/level1-background-track.mp3`} autoPlay loop />
-              <img src="./Level 1 logo.png" alt="Level1Logo" className="l1-top-image-small" />
+              <img src="./level1.png" alt="Level 1 Logo" className="l1-top-image-small" />
+              <h2>Help to fill in the missing letters!</h2>
               <div className="l1-image-container">
                   <img src={currentQuestion.image} alt="Question Image" className="l1-question-image" />
               </div>
@@ -213,7 +215,7 @@ const Level1Page = () => {
                               ← Back
                           </button>
                           <button onClick={handleNextClick} className="l1-navigation-button">
-                              {currentQuestionIndex === questions.length - 1 ? 'Finish' : 'Next → '}
+                              {currentQuestionIndex === questions.length - 1 ? 'Finish!' : 'Next → '}
                           </button>
                       </div>
                   </div>

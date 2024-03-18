@@ -38,7 +38,7 @@ const QuestionBank = [
     },
     {
         text: "I have a pink _________ .",
-        image: "cap1.gif",
+        image: "cap.gif",
         correctAnswer: 'cap',
     },
     {
@@ -78,7 +78,7 @@ const QuestionBank = [
     },
     {
         text: "I can't find my _________.",
-        image: "pen1.gif",
+        image: "pen.gif",
         correctAnswer: 'pen',
     },
     {
