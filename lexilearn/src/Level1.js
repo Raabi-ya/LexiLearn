@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { getDoc, doc, serverTimestamp, setDoc, updateDoc } from "firebase/firestore";
 import "./Level1.css";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import Footer from './Footer';
 import { db, auth } from './firebase';
+import {Link} from "react-router-dom";
 
 //Question bank
-const questions = [
+const Questions = [
   { question: '__ at', answer: 'c', image: 'cat.gif' }, //Test c:cat
   { question: '__ at', answer: 'b', image: 'bat.gif' }, //Test b:bat
   { question: 'be __', answer: 'd', image: 'bed.gif' }, //Test d:bed
@@ -30,130 +29,201 @@ const questions = [
   { question: 'he __', answer: 'n', image: 'hen.gif'},  //Test n:hen
 ];
 
-//Rendering Level 1
-const Level1 = () => {
-  // State variables to track the current question, user answers, displayed questions, and score
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [userAnswers, setUserAnswers] = useState(Array(5).fill(''));
-  const [displayedQuestions, setDisplayedQuestions] = useState([]);
-  const [score, setScore] = useState(null);
-  const [quizFinished, setQuizFinished] = useState(false);
+const Level1Page = () => {
+  const [questions, setQuestions] = useState([]);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [userAnswer, setUserAnswer] = useState('');
+  const [score, setScore] = useState(0);
+  const [feedbackAudio, setFeedbackAudio] = useState(null);
+  const [username, setUsername] = useState("");
 
-  // Function to initialize the displayed questions when the component mounts
   useEffect(() => {
-    const selectedQuestions = questions.sort(() => Math.random() - 0.5).slice(0, 5);
-    setDisplayedQuestions(selectedQuestions);
+      // Shuffle the question bank and select 12 random questions
+      const shuffledQuestions = shuffleArray(Questions).slice(0, 5);
+      setQuestions(shuffledQuestions);
   }, []);
 
-  // Function to handle input change for user answers
-  const handleChange = (event) => {
-    const newAnswers = [...userAnswers];
-    newAnswers[currentQuestion] = event.target.value;
-    setUserAnswers(newAnswers);
-  };
+  useEffect(() => {
+      if (currentQuestionIndex === questions.length) {
+          saveScoreToFirestore();
+          let fbAudio;
+          if (score === questions.length) {
+              fbAudio = './level1-1fb.mp3';
+          } else if (score >= questions.length / 2) {
+              fbAudio = '/level1-2fb.mp3';
+          } else {
+              fbAudio = '/level1-3fb.mp3';
+          }
 
-  //Function to navigate to the previous question
-  const handleBack = () => {
-    setCurrentQuestion(Math.max(currentQuestion - 1, 0));
-  };
-
-  //Function to navigate to the previus question
-  const handleNext = () => {
-    setCurrentQuestion(Math.min(currentQuestion + 1, displayedQuestions.length - 1));
-  };
-
-  //Function to handle the submission of the quiz : calculating the score, saving the score to the database
-  const handleSubmit = async () => {
-    let totalScore = 0;
-    displayedQuestions.forEach((question, index) => {
-      if (userAnswers[index]?.toLowerCase() === question.answer) {
-        totalScore += 1;
+          // Load feedback audio
+          const audio = new Audio(fbAudio);
+          setFeedbackAudio(audio);
       }
-    });
-    setScore(totalScore);
-    setQuizFinished(true);
+  }, [currentQuestionIndex, questions.length, score]);
 
-    const user = auth.currentUser;
-  
-    if (!user) {
-      console.error("User not authenticated.");
-      return;
-    }
-  
-    const attemptDocRef = doc(db, "users", user.uid);
-    const attemptDocSnap = await getDoc(attemptDocRef);
-  
-    let currentAttempt = 1;
-    if (attemptDocSnap.exists()) {
-      const data = attemptDocSnap.data();
-      if (data && typeof data.level1_attempt === 'number' && !isNaN(data.level1_attempt)) {
-        currentAttempt = data.level1_attempt + 1;
-      } else {
-        currentAttempt = 1;
+  const getUser = async () => {
+      const user = auth.currentUser;
+      if (user) {
+          const docRef = doc(db, "users", user.uid);
+          const docSnap = await getDoc(docRef);
+
+          if (docSnap.exists()) {
+              console.log("Document data:", docSnap.data());
+              const userData = docSnap.data();
+              setUsername(userData.username);
+          } else {
+              console.log("No such document!");
+          }
       }
-    }
-  
-    await Promise.all([
-      updateDoc(attemptDocRef, { level1_attempt: currentAttempt }),
-      setDoc(doc(db, `level1-scores/${user.uid}_${currentAttempt}`), {
-        attempt: currentAttempt,
-        score: totalScore,
-        timeStamp: serverTimestamp(),
-      })
-    ]);
   };
 
-  const currentDisplayedQuestion = displayedQuestions[currentQuestion];
-  const isQuizActive = !quizFinished || currentQuestion < displayedQuestions.length - 1;
+  useEffect(() => {
+      getUser()
+  }, []);
 
-  //Rendering the Level1 component
-  return (
-    <div>
-      <div className="level1">
-      <audio src={`${process.env.PUBLIC_URL}/level1-background-track.mp3`} autoPlay loop />
-        <div className="level1-instructions">
-          <div className='image-level1'>
-            <img src="./level1.png" alt='Level 1 logo'/>
-          </div>
-          <h2 className='l1-mainque'>Help us fill in the missing letters!</h2>
-        </div>
-        {currentDisplayedQuestion && (
-          <div className='question'>
-            {currentDisplayedQuestion.image && (
-              <div className='question-image'>
-                <img src={process.env.PUBLIC_URL + '/level1-img-hints/' + currentDisplayedQuestion.image} alt='Hint' />
-              </div>
-            )}
-            <h2>{currentDisplayedQuestion.question}</h2>
-            <input
-              type="text"
-              value={userAnswers[currentQuestion]}
-              onChange={handleChange}
-              placeholder="Type the missing letter!"
-              disabled={!isQuizActive}
-            />
-          </div>
-        )}
-        <div className="navigation-buttons">
-          <button onClick={handleBack} disabled={currentQuestion === 0 || !isQuizActive}>
-            <FontAwesomeIcon icon={faArrowLeft} /> Back
-          </button>
-          <button onClick={handleNext} disabled={currentQuestion === displayedQuestions.length - 1 || !isQuizActive}>
-            Next <FontAwesomeIcon icon={faArrowRight} />
-          </button>
-          {currentQuestion === displayedQuestions.length - 1 && (
-            <button onClick={handleSubmit} disabled={!isQuizActive}>Finish!</button>
-          )}
-        </div>
-        {score !== null && (
-          <div className='score-level1'>
-            <h3>Your Score: {score}/5</h3>
-          </div>
-        )}
-      </div>
-      <div><Footer/></div>
-    </div>
-  );
+  const shuffleArray = array => {
+      // Fisher-Yates shuffle algorithm
+      for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+  };
+
+  const handleUserInput = (event) => {
+      setUserAnswer(event.target.value);
+  };
+
+  const handleNextClick = () => {
+    const correctAnswer = questions[currentQuestionIndex].answer; // Use 'answer' property
+    if (userAnswer.toLowerCase() === correctAnswer || userAnswer.toUpperCase() === correctAnswer) {
+        setScore(prevScore => prevScore + 1);
+    }
+    setUserAnswer('');
+    setCurrentQuestionIndex(prevIndex => prevIndex + 1);
 };
 
-export default Level1;
+
+  const handleBackClick = () => {
+      setCurrentQuestionIndex(prevIndex => prevIndex - 1);
+  };
+
+  const handleFeedbackAudioClick = () => {
+      // If feedback audio exists, play it
+      if (feedbackAudio) {
+          feedbackAudio.play();
+      }
+  };
+
+  const saveScoreToFirestore = async () => {
+      const user = auth.currentUser;
+
+      if (!user) {
+          console.error("User not authenticated.");
+          return;
+      }
+
+      const attemptDocRef = doc(db, "users", user.uid);
+      const attemptDocSnap = await getDoc(attemptDocRef);
+
+      let currentAttempt = 1;
+      if (attemptDocSnap.exists()) {
+          const data = attemptDocSnap.data();
+          if (data && typeof data.level1_attempt === 'number' && !isNaN(data.level1_attempt)) {
+              currentAttempt = data.level1_attempt + 1;
+          } else {
+              currentAttempt = 1;
+          }
+      }
+
+      await Promise.all([
+          updateDoc(attemptDocRef, { level1_attempt: currentAttempt }),
+          setDoc(doc(db, `level1-scores/${user.uid}_${currentAttempt}`), {
+              attempt: currentAttempt,
+              score: score,
+              timeStamp: serverTimestamp(),
+          })
+      ]);
+  };
+
+  if (questions.length === 0) {
+      return <div>Loading...</div>;
+  }
+
+  const currentQuestion = questions[currentQuestionIndex];
+  let fbImage;
+
+  if (currentQuestionIndex === questions.length) {
+      saveScoreToFirestore();
+      let feedback = '';
+      if (score === questions.length) {
+          feedback = 'Perfect! You answered all questions correctly!';
+          fbImage = './feedback1.gif'
+      } else if (score >= questions.length / 2) {
+          feedback = 'Good job! You got most of the questions right!';
+          fbImage = './feedback1.gif'
+      } else {
+          feedback = 'Keep practicing! You can do better!';
+          fbImage = './feedback1.gif'
+      }
+
+      return (
+          <div>
+              <div className="l1-game-over-container">
+                  <h1>{username},</h1>
+                  <h2>Your score: {score} / 5</h2>
+                  <h1 className='l1-feedback'>{feedback}</h1>
+                  <div className='l1-feedback-img'>
+                      <img src={fbImage} alt="FeedbackImage" />
+                  </div>
+                  <button className='feedback-button-l1' onClick={handleFeedbackAudioClick}><img src="/speaker.png" alt='speaker' /></button>
+                  <Link to="/SelectLevelsPage">
+                  <button className='l1-level-selection'>Select Level</button>
+                  </Link>
+                  <Link to="/Level2">
+                  <button className='l2-level-selection2'>Level 2</button>
+                  </Link>
+              </div>
+          </div>
+      );
+  }
+
+  return (
+      <div>
+          <div className="l1-container">
+              <audio src={`${process.env.PUBLIC_URL}/level1-background-track.mp3`} autoPlay loop />
+              <img src="./level1.png" alt="Level 1 Logo" className="l1-top-image-small" />
+              <h2>Help to fill in the missing letters!</h2>
+              <div className="l1-image-container">
+                  <img src={currentQuestion.image} alt="Question Image" className="l1-question-image" />
+              </div>
+              <div className="l1-fill-in-the-blanks">
+                  <h1>{currentQuestion.question}</h1>
+              </div>
+              <div className="l1-input-container">
+                  <input
+                      type="text"
+                      value={userAnswer}
+                      onChange={handleUserInput}
+                      placeholder="Type your answer here!"
+                  />
+              </div>
+              <div className="l1-button-container">
+                  <div className="l1-centered-container">
+                      <div className="l1-navigation-buttons">
+                          <button onClick={handleBackClick} disabled={currentQuestionIndex === 0} className="l1-navigation-button">
+                              ← Back
+                          </button>
+                          <button onClick={handleNextClick} className="l1-navigation-button">
+                              {currentQuestionIndex === questions.length - 1 ? 'Finish!' : 'Next → '}
+                          </button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div><Footer/></div>
+        </div>
+    );
+};
+
+export default Level1Page;

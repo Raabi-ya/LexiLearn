@@ -1,0 +1,168 @@
+.signup-form-group label {
+    display: block;
+    padding-bottom: 5px;
+    margin-bottom: 2 px;
+    font-size: 16px;
+  }
+
+ .signup-form-group input {
+    width: 100%;
+    border: 1px solid #f7eded;
+    border-radius: 20px;
+    font-size: 15px;
+    transition: border-color 0.3s ease;
+    height: 40px;
+    padding: 5px;
+}
+  
+  .signup-form-group input:focus {
+    border-color: #0714ca;
+  }
+  
+  .continue-button-group {
+    display: flex;
+    justify-content: center; 
+    margin-top: 20px; /* Added margin to separate the buttons from the form */
+  }
+  
+  /* Signup page styles */
+  .signup-page {
+    padding: 20px;
+    height:fit-content;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #FAF3DD;
+  }
+  
+  /* Grouping the form and image together */
+  .signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Left section styles */
+  .signup-left-section {
+    padding: 20px;
+  }
+  
+  .signup-left-section img {
+    max-width: 100%;
+    border-radius: 30px;
+    width: 500px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Right section styles */
+  .signup-right-section {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .signup-right-section h2 {
+    text-align: left;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 20px;
+    margin-bottom: 0px;
+  }
+  .signup-right-section h4{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-align: left;
+    margin-bottom: 15px;
+    margin-top: 0px;
+  
+  }
+  
+  /* signup form styles */
+  .Signup-form {
+    background-color: #f0f0f0;
+    border-radius: 30px;
+    padding: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width:550px;
+    height: fit-content;
+  }
+  
+  /* Submit button styles */
+  .confirm-button-group button {
+    background-color: blue;
+    color: #fff;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    margin-top: 5px;
+    
+}
+   .confirm-button-group button:hover {
+    background-color:royalblue;
+  }
+
+  .confirm-button-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  
+  .signup-additional-options {
+    margin-top: 10px;
+    text-align: center;
+    color:gray; 
+    
+  }
+
+  .signup-additional-options p{
+    margin-bottom: 4px;
+    margin-top: 1px;
+    font-size: 0.75rem;
+  }
+  .signup-additional-options b{
+    color: black;
+  }
+
+  .signup-additional-options a {
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .signup-additional-options a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Media queries for responsiveness */
+  
+  @media only screen and (max-width: 768px) {
+    .signup-page {
+      flex-direction: column; /* Stack sections vertically */
+    }
+  
+    .signup-left-section,
+    .signup-right-section {
+      width: 100%; /* Make sections full width */
+    }
+  
+    .Signup-form {
+      width: 90%; /* Adjust form width */
+    }
+  
+    .confirm-button-group button {
+      width: 100%; /* Make buttons full width */
+    }
+  }
+
+  .error-message {
+    color: #ff5252; /* Red color */
+    font-size: 0.8rem;
+    margin-top: 5px;
+  }
+  
+  /* Style the form to highlight the input with an error */
+  .signup-form-group {
+    position: relative;
+  }

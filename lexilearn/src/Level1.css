@@ -5,29 +5,29 @@ body {
   font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.level1 {
+.l1-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.image-level1 {
+.l1-top-image-small {
   height: 300px;
   width: 300px;
   margin: 0 auto;
 }
 
-.image-level1 img {
+.l1-top-image-small img {
   height: auto;
   max-width: 100%;
 }
 
-.level1-instructions {
+.l1-container h2 {
   text-align: center;
   color: brown;
 }
 
-.question {
+.question{
   text-align: center;
   margin-top: 10px;
 }
@@ -49,19 +49,7 @@ body {
   outline: none;
 }
 
-.navigation-buttons {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  padding: 50px;
-}
-
-button {
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 16px;
-}
-
-.navigation-buttons button {
+.l1-navigation-buttons button {
   background-color: blue;
   color: #fff;
   border: none;
@@ -70,33 +58,125 @@ button {
   cursor: pointer;
   transition: background-color 0.3s ease;
   margin: 0 5px;
+  font-size: 16px;
 }
 
-.navigation-buttons button:disabled {
+.l1-navigation-buttons{
+  margin-bottom: 20px;
+ 
+}
+
+.l1-navigation-buttons button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
 
-.navigation-buttons button:hover {
+.l1-navigation-buttons button:hover {
   background-color: royalblue;
 }
 
-.navigation-buttons button:focus {
+.l1-navigation-buttons button:focus {
   outline: none;
 }
 
-.navigation-buttons button svg {
-  margin-right: 10px;
-}
-.question-image{
+.l1-image-container{
   height: 200px;
   width: 200px;
 }
-.question-image img{
+.l1-image-container img{
   max-width: 100%;
   height: auto;
 
 }
-.score-level1{
-  color: orangered;
+.l1-input-container input[type="text"]{
+  border-radius: 20px;
+  padding: 15px;
+  border:solid blue;
+  margin-bottom: 20px;
+  font-size: 16px;
+
+}
+
+.feedback-button-l1 {
+  background-color: rgb(196, 241, 106); /* Background color */
+  border: 2px solid white; /* Border color */
+  border-radius: 50%; /* Make it round */
+  padding: 10px; /* Padding */
+  cursor: pointer; /* Cursor style */
+  transition: background-color 0.3s, color 0.3s; /* Transition effect */
+  position: fixed; /* Position the button relative to the browser window */
+  bottom: 70px; /* Adjust as needed */
+  right: 700px; /* Adjust as needed */
+}
+
+.feedback-button-l1:hover {
+  background-color: yellowgreen; /* Darker background color on hover */
+  color: #ffffff; /* White text on hover */
+}
+
+.feedback-button-l1 img {
+  width: 50px; /* Adjust the width of the PNG icon */
+  height: 50px; /* Adjust the height of the PNG icon */
+}
+
+.l1-level-selection{
+  background-color: blue;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  position: fixed; /* Position the button relative to the browser window */
+  bottom: 20px; /* Adjust as needed */
+  right: 750px; /* Adjust as needed */
+}
+
+.l1-level-selection{
+  background-color: royalblue;
+}
+
+.l1-game-over-container {
+  text-align: center;
+}
+
+.l1-game-over-container h1 {
+  font-size: 24px;
+  color: #333;
+}
+
+.l1-game-over-container h2{
+  color: rgb(137, 79, 79);
+}
+
+.l1-feedback-img{
+  height: 600px;
+  width: 600px;
+  margin: 0 auto;
+}
+
+.l1-feedback-img img{
+  height: auto;
+  max-width: 100%;
+}
+
+.l1-level-selection2{
+  background-color: blue;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  position: fixed; /* Position the button relative to the browser window */
+  bottom: 20px; /* Adjust as needed */
+  right: 625px; /* Adjust as needed */
+}
+
+.l1-level-selection2{
+  background-color: royalblue;
 }
