@@ -339,7 +339,6 @@ const Level2Page = () => {
         <button className='feedback-button-l2' onClick={handleFeedbackAudioClick}><img src="/speaker.png" alt='speaker'/></button>
         <button className='l2-level-selection'>Select Level</button>
         <button className='l2-level-selection2'>Level 3</button>
-
       </div>
       </div>
     );

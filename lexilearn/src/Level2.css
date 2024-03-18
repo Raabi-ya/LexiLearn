@@ -127,7 +127,7 @@
   }
  
   .feedback-button-l2 {
-    background-color: blue; /* Background color */
+    background-color: rgb(196, 241, 106); /* Background color */
     border: 2px solid white; /* Border color */
     border-radius: 50%; /* Make it round */
     padding: 10px; /* Padding */
@@ -139,7 +139,7 @@
   }
   
   .feedback-button-l2:hover {
-    background-color: royalblue; /* Darker background color on hover */
+    background-color: yellowgreen; /* Darker background color on hover */
     color: #ffffff; /* White text on hover */
   }
 
