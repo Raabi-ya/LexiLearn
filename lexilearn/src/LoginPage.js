@@ -8,7 +8,7 @@ import Footer from './Footer';
 import './Login.css'; // Import CSS for styling
 import { AuthContext } from './context/AuthContext';
 
-
+//Login function
 function LoginPage() {
   const [error,setError]=useState(false);
   const [email, setEmail] = useState("");
@@ -34,7 +34,7 @@ function LoginPage() {
   });
 
   };
-
+  //Resetting the forgotten password function
   const handlePasswordReset = () =>{
     
     const email = prompt("Please enter your email!")
@@ -57,11 +57,11 @@ function LoginPage() {
   return (
     <div>
     <div className="login-page">
-      {/* Picture Section */}
+      {/* Picture Section :Left */}
       <div className="left-section">
         <img src="./login-img.png" alt="Login" />
       </div>
-      {/* Login Form Section */}
+      {/* Login Form Section: Right */}
       <div className="right-section">
         <h2> Welcome to LexiLearn! </h2>
         <div className="login-form">

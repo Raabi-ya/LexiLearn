@@ -7,7 +7,9 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 function Footer() {
   return (
+    //Footer container
     <div className="footer">
+      {/*Navigation links to pages */}
       <nav className="footer-navbar">
         <ul className="footer-nav-links">
           <li><a href="/">Home</a></li>
@@ -16,6 +18,7 @@ function Footer() {
           <li><a href="/ContactUs">Contact Us</a></li>
         </ul>
       </nav>
+      {/*Social media icons */}
       <div className="social-icons">
         <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon icon={faFacebook} />

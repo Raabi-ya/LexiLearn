@@ -5,11 +5,9 @@
   padding: 20px;
   text-align: center;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
-
-
 }
 
-/* Footer navbar styles */
+/* Footer navbar styles to navigate among the pages */
 .footer-navbar {
   display: flex;
   justify-content: center;
@@ -17,7 +15,7 @@
 }
 
 .footer-nav-links {
-  list-style-type: none; /* Remove bullet points */
+  list-style-type: none; 
   margin: 0;
   padding: 0;
 }

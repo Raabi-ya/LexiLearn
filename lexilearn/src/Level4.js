@@ -285,8 +285,9 @@ const Level4Page = () => {
             <div className="l4-container">
                 <audio src={`${process.env.PUBLIC_URL}/level4-background-track.mp3`} autoPlay loop />
                 <img src="./Level 4 logo.png" alt="Level4Logo" className="l4-top-image-small" />
+                <h2>Help to fill in the missing word!</h2>
                 <div className="l4-image-container">
-                    <img src={currentQuestion.image} alt="Question Image" className="l4-question-image" />
+                    <img src={currentQuestion.image} alt="Question Hint" className="l4-question-image" />
                 </div>
                 <div className="l4-fill-in-the-blanks">
                     <h1>{currentQuestion.text}</h1>
