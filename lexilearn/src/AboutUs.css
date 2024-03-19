@@ -2,21 +2,21 @@
 .about-us-page {
   padding: 50px;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
-
-
   background-color: #FAF3DD;
 }
 
+/* Heading 1 styles*/
 .about-us-page h1 {
   text-align: center;
   font-size: 40px;
   color:black;
 }
 
+/* Section styles*/
 .section {
-  display: flex; /* Add display flex */
-  flex-direction: column; /* Set flex direction to column */
-  align-items: center; /* Center items horizontally */
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
   margin-bottom: 40px;
   border-radius: 15px;
   padding: 15px;
@@ -24,23 +24,27 @@
   transition: transform 0.3s ease;  
 }
 
+/* Image displaying container styles*/
 .image-div {
   height: 150px;
   width: 150px;
-  margin-bottom: 15px; /* Add margin bottom for spacing */
+  margin-bottom: 15px; 
 }
 
+/* Image styles */
 .image-div img {
   max-width: 100%;
   height: auto;
-  display: block; /* Ensure the image is a block element */
-  margin: 0 auto; /* Center the image horizontally */
+  display: block; 
+  margin: 0 auto; 
 }
 
+/* Section hover effects */
 .section:hover {
   transform: translateY(-10px); 
 }
 
+/* Title styles for section wise */
 .section-title {
   font-size: 24px;
   font-weight: bold;
@@ -48,11 +52,14 @@
   text-align: center;
 }
 
+/* Paragraph inside the section */
 .section-paragraph {
   font-size: 16px;
   line-height: 1.5;
   color:black;
 }
+
+/* Whole about us page rendering div */
 .about-us-page div {
   margin: 0;
   padding: 0;

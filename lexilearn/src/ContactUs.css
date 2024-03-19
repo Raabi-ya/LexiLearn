@@ -1,3 +1,4 @@
+/* Contact us page css styles*/
 .contactUs {
   display: flex;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -6,10 +7,7 @@
   padding-bottom: 50px;
 }
 
-.image-left {
-  flex: 1;
-}
-
+/*Form to the right*/
 .form-right {
   flex: 1;
   display: flex;
@@ -18,29 +16,34 @@
   margin-left: 20px; /* Add margin between image and form */
 }
 
+/*Headin 2 styles*/
 .contactUs h2 {
   text-align: center; /* Center the heading */
 }
 
+/*Contact us form labels*/
 .contactUs label {
   margin-bottom: 8px;
 }
 
+/* Contact us form inputs and text areas*/
 .contactForm input,
 .contactForm textarea {
   width: 90%;
   padding: 8px;
   margin-bottom: 16px;
-  border: 1px solid royalblue; /* Add style and color */
+  border: 1px solid royalblue; 
   border-radius: 20px;
 }
 
+/* Contact form displaying div*/
 .contact {
   background-color: burlywood;
-  border: 1px solid #ccc; /* Add border to the form */
+  border: 1px solid #ccc; 
   border-radius: 20px;
 }
 
+/* Contact us button */
 .contactUs button {
   background-color: blue;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -52,24 +55,29 @@
   margin: 0 auto;
 }
 
+/* Button hover styles*/
 .contactUs button:hover {
   background-color: royalblue;
 }
 
+/* Text inside the div centering */
 .contactUs .contactImage {
   text-align: center;
 }
 
+/* Image soze styles */
 .contactUs .contactImage img {
   max-width: 100%;
   height: auto;
 }
 
+/* Div size adjusting */
 .contactUs .contactForm {
   width: 600px;
   margin-left: 20px;
 }
 
+/* Contact form textarea height adjusting */
 .contactForm textarea {
-  height: 150px; /* Adjust the height as needed */
+  height: 150px; 
 }

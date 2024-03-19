@@ -6,8 +6,10 @@ import Footer from './Footer';
 const AboutUsPage = () => {
   return (
     <div>
+      {/*Whole page rendering component */}
     <div className="about-us-page">
       <h1>About Us</h1>
+      
       <section className="section">
         <h2 className="section-title">Our Story</h2>
         <div className='image-div'>
@@ -30,6 +32,7 @@ const AboutUsPage = () => {
           where we aim to address the main obstacle faced by dyslexic children: reading difficulties. 
         </p>
       </section>
+
       <section className="section">
         <h2 className="section-title">Our Mission</h2>
         <div className='image-div'>

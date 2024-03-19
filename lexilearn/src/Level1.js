@@ -29,6 +29,7 @@ const Questions = [
   { question: 'he __', answer: 'n', image: 'hen.gif'},  //Test n:hen
 ];
 
+//Level1 component
 const Level1Page = () => {
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -82,7 +83,14 @@ const Level1Page = () => {
   }, []);
 
   const shuffleArray = array => {
-      // Fisher-Yates shuffle algorithm
+      /* Fisher-Yates shuffle algorithm : Knuth shuffle
+      /* It shuffles the elements of an array in place, meaning it modifies the original array rather than creating a new one.
+      how the function works: it takes an array as input and iterates over the array in reverse order, 
+      starting from the last element (index array.length - 1) and going backward until the first element (index 0). 
+      For each element at index i, it generates a random index j such that j is between 0 (inclusive) and i + 1 (exclusive). 
+      It then swaps the elements at indices i and j. This is done by using array destructuring assignment, which allows swapping two elements without needing a temporary variable. 
+      It continues this process until it has iterated through all elements of the array. Finally, it returns the shuffled array. The Fisher-Yates shuffle algorithm ensures that every permutation of the array has an equal probability of occurring, making it an efficient and unbiased way to shuffle arrays.
+      */
       for (let i = array.length - 1; i > 0; i--) {
           const j = Math.floor(Math.random() * (i + 1));
           [array[i], array[j]] = [array[j], array[i]];
@@ -90,10 +98,12 @@ const Level1Page = () => {
       return array;
   };
 
+  //Handling the user input
   const handleUserInput = (event) => {
       setUserAnswer(event.target.value);
   };
 
+  //Handling the next click
   const handleNextClick = () => {
     const correctAnswer = questions[currentQuestionIndex].answer; // Use 'answer' property
     if (userAnswer.toLowerCase() === correctAnswer || userAnswer.toUpperCase() === correctAnswer) {
@@ -103,18 +113,19 @@ const Level1Page = () => {
     setCurrentQuestionIndex(prevIndex => prevIndex + 1);
 };
 
-
+  //Handling the back click
   const handleBackClick = () => {
       setCurrentQuestionIndex(prevIndex => prevIndex - 1);
   };
 
+  // Feedback audio button click
   const handleFeedbackAudioClick = () => {
       // If feedback audio exists, play it
       if (feedbackAudio) {
           feedbackAudio.play();
       }
   };
-
+  //Saving the score to firestore database:level1-scores
   const saveScoreToFirestore = async () => {
       const user = auth.currentUser;
 
@@ -149,7 +160,7 @@ const Level1Page = () => {
   if (questions.length === 0) {
       return <div>Loading...</div>;
   }
-
+  //Feedbcak rendering function after finishing the quiz
   const currentQuestion = questions[currentQuestionIndex];
   let fbImage;
 
@@ -169,6 +180,7 @@ const Level1Page = () => {
 
       return (
           <div>
+            {/*Feedback rendering div*/}
               <div className="l1-game-over-container">
                   <h1>{username},</h1>
                   <h2>Your score: {score} / 5</h2>
@@ -190,12 +202,13 @@ const Level1Page = () => {
 
   return (
       <div>
+        {/* Quiz rendering div */}
           <div className="l1-container">
               <audio src={`${process.env.PUBLIC_URL}/level1-background-track.mp3`} autoPlay loop />
               <img src="./level1.png" alt="Level 1 Logo" className="l1-top-image-small" />
               <h2>Help to fill in the missing letters!</h2>
               <div className="l1-image-container">
-                  <img src={currentQuestion.image} alt="Question Image" className="l1-question-image" />
+                  <img src={currentQuestion.image} alt="Question Hint" className="l1-question-image" />
               </div>
               <div className="l1-fill-in-the-blanks">
                   <h1>{currentQuestion.question}</h1>
