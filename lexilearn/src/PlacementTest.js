@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './PlacementTest.css';
 import {Link} from "react-router-dom";
+
 
 const PlacementTest = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -9,6 +10,19 @@ const PlacementTest = () => {
   const [level, setLevel] = useState('');
   const [answered, setAnswered] = useState(false); // State to track if the question has been answered
   const [levelLink,setlevelLink]=useState("/Level1");
+
+  useEffect(() => {
+    // Load background music when the component mounts
+    const audio = new Audio('/pre test backgroud track.mp3');
+    audio.loop = true; // Loop the background music
+    audio.play();
+     // Clean up function to stop music when the component unmounts
+     return () => {
+      audio.pause();
+      audio.currentTime = 0;
+    };
+  }, []); // Empty dependency array ensures this effect runs only once when the component mounts
+
 
   const questions = [
     {
