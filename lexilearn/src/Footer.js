@@ -20,7 +20,7 @@ function Footer() {
         <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon icon={faFacebook} />
         </a>
-        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.instagram.com/lexi_learn_?igsh=MWE2eXQ1eDVhZjc5ZA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon icon={faInstagram} />
         </a>
         <a href="mailto:youremail@example.com">
