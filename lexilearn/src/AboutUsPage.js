@@ -1,7 +1,7 @@
 // AboutUsPage.js
 import React from 'react';
 import './AboutUs.css';
-import Footer from './Footer';
+
 
 const AboutUsPage = () => {
   return (
@@ -56,7 +56,7 @@ const AboutUsPage = () => {
         </p>
       </section>
     </div>
-    <div> < Footer /> </div>
+    
     </div>
   );
 };

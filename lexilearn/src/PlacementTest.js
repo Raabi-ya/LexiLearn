@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './PlacementTest.css';
-import Footer from'./Footer';
+import {Link} from "react-router-dom";
 
 const PlacementTest = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -8,6 +8,7 @@ const PlacementTest = () => {
   const [quizCompleted, setQuizCompleted] = useState(false);
   const [level, setLevel] = useState('');
   const [answered, setAnswered] = useState(false); // State to track if the question has been answered
+  const [levelLink,setlevelLink]=useState("/Level1");
 
   const questions = [
     {
@@ -64,8 +65,10 @@ const PlacementTest = () => {
   const determineLevel = () => {
     if (score <= 2) {
       setLevel('Level 1');
+      setlevelLink('/Level1');
     } else {
       setLevel('Level 2');
+      setlevelLink('/Level2');
     }
   };
 
@@ -75,10 +78,10 @@ const PlacementTest = () => {
   /*};*/
 
   return (
-    <div>
-    <div className='pretest'>
+     <div className='pretest'>
     <div className ="image-pretest" >
       <img src="./pretest.png" alt='pretest logo'/>
+      </div>
       {!quizCompleted && (
         <div className="pre-quiz-container" >
           <h2>Choose the correct Answer!</h2>
@@ -87,15 +90,15 @@ const PlacementTest = () => {
               <img src={questions[currentQuestion].imagehint} alt={`hint for question ${currentQuestion + 1}`} />
             )}
           </div>
-          <ul className="pre-vertical-options">
+          <div className="pre-vertical-options">
             {questions[currentQuestion].options.map((option, index) => (
-              <li key={index}>
+              <a key={index}>
                 <div className="answer-pretest-button">
                   <button onClick={() => handleAnswer(option)}>{option} </button>
                 </div>
-              </li>
+              </a>
             ))}
-          </ul>
+          </div>
           <div className="pretest-next-button">
             <button onClick={prevQuestion} disabled={currentQuestion === 0}>Back ← </button>
             <button onClick={nextQuestion} disabled={!answered}>Next →</button>
@@ -104,19 +107,21 @@ const PlacementTest = () => {
       )}
 
       {quizCompleted && (
-        <div className="quiz-quit ">
+        <div className="pre-quiz-quit ">
           <p>Quiz completed! Your score is {score} out of {questions.length}</p>
           <p>Suggested Level: </p>
           <div>
-            <button>{level} </button>
-            <button>Select Level</button>
+            <Link to={levelLink} ><button>{level} </button></Link>
+            
+            
+           <Link to="/SelectLevelsPage"><button>Select Level</button></Link>
           </div>
         </div>
       )}
+    
     </div>
-    </div>
-    <div><Footer /></div>
-    </div>
+  
+  
   );
 };
 

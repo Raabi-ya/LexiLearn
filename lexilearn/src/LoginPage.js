@@ -4,7 +4,7 @@ import { faUser, faLock } from '@fortawesome/free-solid-svg-icons';
 import { sendPasswordResetEmail, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from './firebase';
 import { useNavigate } from 'react-router-dom';
-import Footer from './Footer';
+
 import './Login.css'; // Import CSS for styling
 import { AuthContext } from './context/AuthContext';
 
@@ -99,7 +99,7 @@ function LoginPage() {
         </div>
       </div>
     </div>
-    <div>< Footer /></div>
+    
     </div>
   );
 }

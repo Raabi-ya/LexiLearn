@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { getDoc, doc, serverTimestamp, setDoc, updateDoc } from "firebase/firestore";
 import { db, auth } from './firebase';
 import "./Level3.css"
-import Footer from './Footer';
+
 
 const QuestionBank = [
   {
@@ -272,7 +272,7 @@ const Level3 = () => {
           </div>
         )}
       </div>
-      <div><Footer /></div>
+    
     </div>
   );
 };

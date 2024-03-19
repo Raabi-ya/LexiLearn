@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import './SelectLevelsPage.css';
-import Footer from './Footer';
+
 
 function SelectLevelsPage() {
   const [backgroundImage] = useState([
@@ -80,7 +80,7 @@ function SelectLevelsPage() {
           </div>
         </header>
       </div>
-      <Footer />
+      
     </div>
   );
 }

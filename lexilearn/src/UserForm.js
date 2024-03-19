@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useContext } from "react";
-import Footer from "./Footer";
 import "./UserForm.css"; // Import CSS file
 import { doc, getDoc, setDoc, serverTimestamp, deleteDoc } from "firebase/firestore";
 import { db, auth } from "./firebase";
@@ -256,9 +255,7 @@ const UserForm = () => {
           </div>
         </div>
       </div>
-      <div>
-        <Footer />
-      </div>
+      
     </div>
   );
 };
