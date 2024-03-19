@@ -9,15 +9,17 @@ function Navbar() {
   const [openLinks, setOpenLinks] = useState(false);
   const { currentUser, dispatch } = useContext(AuthContext);
   const { navigate } = useNavigate();
-
+  
+  //Toggle a=bar function
   const toggleNavbar = () => {
     setOpenLinks(!openLinks);
   };
 
+  //Handling the sign out function
   const handleSignOut = () => {
     auth.signOut().then(() => {
-      dispatch({ type: "LOGOUT" }); // Assuming you have a "LOGOUT" action in your reducer
-      navigate("/login"); // Redirect to login page or any other appropriate route
+      dispatch({ type: "LOGOUT" }); 
+      navigate("/login"); 
     }).catch((error) => {
       console.error('Error signing out:', error);
     });
@@ -26,32 +28,21 @@ function Navbar() {
   return (
     <div className={`navbar ${openLinks ? "open" : "close"}`}>
       <div className="leftSide">
+        {/* Toggle button */}
         <button className="toggleButton" onClick={toggleNavbar}>
           ☰
         </button>
         <img src="/lexiLearnLogo.png" alt="Logo" />
+        {/* Navigating to the pages */}
         <div className="hiddenLinks">
           <Link to="/">Home</Link>
           <Link to="/SelectLevelsPage">Levels</Link>
           <Link to="/UserForm">User Profile</Link>
           <Link to="/AboutUsPage">Progress</Link>
-          {/*<Link to="/LoginPage">Sign In</Link>*/}
-          {/*{currentUser ? (
-          <span>Welcome, {username}</span>
-          
-        ) : (
-          <Link to="/LoginPage">Login</Link>
-        )}*/}
-
+          {/* Display the welcome message and the email of the user after logging in */}
           {currentUser && <span>Welcome, {currentUser.email}</span>}
           {currentUser && <Link to="#" onClick={handleSignOut}>Sign Out</Link>}
           {!currentUser && <Link to="/LoginPage">Login</Link>}
-
-          {/*<Link to="/Signup">Sign Up</Link>*/}
-
-          {/* Conditionally render Sign Up link based on the user's login status */}
-          {/*{!currentUser && <Link to="/Signup">Sign Up</Link>}*/}
-          {/*<Link to="#" onClick={handleSignOut}>Sign Out</Link>*/}
         </div>
       </div>
       <div className="rightSide">
@@ -59,22 +50,10 @@ function Navbar() {
         <Link to="/SelectLevelsPage">Levels</Link>
         <Link to="/UserForm">User Profile</Link>
         <Link to="/AboutUsPage">Progress</Link>
-        {/*<Link to="/LoginPage">Sign In</Link>*/}
-        {/*{currentUser ? (
-          <span>Welcome, {username}</span>
-        ) : (
-          <Link to="/LoginPage">Login</Link>
-        )}*/}
-
+        {/* Display the welcome message and the email of the user after logging in */}
         {currentUser && <span>Welcome, {currentUser.email}</span>}
         {currentUser && <Link to="#" onClick={handleSignOut}>Sign Out</Link>}
         {!currentUser && <Link to="/LoginPage">Login</Link>}
-
-        {/*<Link to="/Signup">Sign Up</Link>*/}
-
-        {/* Conditionally render Sign Up link based on the user's login status */}
-        {/*{!currentUser && <Link to="/Signup">Sign Up</Link>}*/}
-        {/*<Link to="#" onClick={handleSignOut}>Sign Out</Link>*/}
       </div>
     </div>
   );

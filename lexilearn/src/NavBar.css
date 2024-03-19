@@ -1,3 +1,4 @@
+/* Nav bar css*/
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -8,47 +9,53 @@
     font-family:Verdana, Geneva, Tahoma, sans-serif;
   }
   
+  /*Left sude nav bar styles*/
   .navbar .leftSide {
     display: flex;
     align-items: center;
   }
   
+  /* Displaying the welcome and the email of the user */
   .navbar span{
     margin-left: 20px;
     color:burlywood;
     text-decoration: none;
   }
 
+  /* Links to the pages */
   .navbar .hiddenLinks {
     display: flex;
     flex-direction: column;
     position: absolute;
     top: 60px;
     left: 0;
-    background-color:darkcyan; /* Light blue background color */
+    background-color:darkcyan; 
     width: 100%;
     padding: 10px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   }
   
+  /* Nav bar hidden links anchor tag */
   .navbar .hiddenLinks a {
-    color: #fff; /* White text color for links */
+    color: #fff; 
     text-decoration: none;
     margin-bottom: 10px;
   }
   
+  /* Nav bar hidden links right side */
   .navbar .rightSide a {
-    color: #fff; /* White text color for links */
+    color: #fff; 
     text-decoration: none;
     margin-left: 20px;
   }
   
+  /* Nav bar buttons */
   .navbar button {
     background-color: transparent;
     border: none;
     cursor: pointer;
     outline: none;
-    color: #fff; /* White text color for button */
+    color: #fff; 
   }
 
   /* Display the hiddenLinks when the navbar has the 'open' class */
@@ -56,19 +63,21 @@
     display: flex;
   }
 
+/* Closing the navbar hidden links */
 .navbar.close .hiddenLinks {
   display: none;
 }
-  
+
+/* Leftside image */
 .navbar .leftSide img {
-  width: 100px; /* Adjust the width as needed */
-  height: auto; /* Maintain aspect ratio */
+  width: 100px; 
+  height: auto; 
 }
 
+/* Toggle button */
 .navbar .toggleButton button {
   display: flex;
   justify-content: center; 
-  /*margin-top: 20px;*/ /* Added margin to separate the buttons from the form */
   color: black;
 }
   

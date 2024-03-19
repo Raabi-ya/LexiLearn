@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import "./ContactUs.css";
 import Footer from "./Footer"; 
 
+//Handling the user inputs
 const ContactUs = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -10,6 +11,7 @@ const ContactUs = () => {
     message: '',
   });
 
+  //Handling the change : user inputs
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -18,6 +20,7 @@ const ContactUs = () => {
     });
   };
 
+  //Handling the email click button
   const handleEmailClick = () => {
     const { name, email, subject, message } = formData;
     const mailtoLink = `mailto:hiranya.20220472@iit.ac.lk?subject=${encodeURIComponent(
@@ -35,6 +38,7 @@ const ContactUs = () => {
       </div>
       <div className='contact'>
         <h2>Contact Us</h2>
+        {/* Contact us form */}
         <form className='contactForm'>
           <label>
             Name:
@@ -70,6 +74,7 @@ const ContactUs = () => {
         </label>
         <br />
         <label>
+          {/* Calling the handleClick function */}
           Message :
           <textarea
             name="message"
@@ -80,6 +85,7 @@ const ContactUs = () => {
         </label>
         <br />
         <br />
+        {/*Calling the handleEmailClick function */}
         <button type="button" onClick={handleEmailClick}>
           Submit via Email
         </button>
@@ -87,7 +93,7 @@ const ContactUs = () => {
     </div>
     </div>
     <div>
-        <Footer />
+      <Footer />
     </div>
     </div>
   );

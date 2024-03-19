@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom'; // Use Routes instead of Switch
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom'; 
 import Home from './Home';
 import AboutUsPage from './AboutUsPage';
 import UserForm from './UserForm';
@@ -18,16 +18,16 @@ import PlacementTest from './PlacementTest';
 
 function App() {
 
+  //Function to display certain pages to the user only after logging in
   const {currentUser} = useContext(AuthContext);
 
   const RequireAuth = ({children}) => {
-    console.log(currentUser); // Add this line for debugging
+    console.log(currentUser); 
     return currentUser ? children : <Navigate to="/LoginPage" />;
   };
 
-  
-
   return (
+    //Setting router paths for pages
     <Router>
       <div className="App">
         <Navbar />
