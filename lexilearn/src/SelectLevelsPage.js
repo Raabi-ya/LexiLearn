@@ -27,11 +27,24 @@ function SelectLevelsPage() {
     './ralphpath.jpg',
     './garfieldpath.jpg',
     './animebridgepath.jpg'] );
-  const [currentBackgroundIndex, setCurrentBackgroundIndex] = useState(0);
+    
+  /*const [currentBackgroundIndex, setCurrentBackgroundIndex] = useState(0);
 
   const handleBackgroundChange = () => {
     setCurrentBackgroundIndex((prevIndex) => (prevIndex + 1) % backgroundImage.length);
     
+  };*/
+
+   // Retrieve the selected background index from session storage, default to 0 if not found
+   const [currentBackgroundIndex, setCurrentBackgroundIndex] = useState(
+    parseInt(sessionStorage.getItem('selectedBackgroundIndex')) || 0
+  );
+
+  const handleBackgroundChange = () => {
+    const newIndex = (currentBackgroundIndex + 1) % backgroundImage.length;
+    setCurrentBackgroundIndex(newIndex);
+    // Store the selected background index in session storage
+    sessionStorage.setItem('selectedBackgroundIndex', newIndex.toString());
   };
 
   const backgroundStyle = {
@@ -74,3 +87,4 @@ function SelectLevelsPage() {
 
 
 export default SelectLevelsPage;
+ 
