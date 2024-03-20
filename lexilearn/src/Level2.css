@@ -170,7 +170,7 @@
     /*right: 750px; *//* Adjust as needed */
   }
 
-  .l2-level-selection{
+  .l2-level-selection:hover{
     background-color: royalblue;
   }
 
@@ -190,7 +190,7 @@
    /* right: 625px; *//* Adjust as needed */
   }
 
-  .l2-level-selection2{
+  .l2-level-selection2:hover{
     background-color: royalblue;
   }
 
