@@ -112,11 +112,6 @@
   transform: rotate(-135deg); /* Rotate the line to connect circles */
 } 
 
-/*.circle:nth-child(1):hover {
-  background-color: #da8385;
-  color: white;
-}*/
-
 .circle:nth-child(2) {
   top: 1230px;
   left: 350px;
@@ -131,12 +126,7 @@
   transform: rotate(-135deg); /* Rotate the line to connect circles */  
 } 
 
-/*.circle:nth-child(2):hover {
-  background-color: #a398c5;
-  color: white;
-  border: #9471ff;
-}
-*/
+
 .circle:nth-child(3) {
   top: 1020px;
   left: 600px;
@@ -149,12 +139,6 @@
   left: -100px;
   transform: rotate(135deg); /* Rotate the line to connect circles */
 }
-
-/*.circle:nth-child(3):hover {
-  background-color: #d4cf49;
-  border: #fff502;
-  color: white;
-}*/
 
 .circle:nth-child(4) {
   top: 1025px;
@@ -169,14 +153,6 @@
   transform: rotate(135deg); /* Rotate the line to connect circles */
 }
 
-/*.circle:nth-child(4):hover {
-  animation: pulse 2s infinite;*/ /* Run the animation continuously */
-  /*transform: rotate(-360deg);*/ /* Spin the circle on hover */
-  /*ackground-color: #73a867;
-  border: #3ea926;
-  color: white;*/
-/*}*/
-  
 .homeImageContainer {
   width: 40%;
   padding: 20px;

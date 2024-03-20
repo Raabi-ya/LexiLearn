@@ -17,8 +17,11 @@
     padding: 10px; /* Padding */
     cursor: pointer; /* Cursor style */
     transition: background-color 0.3s, color 0.3s; /* Transition effect */
+    position: fixed; /* Position the button relative to the browser window */
     bottom: 70px; /* Adjust as needed */
     right: 700px; /* Adjust as needed */
+    /*margin-top: 0px;
+    margin: 0 auto;*/
 }
 
 .l3-audio-button:hover{
@@ -53,7 +56,8 @@
     font-size: 14px;
     transition: background-color 0.3s ease; 
     margin: 0 auto;
-    margin-bottom: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
   
   .l3-level-selection:hover{
