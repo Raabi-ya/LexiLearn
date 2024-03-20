@@ -31,6 +31,8 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 10px;
+  width: 300px;
+  height: 300px;
 }
 
 .l3-mainque {
@@ -108,7 +110,7 @@
   border: none;
   padding: 10px 20px;
   cursor: pointer;
-  margin-right: 10px;
+  margin-right: 500px;
   margin-bottom: 50px;
   border-radius: 20px;
 }
@@ -120,4 +122,8 @@ button:disabled {
 
 button:hover {
   background-color:royalblue;
+}
+
+.next button{
+  margin-right: 400px;
 }

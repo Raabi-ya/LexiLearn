@@ -1,0 +1,79 @@
+.l3-feedback{
+    text-align: center;
+}
+
+.l3-feedback h2{
+    color: #333;
+}
+
+.l3-feedback h2{
+    color: rgb(137, 79, 79);
+}
+
+.l3-audio-button {
+    background-color: rgb(196, 241, 106); /* Background color */
+    border: 2px solid white; /* Border color */
+    border-radius: 50%; /* Make it round */
+    padding: 10px; /* Padding */
+    cursor: pointer; /* Cursor style */
+    transition: background-color 0.3s, color 0.3s; /* Transition effect */
+    bottom: 70px; /* Adjust as needed */
+    right: 700px; /* Adjust as needed */
+}
+
+.l3-audio-button:hover{
+    background-color: yellowgreen; /* Darker background color on hover */
+    color: #ffffff; /* White text on hover */
+}
+
+.l3-audio-button img{
+    width: 50px; /* Adjust the width of the PNG icon */
+    height: 50px; /* Adjust the height of the PNG icon */
+}
+
+.l3-fb-img{
+    height: 600px;
+    width: 600px;
+    margin: 0 auto;
+}
+
+.l3-fb-img img{
+    height: auto;
+    max-width: 100%;
+}
+
+.l3-level-selection{
+    background-color: blue;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease; 
+    margin: 0 auto;
+    margin-bottom: 100px;
+  }
+  
+  .l3-level-selection:hover{
+    background-color: royalblue;
+  }
+
+.l3-level-selection2{
+    background-color: blue;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease; 
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+  
+  .l3-level-selection2:hover{
+    background-color: royalblue;
+  }

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { getDoc, doc, serverTimestamp, setDoc, updateDoc } from "firebase/firestore";
 import { db, auth } from './firebase';
 import "./Level3.css"
+import { Link } from 'react-router-dom';
 
 
 const QuestionBank = [
@@ -217,7 +218,7 @@ const Level3 = () => {
     setCurrentQuestionIndex(prevIndex => prevIndex - 1);
   };
 
-  const finishQuiz = async () => {
+  /*const finishQuiz = async () => {
     setFinished(true);
 
     const user = auth.currentUser;
@@ -248,7 +249,46 @@ const Level3 = () => {
         timeStamp: serverTimestamp(),
       })
     ]);
+  };*/
+
+  const finishQuiz = async () => {
+    setFinished(true);
+  
+    const user = auth.currentUser;
+  
+    if (!user) {
+      console.error("User not authenticated.");
+      return;
+    }
+  
+    const attemptDocRef = doc(db, "users", user.uid);
+    const attemptDocSnap = await getDoc(attemptDocRef);
+  
+    let currentAttempt = 1;
+    if (attemptDocSnap.exists()) {
+      const data = attemptDocSnap.data();
+      if (data && typeof data.level3_attempt === 'number' && !isNaN(data.level3_attempt)) {
+        currentAttempt = data.level3_attempt + 1;
+      } else {
+        currentAttempt = 1;
+      }
+    }
+  
+    // Update session storage with the current score
+    const sessionScores = JSON.parse(sessionStorage.getItem('level3Scores')) || [];
+    sessionScores.push(score);
+    sessionStorage.setItem('level3Scores', JSON.stringify(sessionScores));
+  
+    await Promise.all([
+      updateDoc(attemptDocRef, { level3_attempt: currentAttempt }),
+      setDoc(doc(db, `level3-scores/${user.uid}_${currentAttempt}`), {
+        attempt: currentAttempt,
+        score: score,
+        timeStamp: serverTimestamp(),
+      })
+    ]);
   };
+  
 
   return (
     <div>
@@ -262,11 +302,13 @@ const Level3 = () => {
               <button onClick={goToPreviousQuestion} disabled={currentQuestionIndex === 0 || finished}>
                 ← Previous
               </button>
-              <button onClick={goToNextQuestion} disabled={currentQuestionIndex === 9 || finished}>
+              <button className="next" onClick={goToNextQuestion} disabled={currentQuestionIndex === 9 || finished}>
                 Next →
               </button>
               {currentQuestionIndex === 9 && (
+                <Link to="/FeedbackLevel3">
                 <button onClick={finishQuiz}>Finish</button>
+                </Link>
               )}
             </div>
           </div>
