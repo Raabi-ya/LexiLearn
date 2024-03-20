@@ -168,14 +168,14 @@ const Level1Page = () => {
       saveScoreToFirestore();
       let feedback = '';
       if (score === questions.length) {
-          feedback = 'Perfect! You answered all questions correctly!';
+          feedback = 'Perfect! You answered all questions correctly! Move to Level 2';
           fbImage = './feedback1.gif'
       } else if (score >= questions.length / 2) {
           feedback = 'Good job! You got most of the questions right!';
-          fbImage = './feedback1.gif'
+          fbImage = './feedback2.gif'
       } else {
           feedback = 'Keep practicing! You can do better!';
-          fbImage = './feedback1.gif'
+          fbImage = './feedback3.gif'
       }
 
       return (

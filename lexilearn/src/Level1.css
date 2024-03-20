@@ -133,13 +133,14 @@ body {
   cursor: pointer;
   font-size: 14px;
   transition: background-color 0.3s ease;
-  position: fixed; /* Position the button relative to the browser window */
-  bottom: 20px; /* Adjust as needed */
-  right: 750px; /* Adjust as needed */
+  margin-top: -300px; 
+  margin-left: 0px; 
+  margin-bottom: 20px;
+  margin-right: 10px;
 }
 
 /* Select Level button and the Level 2 button hover styles */
-.l1-level-selection{
+.l1-level-selection:hover{
   background-color: royalblue;
 }
 
@@ -178,11 +179,9 @@ body {
   cursor: pointer;
   font-size: 14px;
   transition: background-color 0.3s ease;
-  position: fixed; 
-  bottom: 20px; 
-  right: 625px;
+  margin-left: 10px;
 }
 
-.l1-level-selection2{
+.l1-level-selection2:hover{
   background-color: royalblue;
 }
