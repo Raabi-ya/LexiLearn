@@ -73,9 +73,10 @@
     padding: 10px; /* Padding */
     cursor: pointer; /* Cursor style */
     transition: background-color 0.3s, color 0.3s; /* Transition effect */
-    position: fixed; /* Position the button relative to the browser window */
-    bottom: 70px; /* Adjust as needed */
-    right: 700px; /* Adjust as needed */
+    margin: 0 auto;
+    position: fixed;
+    bottom: 150px;
+    right: 700px;
   }
   
   .feedback-button-l4:hover {
@@ -98,9 +99,9 @@
     cursor: pointer;
     font-size: 14px;
     transition: background-color 0.3s ease;
-    position: fixed; /* Position the button relative to the browser window */
-    bottom: 20px; /* Adjust as needed */
-    right: 670px; /* Adjust as needed */
+    position: fixed;
+    bottom: 150px;
+    right: 100px;
   }
 
   .l4-level-selection{
@@ -121,8 +122,8 @@
   }
 
   .l4-feedback-img{
-    height: 600px;
-    width: 600px;
+    height: 400px;
+    width: 400px;
     margin: 0 auto;
   }
 
