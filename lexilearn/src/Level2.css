@@ -118,6 +118,7 @@
   .l2-game-over-container .feedback {
     font-style: italic;
   }
+
   .l2-dropdownbox {
     background-color: rgb(62, 62, 185);
     border-radius: 20px;
@@ -133,8 +134,9 @@
     padding: 10px; /* Padding */
     cursor: pointer; /* Cursor style */
     transition: background-color 0.3s, color 0.3s; /* Transition effect */
+    margin-bottom: 50px;
     position: fixed; /* Position the button relative to the browser window */
-    bottom: 70px; /* Adjust as needed */
+    bottom: 110px; /* Adjust as needed */
     right: 700px; /* Adjust as needed */
   }
   
@@ -158,9 +160,14 @@
     cursor: pointer;
     font-size: 14px;
     transition: background-color 0.3s ease;
-    position: fixed; /* Position the button relative to the browser window */
-    bottom: 20px; /* Adjust as needed */
-    right: 750px; /* Adjust as needed */
+    margin-bottom: 100px; 
+    margin: 0 auto;
+    margin-left: 0px; 
+    margin-bottom: 20px;
+    margin-right: 10px;
+    /*position: fixed;*/ /* Position the button relative to the browser window */
+    /*bottom: 20px; *//* Adjust as needed */
+    /*right: 750px; *//* Adjust as needed */
   }
 
   .l2-level-selection{
@@ -177,13 +184,27 @@
     cursor: pointer;
     font-size: 14px;
     transition: background-color 0.3s ease;
-    position: fixed; /* Position the button relative to the browser window */
-    bottom: 20px; /* Adjust as needed */
-    right: 625px; /* Adjust as needed */
+
+   /* position: fixed; *//* Position the button relative to the browser window */
+    /*bottom: 20px;*/ /* Adjust as needed */
+   /* right: 625px; *//* Adjust as needed */
   }
 
   .l2-level-selection2{
     background-color: royalblue;
+  }
+
+  .l2-fb-img{
+    width: 300px;
+    height: 300px;
+    /*margin: 0 auto;*/
+    margin-left: 250px;
+    margin-bottom: 50px;
+  }
+
+  .l2-fb-img img{
+    height: auto;
+    max-width: 100%;
   }
 
   

@@ -335,7 +335,7 @@ const Level2Page = () => {
         <h1>{username},</h1>
         <h2>Your score: {score} / 7</h2>
         <h1 className='l2-feedback'>{feedback}</h1>
-        <img src={fbImage} alt="FeedbackImage"/>
+        <img className='l2-fb-img' src={fbImage} alt="FeedbackImage"/>
         <button className='feedback-button-l2' onClick={handleFeedbackAudioClick}><img src="/speaker.png" alt='speaker'/></button>
         <Link to="/SelectLevelsPage">
         <button className='l2-level-selection'>Select Level</button>
