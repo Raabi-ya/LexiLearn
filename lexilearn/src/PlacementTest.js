@@ -10,8 +10,27 @@ const PlacementTest = () => {
   const [level, setLevel] = useState('');
   const [answered, setAnswered] = useState(false); // State to track if the question has been answered
   const [levelLink,setlevelLink]=useState("/Level1");
+  const [backgroundMusicPlaying, setBackgroundMusicPlaying] = useState(true);
 
-  const questions = [
+  
+  useEffect(() => {
+    if (quizCompleted) {
+      setBackgroundMusicPlaying(false);
+      const utterance = new SpeechSynthesisUtterance();
+      utterance.text = `Quiz done! you got ${score} out of ${questions.length} right! .`;
+      speechSynthesis.speak(utterance);
+    }
+  }, [quizCompleted, score]);
+
+  useEffect(() => {
+    if (level !== '') {
+      const utterance = new SpeechSynthesisUtterance();
+      utterance.text = `Suggested level ${level}.`;
+      speechSynthesis.speak(utterance);
+    }
+  }, [level]);
+
+ const questions = [
     {
       //question: "Choose the correct Answer!",
       options: ["b e d", "d e b", "d e d",],
@@ -74,12 +93,14 @@ const PlacementTest = () => {
   };
 return (
      <div className='pretest'>
-      <audio src={`${process.env.PUBLIC_URL}/pre test backgroud track.mp3`} autoPlay loop />
+     
     <div className ="image-pretest" >
       <img src="./pretest.png" alt='pretest logo'/>
       </div>
       {!quizCompleted && (
         <div className="pre-quiz-container" >
+         <audio src={`${process.env.PUBLIC_URL}/pre test backgroud track.mp3`} autoPlay loop />
+
           <h2>Choose the correct Answer!</h2>
           <div className="pre-quiz-image">
             {questions[currentQuestion].imagehint && (
@@ -104,8 +125,11 @@ return (
 
       {quizCompleted && (
         <div className="pre-quiz-quit ">
-          <p>Quiz completed! Your score is {score} out of {questions.length}</p>
-          <p>Suggested Level: </p>
+           <div className ="gif-pretest" >
+             <img src="/pretest.gif" alt='pretest gif'/>
+           </div>
+           <p>Quiz done! You got {score} out of {questions.length} right! </p>
+          <p> Suggested Level: </p>
           <div>
             <Link to={levelLink} ><button>{level} </button></Link>
             
@@ -113,6 +137,11 @@ return (
            <Link to="/SelectLevelsPage"><button>Select Level</button></Link>
           </div>
         </div>
+        
+        
+        
+        
+
       )}
     
     </div>

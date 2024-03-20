@@ -101,4 +101,13 @@ background-color: rgb(233, 15, 15);
   font-size: 17px;
   color: brown;
 }
+
+.gif-pretest img{
+  height: 250px;
+  width: 250px;
+  display:flex;
+  justify-content: center;
+  margin-left: 30px;
+
+}
   
