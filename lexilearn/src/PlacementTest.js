@@ -11,19 +11,6 @@ const PlacementTest = () => {
   const [answered, setAnswered] = useState(false); // State to track if the question has been answered
   const [levelLink,setlevelLink]=useState("/Level1");
 
-  useEffect(() => {
-    // Load background music when the component mounts
-    const audio = new Audio('/pre test backgroud track.mp3');
-    audio.loop = true; // Loop the background music
-    audio.play();
-     // Clean up function to stop music when the component unmounts
-     return () => {
-      audio.pause();
-      audio.currentTime = 0;
-    };
-  }, []); // Empty dependency array ensures this effect runs only once when the component mounts
-
-
   const questions = [
     {
       //question: "Choose the correct Answer!",
@@ -55,15 +42,15 @@ const PlacementTest = () => {
     if (selectedAnswer === questions[currentQuestion].correctAnswer) {
       setScore(score + 1);
     }
-    setAnswered(true); // Mark the question as answered
+    setAnswered(true); 
   };
 
   const nextQuestion = () => {
     if (answered && currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
-      setAnswered(false); // Reset answered status for the next question
+      setAnswered(false); 
     } else if (currentQuestion === questions.length - 1) {
-      // Quiz completed
+      
       setQuizCompleted(true);
       determineLevel();
     }
@@ -72,7 +59,7 @@ const PlacementTest = () => {
   const prevQuestion = () => {
     if (currentQuestion > 0) {
       setCurrentQuestion(currentQuestion - 1);
-      setAnswered(false); // Reset answered status when going back to the previous question
+      setAnswered(false); 
     }
   };
 
@@ -85,14 +72,9 @@ const PlacementTest = () => {
       setlevelLink('/Level2');
     }
   };
-
-  /*const quitQuiz = () => {
-    alert(`Quiz terminated. Your score is ${score} out of ${questions.length}`);*/
-    // You may choose to reset the quiz or redirect the user to another page
-  /*};*/
-
-  return (
+return (
      <div className='pretest'>
+      <audio src={`${process.env.PUBLIC_URL}/pre test backgroud track.mp3`} autoPlay loop />
     <div className ="image-pretest" >
       <img src="./pretest.png" alt='pretest logo'/>
       </div>
