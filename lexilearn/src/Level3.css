@@ -3,8 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  margin-top:50px;
+  margin-top:10px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -13,6 +12,7 @@
   width: 300px; 
   height: 300px;
   margin: 0 auto;
+  margin-bottom: -80px;
 }
 
 .l3-top-image img{
@@ -43,7 +43,7 @@
 .question {
   font-size: 20px;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 
@@ -53,7 +53,7 @@
   border: 2px dashed blue;
   padding: 5px;
   margin:0 auto;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   border-radius: 20px;
   cursor: pointer;
   display: flex;
@@ -100,7 +100,7 @@
 }.l3-buttons {
   display: flex;
   justify-content: center;
-  margin-top: 0px; /* Add margin to separate the buttons from the questions */
+  margin-top: 80px;
   margin-bottom: 50px;
 } 
 
@@ -110,7 +110,7 @@
   border: none;
   padding: 10px 20px;
   cursor: pointer;
-  margin-right: 500px;
+  margin-right: 10px;
   margin-bottom: 50px;
   border-radius: 20px;
 }
@@ -126,4 +126,8 @@ button:hover {
 
 .next button{
   margin-right: 400px;
+}
+
+.l3-question-container{
+  margin-top: 10px;
 }
