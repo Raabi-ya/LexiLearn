@@ -30,23 +30,23 @@ const PlacementTest = () => {
 
   const questions = [
     {
-      options: ["b e d", "d e b", "d e d"],
-      correctAnswer: "b e d",
+      options: ["bed", "deb", "ded"],
+      correctAnswer: "bed",
       imagehint: "bed.png"
     },
     {
-      options: ["g o d", "b o g", "d o g"],
-      correctAnswer: "d o g",
+      options: ["god", "bog", "dog"],
+      correctAnswer: "dog",
       imagehint: "dog.png"
     },
     {
-      options: ["b r i d", "b i r d", "d i r b"],
-      correctAnswer: "b i r d",
+      options: ["brid", "bird", "dirb"],
+      correctAnswer: "bird",
       imagehint: "Bird.png"
     },
     {
-      options: ["q u e e n", " p u e e n", " q n e e u"],
-      correctAnswer: "q u e e n",
+      options: ["queen", " pueen", " qneeu"],
+      correctAnswer: "queen",
       imagehint: "queen.png"
     }
   ];
@@ -84,7 +84,7 @@ const PlacementTest = () => {
   };
 
   return (
-    <div>
+    <div className='placement-test-container'>
     <div className='pretest'>
       <div className="image-pretest">
         <img src="./pretest.png" alt='pretest logo' />
