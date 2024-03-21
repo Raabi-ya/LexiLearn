@@ -100,8 +100,8 @@
     font-size: 14px;
     transition: background-color 0.3s ease;
     position: fixed;
-    bottom: 150px;
-    right: 100px;
+    bottom: 70px; /* Adjust as needed */
+    right: 675px; /* Adjust as needed */
   }
 
   .l4-level-selection{

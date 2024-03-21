@@ -105,8 +105,9 @@ body {
   padding: 10px; /* Padding */
   cursor: pointer; /* Cursor style */
   transition: background-color 0.3s, color 0.3s; /* Transition effect */
+  margin-bottom: 10px;
   position: fixed; /* Position the button relative to the browser window */
-  bottom: 70px; /* Adjust as needed */
+  bottom: 90px; /* Adjust as needed */
   right: 700px; /* Adjust as needed */
 }
 
@@ -133,10 +134,9 @@ body {
   cursor: pointer;
   font-size: 14px;
   transition: background-color 0.3s ease;
-  margin-top: -300px; 
-  margin-left: 0px; 
-  margin-bottom: 20px;
-  margin-right: 10px;
+  position: fixed; /* Position the button relative to the browser window */
+  bottom: 43px; /* Adjust as needed */
+  right: 750px; /* Adjust as needed */
 }
 
 /* Select Level button and the Level 2 button hover styles */
@@ -179,6 +179,9 @@ body {
   cursor: pointer;
   font-size: 14px;
   transition: background-color 0.3s ease;
+  position: fixed; /* Position the button relative to the browser window */
+  bottom: 5px; /* Adjust as needed */
+  right: 400px; /* Adjust as needed */
   margin-left: 10px;
 }
 
