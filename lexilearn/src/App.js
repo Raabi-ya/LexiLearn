@@ -14,9 +14,8 @@ import Level2 from './Level2';
 import Level3 from './Level3';
 import Level4 from './Level4';
 import PlacementTest from './PlacementTest';
-import Footer from './Footer';
 import FeedbackLevel3 from './FeedbackLevel3';
-import Progress from './Progress';
+//import Progress from './Progress';
 
 function App() {
 
@@ -59,11 +58,9 @@ function App() {
           <Route path="/Level4" element={<RequireAuth><Level4 /></RequireAuth>} />
           <Route path="/PlacementTest" element={<RequireAuth><PlacementTest /></RequireAuth>} />
           <Route path="/FeedbackLevel3" element={<RequireAuth><FeedbackLevel3 /></RequireAuth>} />
-          <Route path="/Progress" element={<RequireAuth><Progress /></RequireAuth>} />
+          {/*<Route path="/Progress" element={<RequireAuth><Progress /></RequireAuth>} />*/}
         </Routes>
       </div>
-      <div><Footer/></div>
-      
     </Router>
   );
 }

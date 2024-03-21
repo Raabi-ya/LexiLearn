@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getDoc, doc, serverTimestamp, setDoc, updateDoc } from "firebase/firestore";
 import "./Level1.css";
-
+import Footer from './Footer';
 import { db, auth } from './firebase';
 import {Link} from "react-router-dom";
 
@@ -234,7 +234,7 @@ const Level1Page = () => {
                   </div>
               </div>
           </div>
-          
+          <div><Footer/></div>
         </div>
     );
 };

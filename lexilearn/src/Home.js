@@ -1,5 +1,6 @@
 import React from "react";
 import "./Home.css";
+import Footer from "./Footer";
 import { Link } from "react-router-dom"; // Import Link from react-router-dom
 
 function Home() {
@@ -94,7 +95,7 @@ function Home() {
       </section>
       
     </div>
-    
+    <div className="homeFooter">< Footer /></div>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import "./ContactUs.css";
+import Footer from "./Footer"; 
 
 //Handling the user inputs
 const ContactUs = () => {
@@ -91,8 +92,8 @@ const ContactUs = () => {
       </form>
     </div>
     </div>
-    
-  </div>
+    <div> <Footer /> </div>
+    </div>
   );
 };
 

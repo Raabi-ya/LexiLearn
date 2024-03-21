@@ -3,6 +3,7 @@ import { getDoc, doc, serverTimestamp, setDoc, updateDoc } from "firebase/firest
 import { db, auth } from './firebase';
 import "./Level3.css"
 import { Link } from 'react-router-dom';
+import Footer from "./Footer"
 
 
 const QuestionBank = [
@@ -314,7 +315,7 @@ const Level3 = () => {
           </div>
         )}
       </div>
-    
+      <div><Footer /></div>
     </div>
   );
 };

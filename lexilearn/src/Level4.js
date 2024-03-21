@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Level4.css';
+import Footer from './Footer';
 import { getDoc, doc, serverTimestamp, setDoc, updateDoc } from "firebase/firestore";
 import { db, auth } from './firebase';
 import {Link} from "react-router-dom";
@@ -312,7 +313,7 @@ const Level4Page = () => {
                     </div>
                 </div>
             </div>
-            
+            <div><Footer /></div>
         </div>
     );
 };
