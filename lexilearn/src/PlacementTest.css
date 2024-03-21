@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .image-pretest{
@@ -60,13 +61,14 @@
 
 .answer-pretest-button button{
   background-color: coral;
-  border-radius: 25px;
-  padding: 10px 20px;
+  border-radius: 20px;
+  padding: 10px 15px;
   border: none;
-  font-size: 25px;
+  font-size: 20px;
+  margin-left: 20px;
 }
 .answer-pretest-button :hover{
-background-color: rgb(233, 15, 15);
+background-color:darkorange;
 }
 .pretest-next-button button{
   padding: 15px 20px;
@@ -78,7 +80,7 @@ background-color: rgb(233, 15, 15);
   margin-bottom: 50px;
   margin-right: 20px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 18px;
+  font-size: 16px;
 }
 .pretest-next-button :hover{
   background-color: royalblue ;
@@ -94,11 +96,11 @@ background-color: rgb(233, 15, 15);
   margin-bottom: 50px;
   margin-right: 20px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 18px;  
+  font-size: 16px;  
 }
 .pre-quiz-quit p{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 17px;
+  font-size: 18px;
   color: brown;
 }
 
@@ -110,4 +112,13 @@ background-color: rgb(233, 15, 15);
   margin-left: 30px;
 
 }
-  
+
+.pre-vertical-options li{
+  list-style: none;
+}
+footer-containing-div {
+  width: 100%; /* Ensure the footer container spans the full width */
+  position: fixed; /* Position the footer at the bottom */
+  bottom: 0; /* Align the footer to the bottom */
+  left: 0; /* Ensure the footer starts from the left edge */
+}

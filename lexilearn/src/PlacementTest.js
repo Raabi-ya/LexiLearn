@@ -15,7 +15,7 @@ const PlacementTest = () => {
     if (quizCompleted) {
       setBackgroundMusicPlaying(false);
       const utterance = new SpeechSynthesisUtterance();
-      utterance.text = `Quiz done! you got ${score} out of ${questions.length} right! .`;
+      utterance.text = `Well done! you got ${score} out of ${questions.length} right! .`;
       window.speechSynthesis.speak(utterance);
     }
   }, [quizCompleted, score]);
@@ -84,13 +84,14 @@ const PlacementTest = () => {
   };
 
   return (
+    <div>
     <div className='pretest'>
       <div className="image-pretest">
         <img src="./pretest.png" alt='pretest logo' />
         {!quizCompleted && (
           <div className="pre-quiz-container">
             <audio src={`${process.env.PUBLIC_URL}/pre test backgroud track.mp3`} autoPlay loop />
-            <h2>Choose the correct Answer!</h2>
+            <h2>Click on the correct Answer!</h2>
             <div className="pre-quiz-image">
               {questions[currentQuestion].imagehint && (
                 <img src={questions[currentQuestion].imagehint} alt={`hint for question ${currentQuestion + 1}`} />
@@ -109,6 +110,7 @@ const PlacementTest = () => {
               <button onClick={prevQuestion} disabled={currentQuestion === 0}>Back ←</button>
               <button onClick={nextQuestion} disabled={!answered}>Next →</button>
             </div>
+            <div className='footer-containing-div'><Footer/></div>
           </div>
         )}
 
@@ -117,7 +119,7 @@ const PlacementTest = () => {
             <div className="gif-pretest">
               <img src="/pretest.gif" alt='pretest gif' />
             </div>
-            <p>Quiz done! You got {score} out of {questions.length} right! </p>
+            <p>Well done! You got {score} out of {questions.length} right! </p>
             <p> Suggested Level: </p>
             <div>
               <button>{level}</button>
@@ -126,7 +128,7 @@ const PlacementTest = () => {
           </div>
         )}
       </div>
-      <Footer />
+    </div>
     </div>
   );
 };
