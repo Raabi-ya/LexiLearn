@@ -219,39 +219,6 @@ const Level3 = () => {
     setCurrentQuestionIndex(prevIndex => prevIndex - 1);
   };
 
-  /*const finishQuiz = async () => {
-    setFinished(true);
-
-    const user = auth.currentUser;
-
-    if (!user) {
-      console.error("User not authenticated.");
-      return;
-    }
-
-    const attemptDocRef = doc(db, "users", user.uid);
-    const attemptDocSnap = await getDoc(attemptDocRef);
-
-    let currentAttempt = 1;
-    if (attemptDocSnap.exists()) {
-      const data = attemptDocSnap.data();
-      if (data && typeof data.level3_attempt === 'number' && !isNaN(data.level3_attempt)) {
-        currentAttempt = data.level3_attempt + 1;
-      } else {
-        currentAttempt = 1;
-      }
-    }
-
-    await Promise.all([
-      updateDoc(attemptDocRef, { level3_attempt: currentAttempt }),
-      setDoc(doc(db, `level3-scores/${user.uid}_${currentAttempt}`), {
-        attempt: currentAttempt,
-        score: score,
-        timeStamp: serverTimestamp(),
-      })
-    ]);
-  };*/
-
   const finishQuiz = async () => {
     setFinished(true);
   

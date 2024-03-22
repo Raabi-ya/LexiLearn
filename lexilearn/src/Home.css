@@ -317,3 +317,17 @@
   right: 500px; /* Adjust the right position as needed */
   transform: translateY(-50%); /* Center vertically */
 }
+/* Welcome message styles for smaller screens */
+@media only screen and (max-width: 768px) {
+  .welcome-msg-home {
+    font-size: 30px;
+  }
+}
+/* Circle styles for smaller screens */
+@media only screen and (max-width: 768px) {
+  .circle {
+    width: 100px;
+    height: 100px;
+    font-size: 14px;
+  }
+}

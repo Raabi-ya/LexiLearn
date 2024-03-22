@@ -10,22 +10,20 @@
   height: 300px;
   width: 300px;
   margin: 0 auto;
+  
 }
 
 .image-pretest img{
   height: auto;
   max-width: 100%;
+  padding: 20px;
 }
 
 .pre-quiz-container{
-  width: fit-content;
-  height: fit-content;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  gap: 35px;
+  width: 600px;
+  height: auto;
   
 }
 
@@ -35,28 +33,19 @@
 }
 
 .pre-quiz-image{
-  height: fit-content;
   width: 400px;
-  display:flex;
-  justify-content: center;
 }
 
 .pre-quiz-image img{
   max-width: 50%;
-}
-
-.pre-vertical-options a{
-   margin-right: 10px;
+  margin: 0 auto;
 }
 
 .pre-vertical-options {
   display: flex;
   flex-direction: row;
- justify-content: center;
- align-items: center;
- text-align: center;
- margin-right: 10px;
- 
+  text-align: center;
+  margin-right: 20px;
 }
 
 .answer-pretest-button button{
@@ -66,26 +55,29 @@
   border: none;
   font-size: 20px;
   margin-left: 20px;
+  cursor: pointer;
 }
+
 .answer-pretest-button :hover{
 background-color:darkorange;
 }
+
 .pretest-next-button button{
-  padding: 15px 20px;
+  padding: 10px 15px;
   background-color:blue;
   color:white;
   border: none;
-  border-radius: 25px;
+  border-radius: 20px;
   cursor: pointer;
-  margin-bottom: 50px;
-  margin-right: 20px;
+  margin: 40px 20px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 16px;
 }
+
 .pretest-next-button :hover{
   background-color: royalblue ;
-
 }
+
 .pre-quiz-quit button{
   padding: 10px 20px;
   background-color: #007bff;
@@ -98,6 +90,7 @@ background-color:darkorange;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 16px;  
 }
+
 .pre-quiz-quit p{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 18px;
@@ -108,17 +101,9 @@ background-color:darkorange;
   height: 250px;
   width: 250px;
   display:flex;
-  justify-content: center;
   margin-left: 30px;
-
 }
 
 .pre-vertical-options li{
   list-style: none;
-}
-footer-containing-div {
-  width: 100%; /* Ensure the footer container spans the full width */
-  position: fixed; /* Position the footer at the bottom */
-  bottom: 0; /* Align the footer to the bottom */
-  left: 0; /* Ensure the footer starts from the left edge */
 }
