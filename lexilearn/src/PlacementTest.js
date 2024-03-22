@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './PlacementTest.css';
 import Footer from './Footer';
+import { Link } from 'react-router-dom';
 
 const PlacementTest = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -84,6 +85,7 @@ const PlacementTest = () => {
   };
 
   return (
+    <div>
     <div className='placement-test-container'>
     <div className='pretest'>
       <div className="image-pretest">
@@ -110,7 +112,7 @@ const PlacementTest = () => {
               <button onClick={prevQuestion} disabled={currentQuestion === 0}>Back ←</button>
               <button onClick={nextQuestion} disabled={!answered}>Next →</button>
             </div>
-            <div className='footer-containing-div'><Footer/></div>
+            
           </div>
         )}
 
@@ -120,15 +122,18 @@ const PlacementTest = () => {
               <img src="/pretest.gif" alt='pretest gif' />
             </div>
             <p>Well done! You got {score} out of {questions.length} right! </p>
-            <p> Suggested Level: </p>
+            <p> Suggested Level: {level} </p>
             <div>
-              <button>{level}</button>
+              <Link to='/SelectLevelsPage'>
               <button>Select Level</button>
+              </Link>
             </div>
           </div>
         )}
       </div>
     </div>
+    </div>
+    <div className='footer-containing-div'><Footer /></div>
     </div>
   );
 };

@@ -137,7 +137,7 @@
     transition: background-color 0.3s, color 0.3s; /* Transition effect */
     margin-bottom: 50px;
     position: fixed; /* Position the button relative to the browser window */
-    bottom: 110px; /* Adjust as needed */
+    bottom: 60px; /* Adjust as needed */
     right: 700px; /* Adjust as needed */
   }
   
