@@ -71,7 +71,6 @@
   padding: 0;
   margin: 0 10px; /* Add margin between circles */
   text-align: center;
-  /*color: black;*/
   position: absolute;
   display: flex;
   justify-content: center; /* Center horizontally */
@@ -317,17 +316,75 @@
   right: 500px; /* Adjust the right position as needed */
   transform: translateY(-50%); /* Center vertically */
 }
-/* Welcome message styles for smaller screens */
-@media only screen and (max-width: 768px) {
+
+@media screen and (max-width: 768px) {
+  /* Adjustments for smaller screens */
+
+  .homeText {
+    width: 90%; /* Adjust width for smaller screens */
+    margin: 20px auto; /* Center horizontally */
+  }
+
+  .homeImageContainer {
+    width: 90%; /* Adjust width for smaller screens */
+    margin: 20px auto; /* Center horizontally */
+  }
+
+  .home-level-button button,
+  .home-contact-button button {
+    margin-left: auto; /* Center buttons horizontally */
+    margin-right: auto; /* Center buttons horizontally */
+    display: block; /* Ensure buttons take full width */
+  }
+
+  .home-sticker img {
+    max-width: 100%; /* Ensure images don't overflow their containers */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure the image is a block element */
+    margin: 0 auto; /* Center horizontally */
+  }
+
   .welcome-msg-home {
-    font-size: 30px;
+    margin: 20px auto; /* Center the message horizontally */
+    text-align: center; /* Center the text */
+    max-width: calc(100% - 40px); /* Set maximum width to 100% of viewport width minus 40px (for margins) */
+    word-wrap: break-word; /* Allow long words to break into multiple lines */
   }
-}
-/* Circle styles for smaller screens */
-@media only screen and (max-width: 768px) {
+
+  .welcome-msg-home2 {
+    font-size: 20px; /* font size */
+    margin: 20px auto; /* Center the message horizontally */
+    text-align: center; /* Center the text */
+    max-width: calc(100% - 40px); /* Set maximum width to 100% of viewport width minus 40px (for margins) */
+    word-wrap: break-word; /* Allow long words to break into multiple lines */
+  }
+
+  .homeWelcome h2{
+    font-size: 20px; /* font size */
+    margin: 20px auto; /* Center the message horizontally */
+    text-align: center; /* Center the text */
+    max-width: calc(100% - 40px); /* Set maximum width to 100% of viewport width minus 40px (for margins) */
+    word-wrap: break-word; /* Allow long words to break into multiple lines */
+  }
+
   .circle {
-    width: 100px;
-    height: 100px;
-    font-size: 14px;
+    position: static; /* Reset positioning */
+    margin: 10px auto; /* Center horizontally */
   }
+
+  .circlemain {
+    display: none;
+  }
+
+  :root {
+    --line-color: transparent; /* Change the line color to transparent */
+  }
+
+  .welcome-img,
+  .welcome-img2,
+  .welcome-img3 {
+    display: none;
+  }
+
 }
+

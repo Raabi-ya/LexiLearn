@@ -210,7 +210,6 @@ const Level2Page = () => {
 
   useEffect(() => {
     if (currentQuestionIndex === questions.length) {
-      saveScoreToFirestore();
       let fbAudio;
       if (score === questions.length) {
         fbAudio = './level2-1fb.mp3';

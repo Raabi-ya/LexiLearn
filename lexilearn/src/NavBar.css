@@ -56,11 +56,25 @@
     cursor: pointer;
     outline: none;
     color: #fff; 
+    margin-right: 20px;
+    border-radius: 10px;
+  }
+
+  .navbar button:hover{
+    background-color: rgb(118, 201, 201);
   }
 
   /* Display the hiddenLinks when the navbar has the 'open' class */
 .navbar.open .hiddenLinks {
     display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* Adjust as needed */
+    left: 0;
+    background-color: darkcyan;
+    width: 100%;
+    padding: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   }
 
 /* Closing the navbar hidden links */
@@ -79,5 +93,30 @@
   display: flex;
   justify-content: center; 
   color: black;
+}
+
+@media (max-width: 850px) {
+  /* Hide right side links */
+  .navbar .rightSide {
+    display: none;
+  }
+
+  /* Show toggle button */
+  .navbar .toggleButton button {
+    display: block;
+  }
+
+  /* Display the hiddenLinks when the navbar has the 'open' class for small screens */
+  .navbar.open .hiddenLinks {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* Adjust as needed */
+    left: 0;
+    background-color: darkcyan;
+    width: 100%;
+    padding: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
 }
   

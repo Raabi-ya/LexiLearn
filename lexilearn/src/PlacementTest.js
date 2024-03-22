@@ -9,7 +9,6 @@ const PlacementTest = () => {
   const [quizCompleted, setQuizCompleted] = useState(false);
   const [level, setLevel] = useState('');
   const [answered, setAnswered] = useState(false); // State to track if the question has been answered
-  const [levelLink, setLevelLink] = useState("/Level1");
   const [backgroundMusicPlaying, setBackgroundMusicPlaying] = useState(true);
 
   useEffect(() => {
