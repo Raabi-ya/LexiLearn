@@ -71,18 +71,19 @@
     justify-content: space-between;
     width: 300px; /* Adjust as needed */
     align-items: center;
-    padding-bottom: 20px;
+    padding-bottom: 40px;
   }
   
   /* Style for individual navigation buttons */
   .l2-navigation-button {
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color:blue;
     color: #fff;
     border: none;
     border-radius: 20px;
     cursor: pointer;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
   
   /* Style for disabled navigation buttons */
@@ -204,7 +205,40 @@
     height: auto;
     max-width: 100%;
   }
+/* Media queries for responsiveness */
+@media only screen and (max-width: 600px) {
+  .l2-top-image {
+      width: 150px;
+  }
 
+  .l2-hint-image {
+      width: 150px;
+      height: 150px;
+  }
+
+  .l2-dropdownbox {
+      font-size: 12px;
+  }
+
+  .l2-level-selection,
+  .l2-level-selection2 {
+      font-size: 12px;
+      padding: 8px 16px;
+      bottom: 15px;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .l2-top-image {
+      width: 200px;
+  }
+
+  .l2-hint-image {
+      width: 200px;
+      height: 180px;
+  }
+}
+  
   
   
 

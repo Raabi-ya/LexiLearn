@@ -107,3 +107,28 @@ background-color:darkorange;
 .pre-vertical-options li{
   list-style: none;
 }
+/* Add responsive styles */
+@media only screen and (max-width: 768px) {
+  .pre-quiz-container {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .pre-quiz-image img {
+    max-width: 100%;
+  }
+
+  .pre-vertical-options {
+    flex-direction: column;
+    align-items: center;
+    margin-right: 0;
+  }
+
+  .answer-pretest-button button {
+    margin: 10px 0;
+  }
+
+  .gif-pretest img {
+    margin-left: 0;
+  }
+}

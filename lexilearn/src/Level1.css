@@ -3,7 +3,7 @@ body {
   background-color: #FAF3DD;
   margin: 0;
   padding: 0;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 /* Container to render the whole page */
@@ -32,14 +32,34 @@ body {
   color: brown;
 }
 
-/* Question */
-.question{
-  text-align: center;
-  margin-top: 10px;
+/* Image rendering container according to the question */
+.l1-image-container {
+  height: 200px;
+  width: 200px;
 }
 
+/* Image rendering container image styles */
+.l1-image-container img {
+  max-width: 100%;
+  height: auto;
+}
 
-/* Navigation buttons: back, next, finish*/
+/* Answer input text box */
+.l1-input-container input[type="text"] {
+  border-radius: 20px;
+  padding: 15px;
+  border: solid blue;
+  margin-bottom: 20px;
+  font-size: 16px;
+  width: 80%; /* Adjust width as needed */
+}
+
+/* Navigation buttons container */
+.l1-navigation-buttons {
+  margin-bottom: 20px;
+}
+
+/* Navigation buttons: back, next, finish */
 .l1-navigation-buttons button {
   background-color: blue;
   color: #fff;
@@ -50,12 +70,6 @@ body {
   transition: background-color 0.3s ease;
   margin: 0 5px;
   font-size: 16px;
-}
-
-/* Navigation buttons container */
-.l1-navigation-buttons{
-  margin-bottom: 20px;
- 
 }
 
 /* Disabling navigation buttons after reaching the last question */
@@ -74,57 +88,28 @@ body {
   outline: none;
 }
 
-/* Image rendering container according to the question */
-.l1-image-container{
-  height: 200px;
-  width: 200px;
-}
-
-/* Image rendering container image styles*/
-.l1-image-container img{
-  max-width: 100%;
-  height: auto;
-
-}
-
-/* Answer input text box */
-.l1-input-container input[type="text"]{
-  border-radius: 20px;
-  padding: 15px;
-  border:solid blue;
-  margin-bottom: 20px;
-  font-size: 16px;
-
-}
-
-/* Voice feedback button*/
+/* Voice feedback button */
 .feedback-button-l1 {
-  background-color: rgb(196, 241, 106); /* Background color */
-  border: 2px solid white; /* Border color */
-  border-radius: 50%; /* Make it round */
-  padding: 10px; /* Padding */
-  cursor: pointer; /* Cursor style */
-  transition: background-color 0.3s, color 0.3s; /* Transition effect */
+  background-color: rgb(196, 241, 106);
+  border: 2px solid white;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
   margin-bottom: 10px;
-  position: fixed; /* Position the button relative to the browser window */
-  bottom: 90px; /* Adjust as needed */
-  right: 700px; /* Adjust as needed */
-}
-
-/* Voice feedback button hover effects */
-.feedback-button-l1:hover {
-  background-color: yellowgreen; /* Darker background color on hover */
-  color: #ffffff; /* White text on hover */
+  position: fixed;
+  bottom: 90px;
+  right: 700px;
 }
 
 /* Voice Feedback button image */
 .feedback-button-l1 img {
-  width: 50px; /* Adjust the width of the PNG icon */
-  height: 50px; /* Adjust the height of the PNG icon */
+  width: 50px;
+  height: 50px;
 }
 
 /* Select Level button and the Level 2 button styles */
-.l1-level-selection{
+.l1-level-selection {
   background-color: blue;
   color: white;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -134,14 +119,9 @@ body {
   cursor: pointer;
   font-size: 14px;
   transition: background-color 0.3s ease;
-  position: fixed; /* Position the button relative to the browser window */
-  bottom: 43px; /* Adjust as needed */
-  right: 750px; /* Adjust as needed */
-}
-
-/* Select Level button and the Level 2 button hover styles */
-.l1-level-selection:hover{
-  background-color: royalblue;
+  position: fixed;
+  bottom: 43px;
+  right: 750px;
 }
 
 /* Feedback rendering styles */
@@ -154,22 +134,22 @@ body {
   color: #333;
 }
 
-.l1-game-over-container h2{
+.l1-game-over-container h2 {
   color: rgb(137, 79, 79);
 }
 
-.l1-feedback-img{
+.l1-feedback-img {
   height: 600px;
   width: 600px;
   margin: 0 auto;
 }
 
-.l1-feedback-img img{
+.l1-feedback-img img {
   height: auto;
   max-width: 100%;
 }
 
-.l1-level-selection2{
+.l1-level-selection2 {
   background-color: blue;
   color: white;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -179,12 +159,25 @@ body {
   cursor: pointer;
   font-size: 14px;
   transition: background-color 0.3s ease;
-  position: fixed; /* Position the button relative to the browser window */
-  bottom: 5px; /* Adjust as needed */
-  right: 400px; /* Adjust as needed */
+  position: fixed;
+  bottom: 5px;
+  right: 400px;
   margin-left: 10px;
 }
 
-.l1-level-selection2:hover{
-  background-color: royalblue;
+/* Add responsive styles */
+@media only screen and (max-width: 768px) {
+  .l1-top-image-small {
+    width: 200px;
+    height: 200px;
+  }
+
+  .l1-input-container input[type="text"] {
+    width: 100%;
+  }
+
+  .l1-navigation-buttons button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
 }

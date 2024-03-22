@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './Level2.css'
+import './Level2.css';
 import Footer from './Footer';
 import { getDoc, doc, serverTimestamp, setDoc, updateDoc } from "firebase/firestore";
 import { db, auth } from './firebase';

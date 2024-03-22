@@ -268,7 +268,7 @@ const Level3 = () => {
             {finished && <div>Final Score: {score}/10</div>}
             <div className="l3-buttons">
               <button onClick={goToPreviousQuestion} disabled={currentQuestionIndex === 0 || finished}>
-                ← Previous
+                ← Back
               </button>
               <button className="next" onClick={goToNextQuestion} disabled={currentQuestionIndex === 9 || finished}>
                 Next →

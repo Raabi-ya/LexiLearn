@@ -81,7 +81,7 @@
   background-color:lavender;
   padding: 10px;
   margin-right: 20px;
-  cursor: pointer;
+  cursor:grabbing;
   border-radius: 20px;
   
 }
@@ -113,6 +113,7 @@
   margin-right: 10px;
   margin-bottom: 50px;
   border-radius: 20px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 button:disabled {
@@ -130,4 +131,51 @@ button:hover {
 
 .l3-question-container{
   margin-top: 10px;
+}
+/* Add responsive styles */
+@media only screen and (max-width: 768px) {
+  .l3-top-image {
+    width: 200px;
+    height: 200px;
+    margin-bottom: -50px;
+  }
+
+  .question-image {
+    width: 200px;
+    height: 200px;
+  }
+
+  .l3-mainque {
+    padding-top: 50px;
+  }
+
+  .drop-zone {
+    width: 120px;
+    margin-bottom: 30px;
+  }
+
+  .answer-options {
+    left: 0;
+    transform: none;
+  }
+
+  .answer-option {
+    padding: 8px;
+    margin-left: 50px;
+  }
+
+  .answer-option-text {
+    font-size: 16px;
+  }
+
+  .l3-buttons {
+    margin-top: 60px;
+    margin-bottom: 30px;
+  }
+
+  .l3-buttons button {
+    padding: 8px 12px;
+    margin-right: 8px;
+    margin-bottom: 20px;
+  }
 }
