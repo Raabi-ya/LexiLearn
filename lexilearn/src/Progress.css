@@ -1,0 +1,12 @@
+.progress-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .progress-content {
+    text-align: center;
+  }
+  
+  .progress-content h2 {
+    margin-bottom: 20px; /* Add margin bottom for spacing */
+  }
