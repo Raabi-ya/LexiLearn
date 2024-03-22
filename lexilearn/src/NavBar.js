@@ -38,8 +38,15 @@ function Navbar() {
           <Link to="/">Home</Link>
           <Link to="/SelectLevelsPage">Levels</Link>
           <Link to="/UserForm">User Profile</Link>
-          <Link to="/AboutUsPage">Progress</Link>
-          {/* Display the welcome message and the email of the user after logging in */}
+          <Link to="/Progress">Progress</Link>
+          {/*<Link to="/LoginPage">Sign In</Link>*/}
+          {/*{currentUser ? (
+          <span>Welcome, {username}</span>
+          
+        ) : (
+          <Link to="/LoginPage">Login</Link>
+        )}*/}
+
           {currentUser && <span>Welcome, {currentUser.email}</span>}
           {currentUser && <Link to="#" onClick={handleSignOut}>Sign Out</Link>}
           {!currentUser && <Link to="/LoginPage">Login</Link>}
@@ -49,8 +56,14 @@ function Navbar() {
         <Link to="/">Home</Link>
         <Link to="/SelectLevelsPage">Levels</Link>
         <Link to="/UserForm">User Profile</Link>
-        <Link to="/AboutUsPage">Progress</Link>
-        {/* Display the welcome message and the email of the user after logging in */}
+        <Link to="/Progress">Progress</Link>
+        {/*<Link to="/LoginPage">Sign In</Link>*/}
+        {/*{currentUser ? (
+          <span>Welcome, {username}</span>
+        ) : (
+          <Link to="/LoginPage">Login</Link>
+        )}*/}
+
         {currentUser && <span>Welcome, {currentUser.email}</span>}
         {currentUser && <Link to="#" onClick={handleSignOut}>Sign Out</Link>}
         {!currentUser && <Link to="/LoginPage">Login</Link>}
