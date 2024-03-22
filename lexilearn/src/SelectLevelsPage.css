@@ -1,0 +1,133 @@
+.Selected-Levels-Page {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.Selected-Levels-Page-header {
+  
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color:rgb(255, 255, 255);
+  text-shadow: -1px -1px 0 black,  
+             1px -1px 0 black,
+             -1px 1px 0 black,
+             1px 1px 0 black; 
+}
+
+.Level-button {
+  text-align: center;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Level-button button {
+  margin: 10px;
+  padding: 10px;
+  font-size: 16px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  background-color: transparent;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.Level-button button img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.Level-button button + button {
+  margin-top: 10px; /* Margin between buttons */
+}
+
+.Level-button ul {
+  padding: 0;
+  margin: 0;
+}
+
+
+.Selected-Levels-Page button:hover {
+  background-color: #ffe679;
+  transform: scale(1.1);
+}
+
+.Selected-Levels-Page button:focus {
+  outline: none;
+}
+
+.Selected-Levels-Page h1 {
+  margin-bottom: 20px;
+}
+
+.image-buttons {
+  display: flex;
+  justify-content: center; /* Align content horizontally at the center */
+  align-items: center; 
+  width: 200px; 
+  height: 100px;
+  position: relative 
+}
+
+.image-buttons img {
+
+  width: 200px; 
+  height: 200px; 
+  position: absolute; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+}
+
+.image4-buttons {
+  display: flex;
+  justify-content: center; /* Align content horizontally at the center */
+  align-items: center; 
+  width: 200px; 
+  height: 150px;
+  position: relative 
+}
+
+.image4-buttons img {
+  width: 200px; 
+  height: 250px; 
+  position: absolute; 
+  top: 40%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+}
+
+.image1-buttons {
+  display: flex;
+  justify-content: center; /* Align content horizontally at the center */
+  align-items: center; 
+  width: 200px; 
+  height: 150px;
+  position: relative 
+}
+
+.image1-buttons img {
+  width: 200px; 
+  height: 250px; 
+  position: absolute; 
+  top: 40%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+}
+
+.button-shadow button {
+
+  text-shadow: -1px -1px 0 black,  
+  1px -1px 0 black,
+  -1px 1px 0 black,
+  1px 1px 0 black; 
+  
+}
+
+

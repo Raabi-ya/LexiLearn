@@ -1,0 +1,141 @@
+/* Styles for the whole page */
+.pretest{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Logo of the level */
+.image-pretest{
+  height: 300px;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.image-pretest img{
+  height: auto;
+  max-width: 100%;
+}
+
+/* Question container */
+.pre-quiz-container{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  align-items: center;
+  width: 600px; 
+}
+
+
+.pre-quiz-container h2{
+  color:brown;
+}
+
+/* Question image */
+.pre-quiz-image{
+  width: 300px;
+  height: 300px;
+  margin-left: 0px;
+  margin-bottom: 20px;
+}
+
+.pre-quiz-image img{
+  max-width: 100%;
+  height: auto;
+}
+
+/* Answers of the option */
+.pre-vertical-options {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  margin-right: 20px;
+}
+
+/* Buttons of the answers */
+.answer-pretest-button button{
+  background-color: coral;
+  border-radius: 20px;
+  padding: 10px 15px;
+  border: none;
+  font-size: 20px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+/* Button hover */
+.answer-pretest-button :hover{
+background-color:darkorange;
+}
+
+/* Styles for the next and back buttons */
+.pretest-next-button button{
+  padding: 10px 15px;
+  background-color:blue;
+  color:white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin: 40px 40px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+}
+
+/* Hover color added to the next and back button */
+.pretest-next-button :hover{
+  background-color: royalblue ;
+}
+
+/* Level suggestion for the user */
+.pre-quiz-quit button{
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-left: 75px;
+  margin-bottom: 50px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;  
+}
+
+/* Styles for the level suggetion lines*/
+.pre-quiz-quit p{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 18px;
+  color: brown;
+}
+
+/* Styles for the gif */
+.gif-pretest img{
+  height: 250px;
+  width: 250px;
+  display:flex;
+  margin-left: 30px;
+}
+
+/* Answers list styles added*/
+.pre-vertical-options li{
+  list-style: none;
+}
+
+/* Footer styles added to the pre test page*/
+.footer-containing-div{
+  margin-top: 650px;
+}
+
+/* For screens smaller than 600px */
+@media screen and (max-width: 600px) {
+  .pre-quiz-container {
+    width: 90%; /* Adjust width for smaller screens */
+  }
+
+  .pretest-next-button button {
+    margin: 20px 20px; /* Adjust margin for smaller screens */
+  }
+
+  .gif-pretest img {
+    margin-left: 0; /* Remove left margin for smaller screens */
+  }
+}

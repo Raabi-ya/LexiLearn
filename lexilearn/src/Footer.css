@@ -1,0 +1,77 @@
+/* Footer styles */
+.footer {
+  background-color:darkcyan;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Footer navbar styles to navigate among the pages */
+.footer-navbar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.footer-nav-links {
+  list-style-type: none; 
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav-links li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.footer-nav-links li:last-child {
+  margin-right: 0; /* Remove margin from last item */
+}
+
+.footer-nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.footer-nav-links a:hover {
+  color: #ccc;
+}
+
+/* Social icons styles */
+.social-icons {
+  margin-bottom: 10px;
+}
+
+.social-icons a {
+  color: #fff;
+  font-size: 24px;
+  margin-right: 10px;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #ccc;
+}
+
+/* Policy link styles */
+.policy-link {
+  margin-bottom: 10px;
+}
+
+.policy-link a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.policy-link a:hover {
+  color: #ccc;
+}
+
+/* Copyright styles */
+.copyright {
+  margin-bottom: 0;
+}

@@ -1,0 +1,122 @@
+/* Nav bar css*/
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:darkcyan; 
+    padding: 15px 20px;
+    color: #fff; 
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+  /*Left sude nav bar styles*/
+  .navbar .leftSide {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Displaying the welcome and the email of the user */
+  .navbar span{
+    margin-left: 20px;
+    color:burlywood;
+    text-decoration: none;
+  }
+
+  /* Links to the pages */
+  .navbar .hiddenLinks {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color:darkcyan; 
+    width: 100%;
+    padding: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Nav bar hidden links anchor tag */
+  .navbar .hiddenLinks a {
+    color: #fff; 
+    text-decoration: none;
+    margin-bottom: 10px;
+  }
+  
+  /* Nav bar hidden links right side */
+  .navbar .rightSide a {
+    color: #fff; 
+    text-decoration: none;
+    margin-left: 20px;
+  }
+  
+  /* Nav bar buttons */
+  .navbar button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    color: #fff; 
+    margin-right: 20px;
+    border-radius: 10px;
+  }
+
+  .navbar button:hover{
+    background-color: rgb(118, 201, 201);
+  }
+
+  /* Display the hiddenLinks when the navbar has the 'open' class */
+.navbar.open .hiddenLinks {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* Adjust as needed */
+    left: 0;
+    background-color: darkcyan;
+    width: 100%;
+    padding: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+/* Closing the navbar hidden links */
+.navbar.close .hiddenLinks {
+  display: none;
+}
+
+/* Leftside image */
+.navbar .leftSide img {
+  width: 100px; 
+  height: auto; 
+}
+
+/* Toggle button */
+.navbar .toggleButton button {
+  display: flex;
+  justify-content: center; 
+  color: black;
+}
+
+@media (max-width: 850px) {
+  /* Hide right side links */
+  .navbar .rightSide {
+    display: none;
+  }
+
+  /* Show toggle button */
+  .navbar .toggleButton button {
+    display: block;
+  }
+
+  /* Display the hiddenLinks when the navbar has the 'open' class for small screens */
+  .navbar.open .hiddenLinks {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* Adjust as needed */
+    left: 0;
+    background-color: darkcyan;
+    width: 100%;
+    padding: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+}
+  

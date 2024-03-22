@@ -1,0 +1,247 @@
+/* Center the content vertically and horizontally */
+.l2-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #FAF3DD;
+  }
+  
+  /* Style for the top image */
+  .l2-top-image {
+    width: 250px; /* Adjust as needed */
+    height: auto;
+    margin-bottom: 1px; /* Add space below the image */
+  }
+  
+  /* Style for the hint image */
+  .l2-hint-image {
+    width: 250px; /* Adjust as needed */
+    height: 200px;
+    margin-bottom: 20px; /* Add space below the image */
+    margin-top: 20px;
+  }
+  
+  /* Style for the fill in the blanks section */
+  .l2-fill-in-the-blanks {
+    margin-bottom: 20px; /* Add space below the fill in the blanks */
+    text-align: center;
+  }
+
+  .l2-mainque {
+    color: brown;
+  }
+  
+  /* Style for the dropdown section */
+  .l2-dropdown {
+    margin-bottom: 10px; /* Add space below the dropdown */
+  }
+  
+  /* Style for the feedback message */
+  .l2-feedback {
+    margin-bottom: 20px; /* Add space below the feedback message */
+  }
+  .l2-hint-button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .l2-hint-button {
+    padding: 10px 20px;
+    background-color: #c86c17;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  .l2-centered-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+  }
+  
+  /* Style for the navigation buttons */
+  .l2-navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 300px; /* Adjust as needed */
+    align-items: center;
+    padding-bottom: 40px;
+  }
+  
+  /* Style for individual navigation buttons */
+  .l2-navigation-button {
+    padding: 10px 20px;
+    background-color:blue;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-bottom: 40px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+  /* Style for disabled navigation buttons */
+  .l2-navigation-button[disabled] {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .l2-hint-button:hover {
+    background-color: #eddf41;
+    transform: scale(1.1);
+  }
+  
+  .l2-game-over-container {
+    text-align: center;
+  }
+  
+  .l2-game-over-container h1 {
+    font-size: 24px;
+    color: #333;
+  }
+
+  .l2-game-over-container h2{
+    color: rgb(137, 79, 79);
+  }
+  
+  .l2-game-over-container p {
+    font-size: 16px;
+    color: #666;
+    margin: 10px 0;
+  }
+  
+  .l2-game-over-container .feedback {
+    font-style: italic;
+  }
+
+  .l2-dropdownbox {
+    background-color: rgb(62, 62, 185);
+    border-radius: 20px;
+    padding: 5px;
+    font-size: 14px;
+    color: white; 
+  }
+ 
+  .feedback-button-l2 {
+    background-color: rgb(196, 241, 106); /* Background color */
+    border: 2px solid white; /* Border color */
+    border-radius: 50%; /* Make it round */
+    padding: 10px; /* Padding */
+    cursor: pointer; /* Cursor style */
+    transition: background-color 0.3s, color 0.3s; /* Transition effect */
+    margin-bottom: 50px;
+    position: fixed; /* Position the button relative to the browser window */
+    bottom: 60px; /* Adjust as needed */
+    right: 700px; /* Adjust as needed */
+  }
+  
+  .feedback-button-l2:hover {
+    background-color: yellowgreen; /* Darker background color on hover */
+    color: #ffffff; /* White text on hover */
+  }
+
+  .feedback-button-l2 img {
+    width: 50px; /* Adjust the width of the PNG icon */
+    height: 50px; /* Adjust the height of the PNG icon */
+  }
+
+  .l2-level-selection{
+    background-color: blue;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 100px; 
+    margin: 0 auto;
+    margin-left: 0px; 
+    margin-bottom: 20px;
+    margin-right: 10px;
+    position: fixed; /* Position the button relative to the browser window */
+    bottom: 25px; /* Adjust as needed */
+    right: 750px; /* Adjust as needed */
+  }
+
+  .l2-level-selection:hover{
+    background-color: royalblue;
+  }
+
+  .l2-level-selection2{
+    background-color: blue;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    position: fixed; /* Position the button relative to the browser window */
+    bottom: 45px; /* Adjust as needed */
+    right: 625px; /* Adjust as needed */
+  }
+
+  .l2-level-selection2:hover{
+    background-color: royalblue;
+  }
+
+  .l2-fb-img{
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+  }
+
+  .l2-fb-img img{
+    height: auto;
+    max-width: 100%;
+  }
+/* Media queries for responsiveness */
+@media only screen and (max-width: 600px) {
+  .l2-top-image {
+      width: 150px;
+  }
+
+  .l2-hint-image {
+      width: 150px;
+      height: 150px;
+  }
+
+  .l2-dropdownbox {
+      font-size: 12px;
+  }
+
+  .l2-level-selection,
+  .l2-level-selection2 {
+      font-size: 12px;
+      padding: 8px 16px;
+      bottom: 15px;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .l2-top-image {
+      width: 200px;
+  }
+
+  .l2-hint-image {
+      width: 200px;
+      height: 180px;
+  }
+}
+  
+  
+  
+
+  
+  
+  

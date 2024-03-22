@@ -1,11 +1,11 @@
 /* Common styles for form elements */
-.form-group label {
+.login-page .form-group label {
   display: block;
   margin-bottom: 10px;
   font-size: 18px;
 }
 
-.form-group input {
+.login-page .form-group input {
   width: 90%;
   padding: 12px;
   border: 1px solid #ccc;
@@ -14,23 +14,14 @@
   transition: border-color 0.3s ease;
 }
 
-.form-group input:focus {
+.login-page .form-group input:focus {
   border-color: #007bff;
 }
 
-.button-group {
+.login-page .button-group {
   display: flex;
-  justify-content: space-between;
-  width: 70%;
-}
-
-.button-group button {
-  padding: 15px 30px;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: background-color 0.3s ease;
+  justify-content: center; 
+  margin-top: 20px; /* Added margin to separate the buttons from the form */
 }
 
 /* Login page styles */
@@ -39,103 +30,106 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  font-family: 'Courier New', Courier, monospace;
-  background: linear-gradient(to bottom,skyblue, cornflowerblue);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #FAF3DD;
+  overflow: hidden;
 }
 
 /* Left section styles */
-.left-section {
-  flex: 1;
-  padding: 20px 20px 20px 100px;
+.login-page .left-section {
+  padding: 20px;
+  text-align: center;
 }
 
-.left-section img {
+.login-page .left-section img {
   max-width: 100%;
-  border-radius: 20px;
+  border-radius: 30px;
   width: 500px;
   transition: transform 0.3s ease-in-out;
 }
 
-/* Add hover effect */
-.left-section img:hover {
+/* Add hover effect to the entire container */
+.login-page:hover .left-section img {
   transform: scale(1.1);
 }
 
-/* Right section styles */
-.right-section {
-  flex: 1;
+.login-page:hover .login-form {
+  transform: scale(1.05);
 }
 
-.right-section h2 {
+/* Right section styles */
+.login-page .right-section {
+  padding: 20px;
+}
+
+.login-page .right-section h2 {
   margin-bottom: 20px;
   text-align: center;
 }
 
 /* Login form styles */
-.login-form {
+.login-page .login-form {
   background-color: #f0f0f0;
-  border-radius: 20px;
+  border-radius: 30px;
   padding: 30px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 400px;
-  height: 300px;
+  height: 320px;
   margin: 0 auto;
   transition: transform 0.3s ease-in-out;
 }
 
-/* Add hover effect */
-.login-form:hover {
-  transform: scale(1.05);
-}
-.button-group {
-  display: flex;
-  justify-content: center; /* Center the buttons horizontally */
-  width: 100%; /* Adjusted width */
-  margin-top: 20px; /* Added margin to separate the buttons from the form */
-}
-
 /* Submit button styles */
-.button-group button {
-  background-color: royalblue;
+.login-page .button-group button {
+  background-color: blue;
   color: #fff;
-  font-family: 'Courier New', Courier, monospace;
-}
-
-.button-group button:hover {
-  background-color: navy;
-}
-
-.additional-options a {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
   cursor: pointer;
   font-size: 14px;
-  text-decoration: none;
+  transition: background-color 0.3s ease;
 }
-.additional-options a:hover{
+
+.login-page .button-group button:hover {
+  background-color: royalblue;
+}
+
+.login-page .additional-options {
+  margin-top: 15px;
+  text-align: justify; 
+}
+
+.login-page .additional-options p a,span {
+  cursor: pointer;
+  font-size: 14px;
+  color: #007bff;
   text-decoration: underline;
 }
-/* Media queries for responsiveness */
 
+/* Error message styles */
+.login-page #error-message {
+  color: red;
+  font-size: 12px;
+}
+
+/* Media queries for responsiveness */
 @media only screen and (max-width: 768px) {
   .login-page {
     flex-direction: column; /* Stack sections vertically */
   }
 
-  .left-section,
-  .right-section {
+  .login-page .left-section,
+  .login-page .right-section {
     width: 100%; /* Make sections full width */
   }
 
-  .left-section img {
-    border-radius: 0; /* Remove border radius */
-  }
-
-  .login-form {
+  .login-page .login-form {
     width: 90%; /* Adjust form width */
   }
 
-  .button-group button {
+  .login-page .button-group button {
     width: 100%; /* Make buttons full width */
   }
 }
-
-  

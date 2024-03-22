@@ -1,0 +1,183 @@
+/* Level1.css styles */
+body {
+  background-color: #FAF3DD;
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Container to render the whole page */
+.l1-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Logo container */
+.l1-top-image-small {
+  height: 300px;
+  width: 300px;
+  margin: 0 auto;
+}
+
+/* Logo image */
+.l1-top-image-small img {
+  height: auto;
+  max-width: 100%;
+}
+
+/* Instructions text */
+.l1-container h2 {
+  text-align: center;
+  color: brown;
+}
+
+/* Image rendering container according to the question */
+.l1-image-container {
+  height: 200px;
+  width: 200px;
+}
+
+/* Image rendering container image styles */
+.l1-image-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Answer input text box */
+.l1-input-container input[type="text"] {
+  border-radius: 20px;
+  padding: 15px;
+  border: solid blue;
+  margin-bottom: 20px;
+  font-size: 16px;
+  width: 80%; /* Adjust width as needed */
+}
+
+/* Navigation buttons container */
+.l1-navigation-buttons {
+  margin-bottom: 20px;
+}
+
+/* Navigation buttons: back, next, finish */
+.l1-navigation-buttons button {
+  background-color: blue;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0 5px;
+  font-size: 16px;
+}
+
+/* Disabling navigation buttons after reaching the last question */
+.l1-navigation-buttons button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Navigation button hover effects */
+.l1-navigation-buttons button:hover {
+  background-color: royalblue;
+}
+
+/* Navigation buttons focus effects */
+.l1-navigation-buttons button:focus {
+  outline: none;
+}
+
+/* Voice feedback button */
+.feedback-button-l1 {
+  background-color: rgb(196, 241, 106);
+  border: 2px solid white;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  margin-bottom: 10px;
+  position: fixed;
+  bottom: 90px;
+  right: 700px;
+}
+
+/* Voice Feedback button image */
+.feedback-button-l1 img {
+  width: 50px;
+  height: 50px;
+}
+
+/* Select Level button and the Level 2 button styles */
+.l1-level-selection {
+  background-color: blue;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  position: fixed;
+  bottom: 43px;
+  right: 750px;
+}
+
+/* Feedback rendering styles */
+.l1-game-over-container {
+  text-align: center;
+}
+
+.l1-game-over-container h1 {
+  font-size: 24px;
+  color: #333;
+}
+
+.l1-game-over-container h2 {
+  color: rgb(137, 79, 79);
+}
+
+.l1-feedback-img {
+  height: 600px;
+  width: 600px;
+  margin: 0 auto;
+}
+
+.l1-feedback-img img {
+  height: auto;
+  max-width: 100%;
+}
+
+.l1-level-selection2 {
+  background-color: blue;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  position: fixed;
+  bottom: 5px;
+  right: 400px;
+  margin-left: 10px;
+}
+
+/* Add responsive styles */
+@media only screen and (max-width: 768px) {
+  .l1-top-image-small {
+    width: 200px;
+    height: 200px;
+  }
+
+  .l1-input-container input[type="text"] {
+    width: 100%;
+  }
+
+  .l1-navigation-buttons button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}

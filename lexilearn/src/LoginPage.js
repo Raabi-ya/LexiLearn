@@ -1,43 +1,84 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faLock } from '@fortawesome/free-solid-svg-icons';
+import { sendPasswordResetEmail, signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from './firebase';
+import { useNavigate } from 'react-router-dom';
+import Footer from './Footer';
 import './Login.css'; // Import CSS for styling
+import { AuthContext } from './context/AuthContext';
 
+//Login function
 function LoginPage() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [submitted, setSubmitted] = useState(false);
+  const [error,setError]=useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
-  const handleLogin = () => {
-    // Here, you can add your logic for handling the login action, such as sending a request to the server to authenticate the user.
-    // For simplicity, let's just set submitted to true
-    setSubmitted(true);
+  const {dispatch} = useContext(AuthContext)
+  
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    signInWithEmailAndPassword (auth, email, password)
+  .then((userCredential) => {
+    // Signed up 
+    const user = userCredential.user;
+    dispatch({type:"LOGIN", payload:user})
+    navigate("/")
+    // ...
+  })
+  .catch((error) => {
+    setError(true)
+    // ..
+  });
+
   };
+  //Resetting the forgotten password function
+  const handlePasswordReset = () =>{
+    
+    const email = prompt("Please enter your email!")
+    if (email === null) {
+      // User clicked cancel, do nothing
+      return;
+    }
+
+    // User provided an email, send password reset email
+    sendPasswordResetEmail(auth, email)
+      .then(() => {
+        alert("Please check your inbox for the reset password instructions!");
+      })
+      .catch((error) => {
+        console.error("Error sending password reset email:", error);
+        alert("An error occurred while sending the password reset email. Please try again later.");
+      });
+  }
 
   return (
+    <div>
     <div className="login-page">
-      {/* Picture Section */}
+      {/* Picture Section :Left */}
       <div className="left-section">
-        <img src="/login.jpg" alt="Child Learning" />
+        <img src="./login-img.png" alt="Login" />
       </div>
-      {/* Login Form Section */}
+      {/* Login Form Section: Right */}
       <div className="right-section">
-        <h2>Welcome to LexiLearn!</h2>
+        <h2> Welcome to LexiLearn! </h2>
         <div className="login-form">
           <form onSubmit={handleLogin}>
             <div className="form-group">
-              <label htmlFor="username"><FontAwesomeIcon icon={faUser} /> Username</label>
+              <label htmlFor="email"><FontAwesomeIcon icon={faUser} /> E-mail </label>
               <input
-                type="text"
-                id="username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                type="email"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 required
               />
             </div>
             <span style={{ marginRight: '10px' }}></span>
             <div className="form-group">
-              <label htmlFor="password"><FontAwesomeIcon icon={faLock} /> Password</label>
+              <label htmlFor="password"><FontAwesomeIcon icon={faLock} /> Password </label>
               <input
                 type="password"
                 id="password"
@@ -47,17 +88,18 @@ function LoginPage() {
               />
             </div>
             <div className="button-group">
-            <button type="button" onClick={handleLogin}>Login</button>
+            <button type="submit">Login</button>
             </div>
+              {error && <span id='error-message'> Wrong email or password! </span>}
           </form>
-          {submitted}
-          {/* Text and button for sign in option and password reset */}
         <div className="additional-options">
-          <p>Don't have an account? <a href='signup'>Sign Up</a></p>
-          <p>Forgot your password? <a href='reset'>Reset Password</a></p>
+          <p>Don't have an account? <a href='signup'> Sign Up </a></p>
+          <p>Forgot your password? <span onClick={handlePasswordReset} className='forgot-password'>Reset Password</span>  </p>
         </div>
         </div>
       </div>
+    </div>
+    <div>< Footer /></div>
     </div>
   );
 }
