@@ -190,7 +190,6 @@ const questionsData = [
 
 ];
 
-// Function to get random questions
 const getRandomQuestions = (questions) => {
   const shuffledQuestions = questions.sort(() => Math.random() - 0.5);
   return shuffledQuestions.slice(0, 7);
@@ -205,12 +204,10 @@ const Level2Page = () => {
   const [feedbackAudio, setFeedbackAudio] = useState(null);
   const [username, setUsername] = useState("");
 
-   // Load questions when component mounts
   useEffect(() => {
     setQuestions(getRandomQuestions(questionsData));
   }, []);
 
-   // Load feedback audio when currentQuestionIndex or score changes
   useEffect(() => {
     if (currentQuestionIndex === questions.length) {
       let fbAudio;
@@ -228,7 +225,6 @@ const Level2Page = () => {
     }
   }, [currentQuestionIndex, questions.length, score]);
 
-  // Function to get user data
   const getUser = async () => {
     const user = auth.currentUser;
     if(user){
@@ -251,17 +247,14 @@ const Level2Page = () => {
     getUser()
   }, []);
 
-  // Function to handle selection change in dropdown
   const handleSelectChange = (event) => {
     setSelectedOption(event.target.value);
   };
 
-  // Function to handle hint click
   const handleHintClick = () => {
     setShowHint(true);
   };
 
-  // Function to handle next click
   const handleNextClick = () => {
     const correctAnswer = questions[currentQuestionIndex].correctAnswer;
     if (selectedOption === correctAnswer) {
@@ -272,7 +265,6 @@ const Level2Page = () => {
     setCurrentQuestionIndex(prevIndex => prevIndex + 1);
   };
 
-  // Function to handle back click
   const handleBackClick = () => {
     setCurrentQuestionIndex(prevIndex => prevIndex - 1);
   };
@@ -284,7 +276,7 @@ const Level2Page = () => {
     }
   };
 
-  // Function to save score to Firestore
+
   const saveScoreToFirestore = async () => {
     const user = auth.currentUser;
 
@@ -316,15 +308,13 @@ const Level2Page = () => {
     ]);
   };
 
-  // Render loading screen if questions are not loaded yet
   if (questions.length === 0) {
     return <div>Loading...</div>;
   }
 
   const currentQuestion = questions[currentQuestionIndex];
   let fbImage; 
-
-  // Render feedback screen if all questions are answered
+  
   if (currentQuestionIndex === questions.length) {
     saveScoreToFirestore();
     let feedback = '';
@@ -359,7 +349,6 @@ const Level2Page = () => {
     
   }
 
-  // Render level 2 questions
   return (
     <div>
     <div className="l2-container">

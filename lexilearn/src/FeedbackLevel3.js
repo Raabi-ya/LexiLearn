@@ -47,7 +47,6 @@ const FeedbackLevel3 = () => {
     }
   };
 
-  //Generate the feedback
   const generateFeedback = score => {
     let feedback = "";
     let imageSrc = "";
@@ -70,7 +69,6 @@ const FeedbackLevel3 = () => {
     return { feedback, imageSrc, audioSrc };
   };
 
-  //Handle the audio
   const handlePlayAudio = () => {
     setShowAudioPlayer(true);
   };

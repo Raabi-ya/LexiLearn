@@ -1,12 +1,11 @@
 import React from "react";
-import "./Home.css"; //import home css
-import Footer from "./Footer";//import footer
+import "./Home.css";
+import Footer from "./Footer";
 import { Link } from "react-router-dom"; // Import Link from react-router-dom
 
 function Home() {
   return (
     <div>
-    {/*Home section*/}
     <div className="home">
       <section className="homesection">
         <div className="homeWelcome">
@@ -26,7 +25,6 @@ function Home() {
         </div>
       </section>
 
-      {/* Main features section */}
       <section className="homesection">
       <div className="headerContainer">
         <div className="homeText">
@@ -46,7 +44,6 @@ function Home() {
       </div>
       </section>
 
-      {/*Level section*/}
       <section className="homesection">
       <div className="home-level">
         <h1 className="home-topic">Let's Get Started!</h1>
@@ -70,7 +67,6 @@ function Home() {
       </div>
       </section>
 
-      {/* Contact section */}
       <section className="homesection">
         <div className="home-contactUs">
           <h1 className="home-topic">Get in touch with us...</h1>
@@ -88,7 +84,6 @@ function Home() {
         </div>
       </section>
 
-      {/* About section */}
       <section className="homesection">
         <div className="home-aboutUs">
           <h1 className="home-topic">Get to know about us...</h1>
@@ -100,7 +95,6 @@ function Home() {
       </section>
       
     </div>
-    {/* Footer section */}
     <div className="homeFooter">< Footer /></div>
     </div>
   );
