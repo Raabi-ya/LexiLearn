@@ -4,6 +4,7 @@ import Footer from './Footer';
 import { Link } from 'react-router-dom';
 
 const PlacementTest = () => {
+  // State variables using useState hook
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [quizCompleted, setQuizCompleted] = useState(false);
@@ -11,6 +12,7 @@ const PlacementTest = () => {
   const [answered, setAnswered] = useState(false); // State to track if the question has been answered
   const [backgroundMusicPlaying, setBackgroundMusicPlaying] = useState(true);
 
+  // Effect hook to handle actions when quiz is completed
   useEffect(() => {
     if (quizCompleted) {
       setBackgroundMusicPlaying(false);
@@ -20,6 +22,7 @@ const PlacementTest = () => {
     }
   }, [quizCompleted, score]);
 
+  // Effect hook to announce suggested level
   useEffect(() => {
     if (level !== '') {
       const utterance = new SpeechSynthesisUtterance();
@@ -28,6 +31,7 @@ const PlacementTest = () => {
     }
   }, [level]);
 
+  // Array containing quiz questions
   const questions = [
     {
       options: ["bed", "deb", "ded"],
@@ -51,6 +55,7 @@ const PlacementTest = () => {
     }
   ];
 
+  // Function to handle user's answer
   const handleAnswer = (selectedAnswer) => {
     if (selectedAnswer === questions[currentQuestion].correctAnswer) {
       setScore(score + 1);
@@ -58,6 +63,7 @@ const PlacementTest = () => {
     setAnswered(true);
   };
 
+  // Function to move to the next question
   const nextQuestion = () => {
     if (answered && currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
@@ -68,6 +74,7 @@ const PlacementTest = () => {
     }
   };
 
+  // Function to move to the previous question
   const prevQuestion = () => {
     if (currentQuestion > 0) {
       setCurrentQuestion(currentQuestion - 1);
@@ -75,6 +82,7 @@ const PlacementTest = () => {
     }
   };
 
+  // Function to determine suggested level based on score
   const determineLevel = () => {
     if (score <= 2) {
       setLevel('Level 1');
@@ -85,6 +93,7 @@ const PlacementTest = () => {
 
   return (
     <div>
+      {/* Placement test container */}
     <div className='placement-test-container'>
     <div className='pretest'>
       <div className="image-pretest">
@@ -98,6 +107,7 @@ const PlacementTest = () => {
                 <img src={questions[currentQuestion].imagehint} alt={`hint for question ${currentQuestion + 1}`} />
               )}
             </div>
+            {/* Display options for the current question */}
             <ul className="pre-vertical-options">
               {questions[currentQuestion].options.map((option, index) => (
                 <li key={index}>
@@ -107,6 +117,7 @@ const PlacementTest = () => {
                 </li>
               ))}
             </ul>
+            {/* Navigation buttons */}
             <div className="pretest-next-button">
               <button onClick={prevQuestion} disabled={currentQuestion === 0}>Back ←</button>
               <button onClick={nextQuestion} disabled={!answered}>Next →</button>
@@ -114,7 +125,7 @@ const PlacementTest = () => {
             
           </div>
         )}
-
+        {/* Display quiz completion message */}
         {quizCompleted && (
           <div className="pre-quiz-quit ">
             <div className="gif-pretest">

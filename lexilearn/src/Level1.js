@@ -137,13 +137,13 @@ const Level1Page = () => {
       const attemptDocRef = doc(db, "users", user.uid);
       const attemptDocSnap = await getDoc(attemptDocRef);
 
-      let currentAttempt = 1;
+      let currentAttempt = 0;
       if (attemptDocSnap.exists()) {
           const data = attemptDocSnap.data();
           if (data && typeof data.level1_attempt === 'number' && !isNaN(data.level1_attempt)) {
               currentAttempt = data.level1_attempt + 1;
           } else {
-              currentAttempt = 1;
+              currentAttempt = 0;
           }
       }
 

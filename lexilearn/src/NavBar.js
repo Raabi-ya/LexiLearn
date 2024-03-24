@@ -39,13 +39,6 @@ function Navbar() {
           <Link to="/SelectLevelsPage">Levels</Link>
           <Link to="/UserForm">User Profile</Link>
           <Link to="/Progress">Progress</Link>
-          {/*<Link to="/LoginPage">Sign In</Link>*/}
-          {/*{currentUser ? (
-          <span>Welcome, {username}</span>
-          
-        ) : (
-          <Link to="/LoginPage">Login</Link>
-        )}*/}
 
           {currentUser && <span>Welcome, {currentUser.email}</span>}
           {currentUser && <Link to="#" onClick={handleSignOut}>Sign Out</Link>}
@@ -57,12 +50,6 @@ function Navbar() {
         <Link to="/SelectLevelsPage">Levels</Link>
         <Link to="/UserForm">User Profile</Link>
         <Link to="/Progress">Progress</Link>
-        {/*<Link to="/LoginPage">Sign In</Link>*/}
-        {/*{currentUser ? (
-          <span>Welcome, {username}</span>
-        ) : (
-          <Link to="/LoginPage">Login</Link>
-        )}*/}
 
         {currentUser && <span>Welcome, {currentUser.email}</span>}
         {currentUser && <Link to="#" onClick={handleSignOut}>Sign Out</Link>}
